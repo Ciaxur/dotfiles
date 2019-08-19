@@ -155,6 +155,13 @@ mode "i3-gap-resize" {
     bindsym Right           gaps right  current  minus   5
     bindsym Shift+Right     gaps right  current  plus    5
 
+    # Combined Gap Changes
+    bindsym $ctrl+Up        gaps vertical   current plus   5
+    bindsym $ctrl+Down      gaps vertical   current minus  5
+    bindsym $ctrl+Left      gaps horizontal current plus   5
+    bindsym $ctrl+Right     gaps horizontal current minus  5
+
+
 
     # Reset Gap Values
     bindsym $ctrl+r         "gaps outer current set 4 ; gaps inner current set 6"
