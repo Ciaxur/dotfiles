@@ -12,6 +12,11 @@
 
 
 
+# Border Configuration
+new_window normal
+hide_edge_borders vertical
+for_window [class="^.*"] border toggle
+
 
 # Set Variables to Keys
 set $mod  Mod4
@@ -38,7 +43,12 @@ font pango:monospace 8
 ## Key Bindings
 bindsym         $mod+Return                 exec i3-sensible-terminal
 bindsym         $mod+q                      kill
-bindsym         $mod+d                      exec "dmenu_run -nf '#C8C8C8' -nb '#1D1D1D' -sb '#A569BD' -sf '#EEEEEE' -fn 'monospace-10' -p 'Apps:'"
+bindsym         $mod+n                      exec --no-startup-id nautilus
+bindsym         $mod+d                      exec "rofi -show run -location 2 -display-run 'Apps: ' -width 15        \
+                                                    -font 'Monospace 8' -columns 1 -lines 10 -hide-scrollbar        \
+                                                    -theme ~/.config/rofi/solarized-darker.rasi                     \
+                                                    -kb-row-select 'Tab' -kb-row-tab ''"
+
 
 bindsym         $mod+Left                   focus left
 bindsym         $mod+Down                   focus down
@@ -68,7 +78,6 @@ bindsym         $mod+Shift+space            floating toggle
 bindsym         $mod+a                      focus parent
 bindsym         $mod+Shift+n                exec --no-startup-id feh --bg-scale --random ~/Pictures/BackgroundRoll/*
 bindsym         $mod+Print                  exec "flameshot gui"
-
 
 
 
@@ -230,5 +239,7 @@ gaps outer 4
 
 
 # Window Specific Settings
-# Properties could be obtained from "xprop | grep -i 'class"
+# Properties could be obtained from "xprop | grep -i "class"
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="vlc"] floating enable
+for_window [class="keepassxc"] floating enable
