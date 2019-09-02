@@ -1,0 +1,7 @@
+/*
+ * Termite CSS Configuration
+ * - Add Inner Padding Similair to URxvt
+ */
+VteTerminal, vte-terminal {
+    padding: 18px;
+ }
