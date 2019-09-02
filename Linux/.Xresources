@@ -37,20 +37,17 @@
 *.color15: #fdf6e3
 
 
-!! URxvt Transparency
-!URxvt.transparent: true
-!URxvt.shading: 10
-
-
-
 !! URxvt Appearance
-URxvt.font: xft:inconsolata:size=8:antialias=true
-URxvt*borderless: 1
+!URxvt.font: xft:inconsolata:size=8:antialias=true
+
+URxvt.font: xft:inconsolata:size=8:antialias=true:hinting=slight
+
 !URxvt.boldFont: -*-rissole-*
 !URxvt.boldFont: -*-rissole-*
 !URxvt.italicFont: -*-rissole-*
 !URxvt.boldItalicfont: -*-rissole-*
-URxvt.letterSpace: 0
+URxvt*borderless: 1
+URxvt.letterSpace: 0 
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
 URxvt.internalBorder: 18
@@ -61,7 +58,9 @@ URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
-URxvt.iso14755: false
+
+URxvt*iso14755: False
+URxvt*iso14755_52: False
 
 
 
@@ -84,4 +83,24 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.urlLauncher: google-chrome
 URxvt.underlineURLs: true
 !URxvt.urlButton: 1
+
+
+
+!! xterm Settings
+xterm*faceName:             inconsolata 
+xterm*faceSize:             8
+xterm.vt100.saveLines:      1000
+xterm*dynamiccolors:        true
+xterm*utf8:                 2
+xterm*geometry:             WINDOWGEOMETRY
+xterm*visualBell:           off
+xterm*highlightSelection:   true
+
+
+!! Copy-Paste
+xterm*selectToClipboard: true
+xterm*VT100*translations: #override \n\
+    Ctrl Shift <Key>V:  insert-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>C:        select-end(CLIPBOARD)
+
 
