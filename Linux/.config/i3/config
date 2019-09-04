@@ -132,11 +132,11 @@ mode "resize" {
 
 
     # Resize to a Specific Dimension
-    bindsym $ctrl+1 resize set 720px  480px
-    bindsym $ctrl+2 resize set 800px  600px
-    bindsym $ctrl+3 resize set 1060px 800px
-
-
+    bindsym 1 resize set 720px  480px
+    bindsym 2 resize set 800px  600px
+    bindsym 3 resize set 1060px 800px
+    
+    
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
     bindsym Escape mode "default"
