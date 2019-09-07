@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Set Terminal Name
+export TERM="rxvt-unicode-256color"
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/omar/.oh-my-zsh"
 
@@ -111,6 +114,7 @@ export PAGER="most"
 # Load Aliases
 source ~/scripts/runtime/aliases.sh
 source ~/scripts/runtime/functions.sh
+source ~/scripts/runtime/keybinds.sh
 
 # NVM Exports
 export NVM_DIR="$HOME/.nvm"
