@@ -5,8 +5,17 @@ tempFile="/tmp/bat-dump-temp.dump"
 
 
 # Obtain Battery Percentage
-bat="$(acpi -b | awk '{print $4}' | grep -o '[0-9]\+')"
-chargeState="$(acpi -b | awk '{print $3}' | sed 's/,//g')"
+# Two+ Liner
+if [ `acpi | wc -l` -gt 1 ]; then
+    bat=`acpi -b | awk 'END{print}' | awk '{print $4}' | grep -o '[0-9]\+'`
+    chargeState="$(acpi -b | awk 'END{print}' | awk '{print $3}' | sed 's/,//g')"
+
+# One Liner
+else
+    bat=`acpi -b | awk '{print $4}' | grep -o '[0-9]\+'`
+    chargeState="$(acpi -b | awk '{print $3}' | sed 's/,//g')"
+fi
+
 
 # Obtain Status from Temp File (If Any)
 # Status (0 = Not Notified | 1 = Notified <20% | 2 = Notified <10% | 3 = Notified <5% )
