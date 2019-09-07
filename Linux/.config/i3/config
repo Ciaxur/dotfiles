@@ -132,9 +132,13 @@ mode "resize" {
 
 
     # Resize to a Specific Dimension
+    bindsym 0 resize set 560px  360px
     bindsym 1 resize set 720px  480px
     bindsym 2 resize set 800px  600px
     bindsym 3 resize set 1060px 800px
+    bindsym 4 resize set 640px  800px
+    bindsym 5 resize set 720px  900px
+    bindsym 6 resize set 720px  1000px
     
     
     # back to normal: Enter or Escape or $mod+r
@@ -243,3 +247,6 @@ gaps outer 4
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="keepassxc"] floating enable
+
+# Sign in Window / Redirect
+for_window [title="Sign in - *"] floating enable
