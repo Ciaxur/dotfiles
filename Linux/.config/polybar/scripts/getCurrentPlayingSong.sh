@@ -1,0 +1,1 @@
+../../../scripts/spotify/getCurrentPlayingSong.sh

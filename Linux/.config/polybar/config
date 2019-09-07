@@ -52,15 +52,16 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = NotoSans-Regular:size=8;0
+font-0 = "Roboto:pixelsize=8:weigth=bold;0"
+#font-0 = NotoSans-Regular:size=8;0
 font-1 = Unifont:size=6;1
 font-2 = FontAwesome:size=8;-2
 font-3 = NotoSans-Regular:size=8;-1
 font-4 = MaterialIcons:size=10;-1
 font-5 = Termsynu:size=8;-1
 
-modules-left = bspwm i3
-modules-center = mpd 
+modules-left = bspwm i3 spotify-script
+modules-center =  
 modules-right = xbacklight volume memory cpu cpu-temps bat-script wlan1 wlan2 eth date
 
 tray-position = right
@@ -78,6 +79,12 @@ tray-padding = 2
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
+
+[module/spotify-script]
+type = custom/script
+exec = ~/.config/polybar/scripts/getCurrentPlayingSong.sh
+interval = 1
+
 
 [module/bat-script]
 type = custom/script
@@ -145,7 +152,7 @@ label-empty-padding = 1
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
-wrapping-scroll = false
+wrapping-scroll = flase
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -221,7 +228,7 @@ label = %{F#999}MEM %{F#FFF}%percentage_used%%
 
 [module/wlan1]
 type = internal/network
-interface = wlx00e04c21b013
+interface = wlxec086b17583f 
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -243,7 +250,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/wlan2]
 type = internal/network
-interface = wlxec086b17583f
+interface = wlxd0374535daaa 
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
