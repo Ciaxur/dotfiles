@@ -8,11 +8,9 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-;background = #151515
-background = #7700689C
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
+;background = #7700689C
+background = #0000689C
+background-alt = #255DADE2
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
@@ -53,7 +51,6 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = "Roboto:pixelsize=8:weigth=bold;0"
-#font-0 = NotoSans-Regular:size=8;0
 font-1 = Unifont:size=6;1
 font-2 = FontAwesome:size=8;-2
 font-3 = NotoSans-Regular:size=8;-1
@@ -62,7 +59,7 @@ font-5 = Termsynu:size=8;-1
 
 modules-left = bspwm i3 spotify-script
 modules-center =  
-modules-right = xbacklight volume memory cpu cpu-temps bat-script wlan1 wlan2 eth date
+modules-right = xbacklight volume memory cpu-temps bat-script wlan1 wlan2 eth date
 
 tray-position = right
 tray-padding = 2
@@ -89,14 +86,14 @@ interval = 1
 [module/bat-script]
 type = custom/script
 exec = ~/.config/polybar/scripts/battery-display.sh
-interval = 10
-format-underline = #ffb52a
+interval = 4
+format-underline = #55ffb52a
 
 [module/cpu-temps]
 type = custom/script
 exec = ~/.config/polybar/scripts/cpu-temps.sh
-interval = 5
-format-underline = #f50a4d
+interval = 2 
+format-underline = #5574FF33
 
 
 [module/xwindow]
@@ -134,7 +131,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= #FF8733
+label-focused-underline= #00FF8733
 label-focused-padding = 1
 
 label-occupied = %index%
@@ -215,7 +212,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #74FF33
+format-underline = #5574FF33
 label = %{F#999}CPU %{F#FFF}%percentage%%
 
 [module/memory]
@@ -223,7 +220,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #B033FF
+format-underline = #44B033FF
 label = %{F#999}MEM %{F#FFF}%percentage_used%% 
 
 [module/wlan1]
@@ -232,7 +229,7 @@ interface = wlxec086b17583f
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = #449f78e1
 label-connected = %{F#999}WLAN %{F#FFF}%essid%
 
 format-disconnected =
@@ -254,7 +251,7 @@ interface = wlxd0374535daaa
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = #449f78e1
 label-connected = %{F#999}WLAN %{F#FFF}%essid%
 
 format-disconnected =
@@ -290,7 +287,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = %%{F#99}%m/%d/%Y%%{F-}  %%{F#fff}%I:%M %p%{F-}
+date = %%{F#99}%m/%d/%Y%%{F-} %a, %%{F#fff}%I:%M %p%{F-}
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
@@ -298,7 +295,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #440a6cf5
 
 label = %date%
 
