@@ -22,15 +22,20 @@ if [ $bat -eq 100 ]; then
 
 # BAT = red ; $bat = white
 elif [ $bat -lt 11 ] && [ $chargeState = "Discharging" ]; then
-    echo " 🔋%{F#FF4400}BAT %{F#FFF}$bat% "
+    echo " %{F#999}BAT %{F#FF4400}↓%{F#FFF}$bat% "
 
 # BAT = orange ; $bat = white
 elif [ $bat -lt 21 ] && [ $chargeState = "Discharging" ]; then
-    echo " 🔋%{F#FFB300}BAT %{F#FFF}$bat% "
+    echo " %{F#999}BAT %{F#FFB300}↓%{F#FFF}$bat% "
+
+# BAT = green ; Discharging
+elif [ $chargeState = "Discharging" ]; then
+    echo " %{F#999}BAT %{F#37FF00}↓%{F#FFF}$bat% "
+
 
 # BAT = green ; $bat = white
 else
-    echo " 🔋%{F#37FF00}BAT %{F#FFF}$bat% "
+    echo " %{F#999}BAT %{F#37FF00}↑%{F#FFF}$bat% "
 fi
 
 

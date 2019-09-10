@@ -1,1 +1,1 @@
-../../../scripts/spotify/getCurrentPlayingSong.sh
+/home/omar/scripts/spotify/getCurrentPlayingSong.sh
