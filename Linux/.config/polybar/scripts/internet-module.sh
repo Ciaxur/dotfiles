@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Obtain Connection Information
-CONX_INFO=$(nmcli d | grep -i connected)
+CONX_INFO=$(nmcli d | grep -iw connected)
 
 # Validate Connection Found
 if [ "$CONX_INFO" = "" ]; then
