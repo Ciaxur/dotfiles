@@ -59,7 +59,7 @@ font-5 = Termsynu:size=8;-1
 
 modules-left = bspwm i3 spotify-script
 modules-center =  
-modules-right = xbacklight volume memory cpu-temps bat-script wlan1 wlan2 eth date
+modules-right = xbacklight volume memory cpu-temps bat-script internet-conx date
 
 tray-position = right
 tray-padding = 2
@@ -76,6 +76,11 @@ tray-padding = 2
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
+[module/internet-conx]
+type = custom/script
+exec = ~/.config/polybar/scripts/internet-module.sh
+interval = 1
+format-underline = #449f78e1
 
 [module/spotify-script]
 type = custom/script
