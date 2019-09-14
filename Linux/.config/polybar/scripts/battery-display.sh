@@ -14,7 +14,6 @@ else
 fi
 
 
-
 # Change Colors based on States
 # BAT = Grey ; $bat = white
 if [ $bat -eq 100 ]; then
