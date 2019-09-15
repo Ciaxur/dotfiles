@@ -28,6 +28,16 @@ ALBUM=$(cat /tmp/$TMP_FILE | grep -iw "album" | cut -d ' ' -f2-)
 ARTIST=$(cat /tmp/$TMP_FILE | grep -iw "artist" | cut -d ' ' -f2-)
 SONG=$(cat /tmp/$TMP_FILE | grep -iw "title" | cut -d ' ' -f2-)
 
+
+#################################
+# Make sure Valid Data is found #
+#################################
+if [ "$ALBUM" = "" ] || [ "$ARTIST" = "" ] || [ "$SONG" = "" ] ;then
+    echo "%{F#5DADE2}[ %{F#999} Spotify %{F#5DADE2}]"
+    return 0
+fi
+
+
 #######################################
 # Convert Microseconds to Human Time  #
 #######################################
