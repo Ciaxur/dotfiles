@@ -53,6 +53,9 @@ set         expandtab
 syntax      on
 colorscheme desert
 
+" Active Search Highlighting
+set hlsearch
+
 " Hybrid Line Numbers ON
 set         relativenumber
 set         nu rnu
