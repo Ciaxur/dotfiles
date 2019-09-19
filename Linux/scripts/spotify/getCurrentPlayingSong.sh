@@ -4,6 +4,11 @@
 DEBUG=0
 
 
+###############################
+# SPOTIFY ICON (Iosevka Font) #
+###############################
+ICON=''
+
 
 ###################################
 # Obtain data and Store into Temp #
@@ -33,7 +38,7 @@ SONG=$(cat /tmp/$TMP_FILE | grep -iw "title" | cut -d ' ' -f2-)
 # Make sure Valid Data is found #
 #################################
 if [ "$ALBUM" = "" ] || [ "$ARTIST" = "" ] || [ "$SONG" = "" ] ;then
-    echo "%{F#5DADE2}[ %{F#999} Spotify %{F#5DADE2}]"
+    echo "%{F#5DADE2}[ %{F#1DB954}$ICON %{F#999}Spotify %{F#5DADE2}]"
     return 0
 fi
 
@@ -48,7 +53,7 @@ SEC=$(( ($MICRO_SEC - ($MIN * 60000000)) / 1000000  ))
 ######################
 # Output for Polybar #
 ######################
-echo "%{F#5DADE2}[ $SONG - $ARTIST ]"
+echo "%{F#1DB954} $ICON %{F#5DADE2}[ $SONG - $ARTIST ]"
 
 
 ####################
