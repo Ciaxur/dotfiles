@@ -193,8 +193,8 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = BL
+format =  <label>
+label = %percentage%%
 
 bar-width = 10
 bar-indicator = |
@@ -307,9 +307,13 @@ label = %date%
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 format-muted-prefix = " "
 format-muted-foreground = #EC7063 
