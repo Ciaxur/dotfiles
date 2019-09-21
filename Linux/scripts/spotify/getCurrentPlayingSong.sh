@@ -8,6 +8,7 @@ DEBUG=0
 # SPOTIFY ICON (Iosevka Font) #
 ###############################
 ICON=''
+SONG_LEN_MAX=35
 
 
 ###################################
@@ -40,7 +41,13 @@ SONG=$(cat /tmp/$TMP_FILE | grep -iw "title" | cut -d ' ' -f2-)
 if [ "$ALBUM" = "" ] || [ "$ARTIST" = "" ] || [ "$SONG" = "" ] ;then
     echo "%{F#5DADE2}[ %{F#1DB954}$ICON %{F#999}Spotify %{F#5DADE2}]"
     return 0
+
+# Limit the Song String to Variable Character Length
+elif [ "$(expr length "$SONG")" -gt $SONG_LEN_MAX ];then
+    SONG="$(echo $SONG | cut -c1-$SONG_LEN_MAX)..."
 fi
+
+
 
 
 #######################################
@@ -63,13 +70,12 @@ if [ $DEBUG = 0 ];then
     return 0
 fi
 
-printf "Lenth: "
+printf "Length: "
 if [ $SEC -lt 10 ]; then
     echo "$MIN:0$SEC"
 else
     echo "$MIN:$SEC"
 fi
-
 
 
 echo "Song: $SONG"
