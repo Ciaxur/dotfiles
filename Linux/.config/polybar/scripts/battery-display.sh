@@ -28,6 +28,11 @@ fi
 if [ $bat -eq 100 ]; then
    echo "%{F#00DD00}$HIGH %{F#FFF}$bat%"
 
+# BAT on 50%
+elif [ $bat -le 50 ]; then
+   echo "%{F#AAA}$MED %{F#FFF}$bat%"
+
+
 # BAT = red ; $bat = white
 elif [ $bat -lt 11 ] && [ $chargeState = "Discharging" ]; then
     echo " %{F#FF0000}$LOW %{F#FF4400}↓%{F#FFF}$bat%"
