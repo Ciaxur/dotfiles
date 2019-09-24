@@ -27,3 +27,22 @@ nightmode() {
 
 }
 
+
+# lf File Manager Function that
+#  CD's into path from lf
+lfcd() {
+    # Run lf saving path
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp"
+
+    # Make sure file path is found
+    if [ -f "$tmp" ]; then
+        dir="$(cat $tmp)"
+        rm -f "$tmp"
+
+
+        # CD into directory if not same as current
+        #  and is an actual directory
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
