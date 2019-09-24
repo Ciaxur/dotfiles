@@ -4,9 +4,10 @@ alias l="ls -lh"                # List View
 alias logout="kill -9 -1"       # Force Logout all Users
 alias open="nautilus"           # GUI File Manager
 alias kp="keepassxc.cli"        # Keepass CLI
+alias py="python3.7"            # Latest Python Alias
 
-# TUI File Manager (Ranger) - Goes to Directory in ranger on exit
-alias fm='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
+# Alias to Function lfcd, function.sh has to be
+#  sourced before this :)
+alias fm='lfcd'
 
 
