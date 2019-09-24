@@ -3,8 +3,10 @@
 # Battery Status Symbols (From FontAwesome)
 CHARGE=''
 LOW=''
+MED_LOW=''
 MED=''
-HIGH=''
+MED_FULL=''
+FULL=''
 
 
 #######################
@@ -26,24 +28,33 @@ fi
 # Change Colors based on States
 # BAT = Grey ; $bat = white
 if [ $bat -eq 100 ]; then
-   echo "%{F#00DD00}$HIGH %{F#FFF}$bat%"
+   echo "%{F#00DD00}$FULL %{F#FFF}$bat%"
 
+
+# BAT on 10% = red ; $bat = white
+elif [ $bat -le 10 ] && [ $chargeState = "Discharging" ]; then
+    echo " %{F#FF0000}$LOW %{F#FF4400}↓%{F#FFF}$bat%"
+
+# BAT on 20% = orange ; $bat = white
+elif [ $bat -le 20 ] && [ $chargeState = "Discharging" ]; then
+    echo "%{F#D35400}$MED_LOW %{F#FFB300}↓%{F#FFF}$bat%"
+
+# BAT on 35%
+elif [ $bat -le 35 ] && [ $chargeState = "Discharging" ]; then
+    echo "%{F#FF7F06}$MED_LOW %{F#FFB300}↓%{F#FFF}$bat%"
 
 # BAT on 50%
 elif [ $bat -le 50 ] && [ $chargeState = "Discharging" ]; then
-    echo "%{F#AAA}$MED %{F#FFB300}↓%{F#FFF}$bat%"
+    echo "%{F#F0FF06}$MED %{F#FFB300}↓%{F#FFF}$bat%"
 
-# BAT = red ; $bat = white
-elif [ $bat -lt 11 ] && [ $chargeState = "Discharging" ]; then
-    echo " %{F#FF0000}$LOW %{F#FF4400}↓%{F#FFF}$bat%"
+# BAT on 50%
+elif [ $bat -le 75 ] && [ $chargeState = "Discharging" ]; then
+    echo "%{F#EEE}$MED_FULL %{F#FFB300}↓%{F#FFF}$bat%"
 
-# BAT = orange ; $bat = white
-elif [ $bat -lt 21 ] && [ $chargeState = "Discharging" ]; then
-    echo "%{F#D35400}$MED %{F#FFB300}↓%{F#FFF}$bat%"
 
-# BAT = green ; Discharging
+# BAT > 75% = green ; Discharging
 elif [ $chargeState = "Discharging" ]; then
-    echo "%{F#AAA}$HIGH %{F#37FF00}↓%{F#FFF}$bat%"
+    echo "%{F#EEE}$FULL %{F#37FF00}↓%{F#FFF}$bat%"
 
 
 # BAT = green ; $bat = white
