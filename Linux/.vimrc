@@ -19,8 +19,8 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
+" Nerd Tree 
+Plugin 'file:///home/omar/.vim/bundle/nerdtree'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -45,26 +45,98 @@ filetype plugin indent on    " required
 
 
 
+"" General Configuration
+set         history=500
+
+
+
+" Change viminfo Location
+set viminfo+=n~/.vim/viminfo
+
 " Tabbing Configuration
 filetype    plugin indent on
 set         tabstop=4
 set         shiftwidth=4
 set         expandtab
+set         smarttab
+set         ai              " Auto Indent
+set         si              " Smart Indent
 syntax      on
 colorscheme desert
+set         mouse=a         " Enable Mouse Interactions
 
 " Active Search Highlighting
-set hlsearch
+set hlsearch                " Highlights Search
+set incsearch               " Highlight as you type
+set ignorecase              " Ignore Case while searching  
+set smartcase               " Be Smart About Cases
+set showcmd                 " Show Commands being typed
+
+
+" Clear Search -> \c
+map <leader>c :noh<cr>     
+
+" Match Braces
+set showmatch
 
 " Hybrid Line Numbers ON
 set         relativenumber
 set         nu rnu
 
+
+"" Mapping Keys
 " Remap ctrl+w to ctrl+e (File Switching for vim -o file1 file2)
-nnoremap    <C-e> <C-w>
+nnoremap    <C-e> <C-w>             
+" Quick Save -> \w
+nmap        <leader>w :w<cr>        
+" Switch between opened Files \[ and \]
+nmap        <leader>[ :prev<cr>     
+nmap        <leader>] :next<cr>
 
-" Enable Mouse Interactions
-set         mouse=a
 
-" User-Plugins
+" Mapping for Managing Tabs
+map <leader>tn :tabnew<cr>
+map <leader>tc :tabclose<cr>
+map <leader>t[ :tabprevious<cr>
+map <leader>t] :tabnext<cr>
+
+
+"" Commands
+" Sudo Saves current file -> :W
+command W w !sudo tee % > /dev/null
+
+
+"" Status Line
+set laststatus=2
+set statusline=\%{HasPaste()}%F%m%r%h\ %w\ \ \ \ %=Line:\ %l\ \ Column:\ %c
+
+
+"" Spell Check Toggle (Type ss)
+map ss :setlocal spell!<cr>
+
+
+"" User-Plugins
 Plugin 'airblade/vim-gitgutter'
+
+
+"""""""""""""""""""""""""""""
+" NERD TREE CONFIGURATION
+"""""""""""""""""""""""""""""
+"" Toggle NerdTree (Ctrl+B)
+map <C-b> :NERDTreeToggle<cr>
+let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinSize=35
+
+
+
+
+"" Functions
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    endif
+    return ''
+endfunction
+
+
+
