@@ -1,0 +1,2 @@
+# Outputs Linux Info to Screen
+neofetch

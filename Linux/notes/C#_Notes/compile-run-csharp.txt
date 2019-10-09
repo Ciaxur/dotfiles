@@ -1,0 +1,20 @@
+## Use Mono for Running/Compiling/Debugging C#
+
+# COMPILING
+mcs file.cs                     - Compiles C# File
+mcs file.cs -out:file.exe       - Compile with Output
+
+
+# COMPILING A PROJECT
+msbuild Project.csproj
+msbuild /p:Configuration=Release Project.csproj     - Could Specify COnfiguration type
+
+
+# DEBUGGING
+mcs file.cs -debug              - Compiles with Debug Enabled
+
+# Attaching Debugged Executable to VSCode
+mono --debug --debugger-agent=transport=dt_socket,server=y,address=127.0.0.1:55555 Program.exe
+
+# RUNNING
+mono file.exe                   - Runs the executable (Can also chmod +x and ./file.exe)

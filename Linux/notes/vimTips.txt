@@ -1,0 +1,8 @@
+# Finding Words
+- Type / or ? followed by the word (?word) or (/?word)
+- Then search up or down by pressing * or #
+
+# Vim Cheatsheet
+https://vim.rtorr.com/
+
+

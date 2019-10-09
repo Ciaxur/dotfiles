@@ -1,0 +1,5 @@
+# Obtaining Size in General (Recursive/Sub-Directories)
+du -h ./file-dir               ->      -h is for "Human Readability"
+
+# Obtaining the Size of a Single File/Directory
+du -sh ./file-dir              ->      -s Disables Sub-Directory Search
