@@ -19,6 +19,8 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'flazz/vim-colorschemes'
+
 " Nerd Tree 
 Plugin 'file:///home/omar/.vim/bundle/nerdtree'
 " The sparkup vim script is in a subdirectory of this repo called vim.
@@ -49,6 +51,10 @@ filetype plugin indent on    " required
 set         history=500
 
 
+" Make Cursor Hori-Line in Insert
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 " Change viminfo Location
 set viminfo+=n~/.vim/viminfo
@@ -62,7 +68,11 @@ set         smarttab
 set         ai              " Auto Indent
 set         si              " Smart Indent
 syntax      on
-colorscheme desert
+" colorscheme desert
+
+"" Color Scheme https://github.com/flazz/vim-colorschemes/tree/master/colors
+colorscheme dracula
+highlight Normal ctermbg=none
 set         mouse=a         " Enable Mouse Interactions
 
 " Active Search Highlighting
