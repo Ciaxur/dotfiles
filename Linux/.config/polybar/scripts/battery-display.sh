@@ -47,12 +47,12 @@ elif [ $bat -le 35 ] && [ $chargeState = "Discharging" ]; then
 elif [ $bat -le 50 ] && [ $chargeState = "Discharging" ]; then
     echo "%{F#F0FF06}$MED %{F#FFB300}↓%{F#FFF}$bat%"
 
-# BAT on 50%
+# BAT on 75%
 elif [ $bat -le 75 ] && [ $chargeState = "Discharging" ]; then
     echo "%{F#EEE}$MED_FULL %{F#FFB300}↓%{F#FFF}$bat%"
 
 
-# BAT > 75% = green ; Discharging
+# Discharging
 elif [ $chargeState = "Discharging" ]; then
     echo "%{F#EEE}$FULL %{F#37FF00}↓%{F#FFF}$bat%"
 
