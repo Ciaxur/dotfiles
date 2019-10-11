@@ -3,7 +3,7 @@
 # Shows the selected character in dunst if running.
 
 # Must have xclip installed to even show menu.
-xclip -h >/dev/null || exit
+xclip >/dev/null || exit
 
 chosen=$(grep -v "#" ~/scripts/dmenu-emoji/emoji-list | rofi -dmenu \
                  -location 2 -width 20 \
