@@ -61,8 +61,9 @@ modules-left = bspwm i3 spotify-script
 modules-center =  
 modules-right = xbacklight volume memory cpu-temps bat-script internet-conx date
 
-tray-position = right
-tray-padding = 2
+;; Icon App Tray
+;tray-position = right
+;tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
 
