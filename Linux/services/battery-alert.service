@@ -1,0 +1,14 @@
+[Unit]
+Description=Battery Checker
+
+
+[Service]
+Type=simple
+User=omar
+ExecStart=/home/omar/scripts/batteryCheck/script.sh
+KillMode=process
+IgnoreSIGPIPE=no
+
+
+[Install]
+WantedBy=multi-user.target
