@@ -1,0 +1,1 @@
+/home/omar/scripts/nvidia-brightness/get-brightness.sh
