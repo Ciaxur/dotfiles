@@ -1,0 +1,131 @@
+// "clang-format.executable": "E:\\msys64\\mingw64\\lib\node_modules\\clang-format\\bin\\win32\\clang-format.exe",
+
+{
+    "editor.fontSize": 12,
+
+    "explorer.confirmDragAndDrop": false,
+
+    "workbench.colorTheme": "One Dark Pro Vivid",
+
+    "beautify.config": "./ConfigFiles/.jsbeautifyrc",
+
+    "workbench.colorCustomizations": {
+        "[One Dark Pro Vivid]": {
+            "sideBar.background": "#282D37",
+            "sideBarSectionHeader.background": "#40494E"
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "[One Dark Pro Vivid]": {
+            "keywords": "#FF3E93",
+            "comments": "#7A7A7A",
+        }
+    },
+
+
+    // Setup File Associations
+    "files.associations": {
+        "*.py": "python"
+    },
+    
+    "[java]":{
+        "editor.formatOnType": true,
+        "editor.formatOnSave": false
+    },
+    "[json]":{
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.formatOnType": true
+    },
+    "[cpp]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[python]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true
+    },
+
+
+    // C# Settings
+    "editor.codeLens": false,
+
+    
+    "git.autofetch": true,
+
+    "explorer.openEditors.visible": 0,
+    "files.autoSave": "afterDelay",
+    
+    "editor.minimap.enabled": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    // Java Settings
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "java.completion.guessMethodArguments": true,
+
+    // Powersehll Settings
+    "powershell.powerShellExePath": "C:\\WINDOWS\\SysWow64\\WindowsPowerShell\\v1.0\\powershell.exe",
+
+    // Arduino
+    "arduino.ignoreBoards": [
+        "Adafruit HUZZAH ESP8266"
+    ],
+    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 120, MaxEmptyLinesToKeep: 3, UseTab: Never, TabWidth: 4, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
+    
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "typescript.surveys.enabled": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "material-icon-theme.activeIconPack": "angular",
+
+    "eslint.autoFixOnSave": true,
+    // "C_Cpp.intelliSenseEngine": "Tag Parser"
+    
+
+    // TODO Highlight
+    "todohighlight.isEnable": true,
+    "todohighlight.isCaseSensitive": true,
+    "todohighlight.keywords": [
+        {
+            "text": "NOTE:",
+            "color": "#7AFF33",
+            "border": "1px solid #7AFF33",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)",
+        },
+        {
+            "text": "DEBUG:",
+            "color": "#FF33AC",
+            "border": "1px solid #FF33AC",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)",
+        },
+        {
+            "text": "BUG:",
+            "color": "red",
+            "border": "1px solid red",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)",
+        },
+        {
+            "text": "HACK:",
+            "color": "#FF5733",
+            "border": "1px solid #FF5733",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)",
+        },
+        {
+            "text": "TODO:",
+            "color": "#33FFE0",
+            "border": "1px solid #33FFE0",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)",
+        }
+    ],
+    "workbench.iconTheme": "material-icon-theme",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "python.jediEnabled": false,
+}
