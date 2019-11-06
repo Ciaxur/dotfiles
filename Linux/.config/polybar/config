@@ -59,10 +59,11 @@ font-5 = Iosevka:size=12;1
 
 modules-left = bspwm i3 spotify-script
 modules-center =  
-modules-right = xbacklight volume memory cpu-temps bat-script internet-conx date
+modules-right = brightness volume memory cpu-temps bat-script internet-conx date
 
-tray-position = right
-tray-padding = 2
+;; Icon App Tray
+;tray-position = right
+;tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -76,6 +77,11 @@ tray-padding = 2
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
+[module/brightness]
+type = custom/script
+exec = ~/.config/polybar/scripts/get-brightness.sh
+interval = 0.2
+
 [module/internet-conx]
 type = custom/script
 exec = ~/.config/polybar/scripts/internet-module.sh
