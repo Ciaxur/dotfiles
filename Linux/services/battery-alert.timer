@@ -1,0 +1,10 @@
+[Unit]
+Description=Runs at startup and every 1min
+
+[Timer]
+OnUnitActiveSec=1m
+OnBootSec=1m
+Unit=battery-alert.service
+
+[Install]
+WantedBy=basic.target

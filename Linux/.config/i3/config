@@ -213,8 +213,11 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec /home/omar/scripts/nvidia-brightness/apply-brightness.sh 0.1     # increase screen brightness (Nvidia)
+bindsym XF86MonBrightnessDown exec /home/omar/scripts/nvidia-brightness/apply-brightness.sh -0.1  # decrease screen brightness (Nvidia)
+
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 
 # Media player controls
@@ -225,12 +228,12 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # Locking Screen
-#bindsym $mod+l exec i3lock --color=33FFE1
-bindsym $mod+l exec i3lock -i ~/Pictures/mowing-moon.png -t
+#bindsym $mod+l exec i3lock -i $(find ~/Pictures/LockScreen/ -name "*.*" | shuf -n1) -t
+bindsym $mod+l exec ~/scripts/lockscreen.sh 
 
 # Launch Emoji Menu
 bindsym $mod+period exec --no-startup-id ~/scripts/dmenu-emoji/dmenu-emoji.sh
-bindsym $mod+c exec --no-startup-id google-chrome
+bindsym $mod+c exec --no-startup-id google-chrome-stable
 
 # Launch Compton
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
@@ -247,6 +250,7 @@ gaps outer 4
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="keepassxc"] floating enable
+for_window [class="flameshot"] floating enable
 
 # Sign in Window / Redirect
 for_window [title="Sign in - *"] floating enable
