@@ -5,7 +5,7 @@
 # Must have xclip installed to even show menu.
 xclip >/dev/null || exit
 
-chosen=$(grep -v "#" ~/scripts/dmenu-emoji/emoji-list | rofi -dmenu \
+chosen=$(grep -v "#" ~/scripts/dmenu-emoji/emoji-list | rofi -dmenu -p "Emoji" \
                  -location 2 -width 20 \
 		 -lines 20 -line-margin 0 -line-padding 1 \
 		 -separator-style none -font "Monospace 8" -columns 1 -bw 0 \
