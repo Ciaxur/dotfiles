@@ -9,6 +9,8 @@ DEBUG=0
 ###############################
 ICON=''
 SONG_LEN_MAX=35
+PAUSE_ICON=''
+PLAY_ICON=''
 
 
 ###################################
@@ -49,6 +51,13 @@ fi
 
 
 
+#######################################
+# Get Play/Pause Status               #
+#######################################
+PLAYBACK_QUERY=`qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlaybackStatus`
+PLAY_STATUS=$PLAY_ICON
+[[ $PLAYBACK_QUERY = "Playing" ]] && PLAY_STATUS="$PLAY_ICON" || PLAY_STATUS="$PAUSE_ICON"
+
 
 #######################################
 # Convert Microseconds to Human Time  #
@@ -60,7 +69,7 @@ SEC=$(( ($MICRO_SEC - ($MIN * 60000000)) / 1000000  ))
 ######################
 # Output for Polybar #
 ######################
-echo "%{F#1DB954} $ICON %{F#5DADE2}[ $SONG - $ARTIST ]"
+echo "%{F#1DB954} $ICON %{F#5DADE2}[ $SONG - $ARTIST  $PLAY_STATUS  ]" 
 
 
 ####################
