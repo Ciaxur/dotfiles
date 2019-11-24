@@ -1,10 +1,10 @@
 # Custom Aliases
-alias ll="ls -alh"              # List-View + Hidden
-alias l="ls -lh"                # List View
+alias ll="exa -al --git"        # List-View + Hidden
+alias l="exa -l --git"          # List View
 alias logout="kill -9 -1"       # Force Logout all Users
 alias open="nautilus"           # GUI File Manager
 alias kp="keepassxc.cli"        # Keepass CLI
-alias py="python3.7"            # Latest Python Alias
+alias py="python"               # Latest Python Alias
 
 # Alias for Downloader-CLI by "deepjyoti30"
 alias dw="py ~/documents/git-clones/downloader-cli/download.py"
