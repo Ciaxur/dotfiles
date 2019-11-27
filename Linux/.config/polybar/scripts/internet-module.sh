@@ -5,13 +5,18 @@
 ##################
 WIFI_I=''
 ETH_I=''
+AIRPLAINE_I=''
 
 
 # Obtain Connection Information
 CONX_INFO=$(nmcli d | grep -iw connected)
+AIRPLANE_MODE=$(nmcli g | sed -n 2p | awk '{print $4}')
 
 # Validate Connection Found
-if [ "$CONX_INFO" = "" ]; then
+if [ "$AIRPLANE_MODE" = "disabled" ]; then
+    echo "%{F#FFF}$AIRPLAINE_I"
+    exit 0
+elif [ "$CONX_INFO" = "" ]; then
     echo ""
     exit 1
 fi
