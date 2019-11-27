@@ -5,6 +5,7 @@ alias logout="kill -9 -1"       # Force Logout all Users
 alias open="nautilus"           # GUI File Manager
 alias kp="keepassxc.cli"        # Keepass CLI
 alias py="python"               # Latest Python Alias
+alias diff="diff --color"       # Diff with Color
 
 # Alias for Downloader-CLI by "deepjyoti30"
 alias dw="py ~/documents/git-clones/downloader-cli/download.py"
