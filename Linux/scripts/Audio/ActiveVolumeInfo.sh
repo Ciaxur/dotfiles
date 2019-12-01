@@ -1,10 +1,17 @@
 #!/bin/sh
 
 # GET ACTIVE SINK
-ACTIVE_Index=$(pacmd list-sinks | grep "* index" | awk '{print $3}')
+ACTIVE_Index=$(pacmd list-sinks 2> /dev/null | grep "* index" | awk '{print $3}')
+
+# MAKE SURE PULSEAUDIO QUERY SUCCESS
+if [ "$ACTIVE_Index" = "" ]; then
+    echo ""
+    exit 1
+fi
+
 
 # GET INDEX's INFO
-INDEX_INFO=$(pacmd list-sinks | sed -n -e "/index: $ACTIVE_Index/,/index:/ p")
+INDEX_INFO=$(pacmd list-sinks 2> /dev/null | sed -n -e "/index: $ACTIVE_Index/,/index:/ p")
 
 # GET VOLUME & MUTE
 VOLUME=$(echo -e "$INDEX_INFO" | grep "volume:" | sed '1!d' | awk '{print $5}' | grep -o '[0-9]\+')
@@ -20,6 +27,7 @@ VOL0_I=''
 VOL1_I=''
 VOL2_I=''
 VOL_I=''    # USED EMOJI
+
 
 
 if [ "$MUTED" = "yes" ]; then
