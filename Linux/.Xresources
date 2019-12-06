@@ -103,4 +103,7 @@ xterm*VT100*translations: #override \n\
     Ctrl Shift <Key>V:  insert-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>C:        select-end(CLIPBOARD)
 
-
+!! st Simple Terminal Settigs
+st.alpha: 1.0
+st.font: Monospace:size=8:antialias=true:autohint=true
+st.borderpx: 15

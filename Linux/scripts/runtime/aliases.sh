@@ -1,6 +1,6 @@
 # Custom Aliases
-alias ll="exa -al --git"        # List-View + Hidden
-alias l="exa -l --git"          # List View
+alias ll="exa -alg --git"       # List-View + Hidden
+alias l="exa -lg --git"         # List View
 alias logout="kill -9 -1"       # Force Logout all Users
 alias open="nautilus"           # GUI File Manager
 alias kp="keepassxc.cli"        # Keepass CLI
@@ -15,4 +15,5 @@ alias dw="py ~/documents/git-clones/downloader-cli/download.py"
 alias fm='lfcd'
 
 # Alias for Copying over Text by piping
-alias copy="tr -d '\n' | xclip -selection clipboard"
+#alias copy="tr -d '\n' | xclip -selection clipboard"
+alias copy="xclip -selection clipboard"

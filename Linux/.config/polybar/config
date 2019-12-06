@@ -59,7 +59,7 @@ font-5 = Iosevka:size=12;1
 
 modules-left = bspwm i3 spotify-script
 modules-center = 
-modules-right = brightness volume-script memory cpu-temps bat-script internet-conx date
+modules-right = brightness volume-script memory cpu-usage bat-script internet-conx date
 
 ;; Icon App Tray
 ;tray-position = right
@@ -103,13 +103,13 @@ interval = 1
 [module/bat-script]
 type = custom/script
 exec = ~/.config/polybar/scripts/battery-display.sh
-interval = 4
+interval = 5
 #format-underline = #55ffb52a
 
-[module/cpu-temps]
+[module/cpu-usage]
 type = custom/script
-exec = ~/.config/polybar/scripts/cpu-temps.sh
-interval = 2 
+exec = ~/.config/polybar/scripts/CPU/cpu-usage.sh
+interval = 2
 #format-underline = #5574FF33
 
 

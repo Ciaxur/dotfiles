@@ -44,8 +44,6 @@ COMPLETION_WAITING_DOTS="true"
 ## User Configuration ##
 ########################
 
-# Set Terminal Name
-export TERM="rxvt-unicode-256color"
 
 # Colorize man Pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -74,3 +72,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Pip Packages Exports
 export PATH=$PATH:$HOME/.local/bin
+
+# Golang Package Exports
+export PATH=$PATH:$GOPATH/bin

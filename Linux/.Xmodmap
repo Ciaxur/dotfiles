@@ -1,0 +1,6 @@
+! Setting Right Shift to Forward Slash cause I don't really use it :)
+keycode 62  = slash question slash question
+
+! Assign shift only to Left Shift
+clear shift
+add shift = Shift_L

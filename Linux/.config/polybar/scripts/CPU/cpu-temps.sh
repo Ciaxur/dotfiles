@@ -19,6 +19,8 @@ CPU_PERC=`top -bn1 | grep "Cpu(s)" | \
            awk '{printf "%d%%", 100 - $1}'`
 
 # Output Temperatures
-#echo " %{F#FFF}CPU %{F#999}$PKG_TEMP°C $CORE0_TEMP°C $CORE1_TEMP°C "
+echo " %{F#FFF}CPU %{F#999}$PKG_TEMP°C $CORE0_TEMP°C $CORE1_TEMP°C "
 echo "%{F#FFF}$CPU_I %{F#FFF}$CPU_PERC %{F#999}[$PKG_TEMP $CORE0_TEMP $CORE1_TEMP]°C"
+echo "%{F#FFF}$CPU_I %{F#FFF}$CPU_PERC"
+
 
