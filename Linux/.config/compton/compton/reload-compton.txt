@@ -1,0 +1,3 @@
+# Kills and Launched Compton (Reload/Restart)
+# Run this in Terminal not as a Shell
+pkill compton && compton --config ~/.config/compton/compton.conf -b

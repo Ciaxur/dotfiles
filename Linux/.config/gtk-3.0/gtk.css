@@ -5,3 +5,7 @@
 VteTerminal, vte-terminal {
     padding: 18px;
  }
+
+* {
+    font-size: 12px;
+}
