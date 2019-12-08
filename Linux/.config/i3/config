@@ -43,7 +43,7 @@ font pango:monospace 8
 
 
 ## Key Bindings
-bindsym         $mod+Return                 exec termite
+bindsym         $mod+Return                 exec optirun termite
 bindsym         $mod+q                      kill
 bindsym         $mod+n                      exec --no-startup-id nautilus
 bindsym         $mod+d                      exec "rofi -show run -location 2 -display-run 'Apps: ' -width 15        \
