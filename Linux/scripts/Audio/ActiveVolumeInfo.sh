@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 # GET ACTIVE SINK
 ACTIVE_Index=$(pacmd list-sinks 2> /dev/null | grep "* index" | awk '{print $3}')
 

@@ -1,8 +1,0 @@
-Use "scrot" to do so
-
-"scrot -s [saveToFile]" -> Select a box to screenshot
-"scrot [saveToFile]"    -> Screenshots entire Screen
-
-
-Use Flameshot to do so
-flameshot gui

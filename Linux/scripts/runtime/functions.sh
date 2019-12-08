@@ -46,3 +46,6 @@ lfcd() {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
+
+# Runs Local NPM Packages
+function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }

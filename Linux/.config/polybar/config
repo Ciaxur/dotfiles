@@ -81,7 +81,7 @@ modules-right = brightness volume-script memory cpu-usage bat-script internet-co
 [module/volume-script]
 type = custom/script
 exec = ~/.config/polybar/scripts/ActiveVolumeInfo.sh
-interval = 0.05
+interval = 0.03
 
 [module/brightness]
 type = custom/script

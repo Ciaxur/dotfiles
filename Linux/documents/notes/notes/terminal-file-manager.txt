@@ -1,3 +1,0 @@
-// Terminal Interface for File Management
-ranger      ->      Simple & Minimal TUI File Managment
-fm          ->      Alias (File Manager) to ranger

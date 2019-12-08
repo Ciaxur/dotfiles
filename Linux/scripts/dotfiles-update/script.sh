@@ -8,8 +8,8 @@
 
 
 # PATHS TO CHECK (MUST BE ABSOUTE, for guarenteed success!)
-source_path="./Source"
-target_path="./Target"
+source_path="/home/omar"
+target_path="/home/omar/documents/git-clones/dotfiles/Linux"
 filesUsed_file="filesUsed.txt"
 
 # MOVE ALL SPECIFIED FILES/DIRS FROM TEXTFILE
@@ -26,9 +26,10 @@ if [ -f $filesUsed_file ]; then
         prevPath=$(dirname $target)
         if [ ! "$prevPath" = "$target_path" ]; then
             mkdir -p $prevPath
+            cp -ru $source $prevPath
+        else
+            cp -ru $source $target
         fi
-
-        cp -ru $source $target
     done < filesUsed.txt
 
 else

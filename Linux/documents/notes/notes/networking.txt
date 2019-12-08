@@ -1,2 +1,0 @@
-// Terminal Interface
-nmtui       ->      Launches Terminal User Interface to pick network

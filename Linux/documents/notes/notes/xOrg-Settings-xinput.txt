@@ -1,4 +1,0 @@
-# Changing settings for Devices
-xinput list                             ->          Lists all the Devices and ID
-xinput list-props <ID>                  ->          Lists the Properties of given Device ID 
-xinput set-prop <ID> <PROP-ID> <VAL>    ->          Changes Property Setting Value 

@@ -1,1 +1,0 @@
-/home/omar/scripts/Audio/ActiveVolumeInfo.sh

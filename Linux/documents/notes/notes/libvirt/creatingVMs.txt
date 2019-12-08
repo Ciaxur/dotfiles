@@ -1,2 +1,0 @@
-# Creating VMs (Example with VNC)
-sudo virt-install --name=Docker-Linux --vcpu=1 --ram=1024 --cdrom=/share/PublicDocuments/VMimages/archlinux-2019.09.01-x86_64.iso --disk size=20,target=vdb --os-type linux --os-variant virtio26 --graphics=vnc,listen=0.0.0.0 

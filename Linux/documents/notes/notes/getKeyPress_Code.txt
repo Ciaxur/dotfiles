@@ -1,5 +1,0 @@
-# Produces Key Code
-lesskey -o .less -
-
-# Get any Event Details
-xev
