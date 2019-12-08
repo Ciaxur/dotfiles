@@ -1,0 +1,6 @@
+Using `xmodmap`
+Check out Arch Wiki on xmodmap
+
+
+[ Resetting Mappings to Default ]
+setxkbmap -layout us

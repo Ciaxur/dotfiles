@@ -1,0 +1,2 @@
+# Command to save to Buffer from File
+xclip -sel clip < file.txt
