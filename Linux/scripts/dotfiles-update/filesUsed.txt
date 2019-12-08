@@ -1,0 +1,4 @@
+file1
+dir1/stuff1
+dir2/stuff2
+dir3
