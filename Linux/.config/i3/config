@@ -237,8 +237,9 @@ bindsym $mod+Tab mode "better-shortcuts"
 #bindsym XF86MonBrightnessUp exec /home/omar/scripts/nvidia-brightness/apply-brightness.sh 0.1     # increase screen brightness (Nvidia)
 #bindsym XF86MonBrightnessDown exec /home/omar/scripts/nvidia-brightness/apply-brightness.sh -0.1  # decrease screen brightness (Nvidia)
 
-bindsym XF86MonBrightnessUp exec ~/scripts/Brightness/intel/applyBrightness.sh +10       # Increase Screen Brightness (Intel)
-bindsym XF86MonBrightnessDown exec ~/scripts/Brightness/intel/applyBrightness.sh -10     # Increase Screen Brightness (Intel)
+bindsym XF86MonBrightnessUp exec /home/omar/scripts/Brightness/BrightnessServiceChange/addConfig.sh +10      # Increase Screen Brightness (Intel)
+bindsym XF86MonBrightnessDown exec /home/omar/scripts/Brightness/BrightnessServiceChange/addConfig.sh -10    # Decrease Screen Brightness (Intel)
+
 
 
 # Media player controls
@@ -275,9 +276,7 @@ for_window [class="vlc"] floating enable
 for_window [class="keepassxc"] floating enable
 for_window [class="flameshot"] floating enable
 for_window [class="Qalculate-gtk"] floating enable
-
-# Sign in Window / Redirect
-for_window [title="Sign in - *"] floating enable
+for_window [class="Pavucontrol"] floating enable
 
 # Enable Floating for Specified Titles
 for_window [title="123FLOAT*"] floating enable
