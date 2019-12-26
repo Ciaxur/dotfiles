@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer Check for Brightness Change
+
+[Timer]
+OnUnitActiveSec=1s
+OnBootSec=5s
+Unit=brightness-control.service
+
+[Install]
+WantedBy=basic.target
