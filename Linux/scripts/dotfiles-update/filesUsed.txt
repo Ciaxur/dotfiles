@@ -19,3 +19,5 @@ scripts/spotify
 .config/polybar
 .config/rofi
 .config/lf
+.config/termite
+.config/dunst
