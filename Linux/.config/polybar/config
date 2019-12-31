@@ -59,7 +59,7 @@ font-5 = Iosevka:size=12;1
 
 modules-left = bspwm i3 spotify-script
 modules-center = 
-modules-right = brightness volume-script memory cpu-usage bat-script internet-conx date
+modules-right = brightness volume memory cpu-usage bat-script internet-conx date
 
 ;; Icon App Tray
 ;tray-position = right
@@ -78,6 +78,11 @@ modules-right = brightness volume-script memory cpu-usage bat-script internet-co
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
+[module/cpu-usage]
+type = custom/script
+exec = ~/.config/polybar/scripts/CPU/usage
+tail = true
+
 [module/volume-script]
 type = custom/script
 exec = ~/.config/polybar/scripts/ActiveVolumeInfo.sh
@@ -86,12 +91,12 @@ interval = 0.03
 [module/brightness]
 type = custom/script
 exec = ~/.config/polybar/scripts/getBrightness.sh
-interval = 0.5
+interval = 1
 
 [module/internet-conx]
 type = custom/script
 exec = ~/.config/polybar/scripts/internet-module.sh
-interval = 1
+interval = 2.5
 #format-underline = #449f78e1
 
 [module/spotify-script]
@@ -105,12 +110,6 @@ type = custom/script
 exec = ~/.config/polybar/scripts/battery-display.sh
 interval = 5
 #format-underline = #55ffb52a
-
-[module/cpu-usage]
-type = custom/script
-exec = ~/.config/polybar/scripts/CPU/cpu-usage.sh
-interval = 2
-#format-underline = #5574FF33
 
 
 [module/xwindow]
