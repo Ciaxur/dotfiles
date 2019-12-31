@@ -273,7 +273,7 @@ gaps outer 4
 # Properties could be obtained from "xprop | grep -i "class"
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="vlc"] floating enable
-for_window [class="keepassxc"] floating enable
+for_window [class="KeePassXC"] floating enable
 for_window [class="flameshot"] floating enable
 for_window [class="Qalculate-gtk"] floating enable
 for_window [class="Pavucontrol"] floating enable
