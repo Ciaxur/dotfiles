@@ -1,4 +1,6 @@
 documents/notes
+documents/code/go/01-Mini-Programs/CPU_Usage
+documents/code/go/01-Mini-Programs/VolumeInfo
 scripts/Audio
 scripts/batteryCheck
 scripts/Brightness
