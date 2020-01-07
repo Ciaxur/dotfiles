@@ -83,19 +83,20 @@ func parseOutput(output []byte, tInfo *TempInfo) {
 }
 
 func main() {
-	cmd := exec.Command("sensors", "-u")
-	out, err := cmd.Output()
 	tempEmojis := []string{"", "", "", "", ""}
-
-	if err != nil {
-		fmt.Println("Command Error:", err.Error())
-		os.Exit(1)
-	}
-
 	var tempInfo TempInfo
 
 	for {
-		// GET DATA
+		// RUN COMMAND TO GET INFO
+		cmd := exec.Command("sensors", "-u")
+		out, err := cmd.Output()
+
+		if err != nil {
+			fmt.Println("Command Error:", err.Error())
+			os.Exit(1)
+		}
+
+		// PARSE DATA FROM INFO
 		parseOutput(out, &tempInfo)
 
 		// CHOOSE APPROPRIATE EMOJI
