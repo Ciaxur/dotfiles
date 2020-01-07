@@ -75,3 +75,7 @@ export PATH=$PATH:$HOME/.local/bin
 
 # Golang Package Exports
 export PATH=$PATH:$GOPATH/bin
+
+# fzf Additions
+source /home/omar/documents/git-clones/fzf/shell/completion.zsh
+source /home/omar/documents/git-clones/fzf/shell/key-bindings.zsh
