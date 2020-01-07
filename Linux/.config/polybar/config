@@ -59,7 +59,7 @@ font-5 = Iosevka:size=12;1
 
 modules-left = bspwm i3 spotify-script
 modules-center = 
-modules-right = brightness better-volume memory cpu-usage bat-script internet-conx date
+modules-right = brightness better-volume memory cpu-temp cpu-usage bat-script internet-conx date
 
 ;; Icon App Tray
 ;tray-position = right
@@ -83,6 +83,11 @@ type = custom/script
 exec = ~/.config/polybar/scripts/VolumeInfo
 tail = true
 click-left = ~/.config/polybar/scripts/ActiveSink-Toggle-Mute.sh
+
+[module/cpu-temp]
+type = custom/script
+exec = ~/.config/polybar/scripts/CPU/cpu-temps
+tail = true
 
 [module/cpu-usage]
 type = custom/script
