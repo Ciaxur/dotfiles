@@ -59,7 +59,7 @@ font-5 = Iosevka:size=12;1
 
 modules-left = bspwm i3 spotify-script
 modules-center = 
-modules-right = brightness better-volume memory cpu-temp cpu-usage bat-script internet-conx date
+modules-right = brightness better-volume memory cpu-usage cpu-temp bat-script internet-conx date
 
 ;; Icon App Tray
 ;tray-position = right
