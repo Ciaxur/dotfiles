@@ -237,8 +237,9 @@ bindsym $mod+Tab mode "better-shortcuts"
 #bindsym XF86MonBrightnessUp exec /home/omar/scripts/nvidia-brightness/apply-brightness.sh 0.1     # increase screen brightness (Nvidia)
 #bindsym XF86MonBrightnessDown exec /home/omar/scripts/nvidia-brightness/apply-brightness.sh -0.1  # decrease screen brightness (Nvidia)
 
-bindsym XF86MonBrightnessUp exec /home/omar/scripts/Brightness/BrightnessServiceChange/addConfig.sh +10      # Increase Screen Brightness (Intel)
-bindsym XF86MonBrightnessDown exec /home/omar/scripts/Brightness/BrightnessServiceChange/addConfig.sh -10    # Decrease Screen Brightness (Intel)
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%       # Increase Screen Brightness (Intel)
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-     # Decrease Screen Brightness (Intel)
+
 
 
 

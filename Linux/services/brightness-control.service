@@ -1,9 +1,0 @@
-[Unit]
-Description=Handles Setting Intel Brightness
-
-[Service]
-Type=simple
-ExecStart=/usr/share/service-scripts/BrightnessChange.sh
-
-[Install]
-WantedBy=multi-user.target
