@@ -18,7 +18,7 @@ export ZSH="/home/omar/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell-mod"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
