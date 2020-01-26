@@ -1,4 +1,3 @@
-
 # Obtains Running Background Jobs
 function totalJobs() {
     total_jobs=$(jobs | wc -l)
@@ -10,15 +9,15 @@ function totalJobs() {
         total_jobs="[${total_jobs}]"
     fi
 
-    print "$total_jobs"
+    print "%{$fg_bold[blue]%}$total_jobs"
 }
 
 
-local ret_status="%(?:%{$FG[133]%}➜ :%{$fg_bold[red]%}➜ )"
-#local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-PROMPT='${ret_status}$(totalJobs) %{$fg[blue]%}%c%{$reset_color%} $(git_prompt_info)'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[magenta]%}"
+PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT+='$(totalJobs) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$FG[160]%}✗"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
