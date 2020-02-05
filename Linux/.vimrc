@@ -20,6 +20,7 @@ Plugin 'tpope/vim-fugitive'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'ahbnr/vim-abs'  " Abs Syntax Highlighting
 
 " Nerd Tree 
 Plugin 'file:///home/omar/.vim/bundle/nerdtree'
