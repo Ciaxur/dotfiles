@@ -6,7 +6,8 @@ alias open="nautilus"           # GUI File Manager
 alias kp="keepassxc.cli"        # Keepass CLI
 alias py="python"               # Latest Python Alias
 alias diff="diff --color"       # Diff with Color
-alias fzf="fzf --height 50% --layout=reverse --border --color=16 --preview='head -$LINES {+}'"
+#alias fzf="fzf --height 50% --layout=reverse --border --color=16 --preview='head -$LINES {+}'"
+alias fzf="fzf --height 50% --layout=reverse --border --color=16 --preview='~/.config/lf/scopes/pistol {}'"
 
 # Alias for Downloader-CLI by "deepjyoti30"
 alias dw="py ~/documents/git-clones/downloader-cli/download.py"
