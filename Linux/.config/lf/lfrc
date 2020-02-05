@@ -3,7 +3,7 @@ set shell sh
 set color256 on
 set number true
 set relativenumber true
-set previewer ~/.config/lf/w3mimgdisplay-script.sh
+set previewer ~/.config/lf/scopes/pistol
 
 # set '-eu' options for shell commands
 # These options are used to have safer shell commands. Option '-e' is used to
