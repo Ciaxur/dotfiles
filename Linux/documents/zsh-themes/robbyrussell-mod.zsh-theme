@@ -1,6 +1,6 @@
 # Obtains Running Background Jobs
 function totalJobs() {
-    total_jobs=$(jobs | wc -l)
+    total_jobs=$(jobs | sed  '/^(.*)$/d' | wc -l)
 
     if [ $total_jobs -eq 0 ]; then
         total_jobs=""
