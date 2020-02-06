@@ -24,3 +24,4 @@ scripts/spotify
 .config/lf
 .config/termite
 .config/dunst
+.oh-my-zsh/themes/robbyrussell-mod.zsh-theme
