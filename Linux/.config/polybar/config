@@ -120,6 +120,7 @@ interval = 1
 type = custom/script
 exec = ~/.config/polybar/scripts/battery-display.sh
 interval = 5
+click-left = notify-send "Battery Info" "`acpi`" -t 2000
 #format-underline = #55ffb52a
 
 
