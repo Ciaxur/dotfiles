@@ -1,0 +1,9 @@
+# Initialize Local Git Repository
+git init
+
+# Set a new remote
+git remote add origin git@github.com:USER/REPO.git
+git push -u origin master
+
+# Verify new remote
+git remote -v
