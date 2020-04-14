@@ -79,3 +79,5 @@ export PATH=$PATH:$GOPATH/bin
 # fzf Additions
 source /home/omar/documents/git-clones/fzf/shell/completion.zsh
 source /home/omar/documents/git-clones/fzf/shell/key-bindings.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
