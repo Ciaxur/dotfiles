@@ -81,3 +81,33 @@ source /home/omar/documents/git-clones/fzf/shell/completion.zsh
 source /home/omar/documents/git-clones/fzf/shell/key-bindings.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+
+# Configure "time" command's Output
+TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
+'avg shared (code):         %X KB'$'\n'\
+'avg unshared (data/stack): %D KB'$'\n'\
+'total (sum):               %K KB'$'\n'\
+'max memory:                %M MB'$'\n'\
+'page faults from disk:     %F'$'\n'\
+'other page faults:         %R'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/omar/Applications/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/omar/Applications/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/omar/Applications/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/omar/Applications/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+# Don't Activate it yet
+conda deactivate
+
+# <<< conda initialize <<<
+
