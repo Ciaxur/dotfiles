@@ -16,7 +16,7 @@ scripts/spotify
 .vimrc
 .Xmodmap
 .Xresources
-.config/compton
+.config/picom
 .config/gtk-3.0/gtk.css
 .config/i3
 .config/polybar

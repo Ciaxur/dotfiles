@@ -8,7 +8,7 @@ echo -n | xclip -sel clipboard || exit
 chosen=$(grep -v "#" ~/scripts/dmenu-emoji/emoji-list | rofi -dmenu -p "Emoji" \
                  -location 2 -width 20 \
 		 -lines 20 -line-margin 0 -line-padding 1 \
-		 -separator-style none -font "Monospace 8" -columns 1 -bw 0 \
+		 -separator-style none -font "NotoColorEmoji 8" -columns 1 -bw 0 \
 		 -hide-scrollbar \
 		 -color-window "#002334, #002334, #002334" \
 		 -color-normal "#00344E, #7F8C8D, #003140, #195A78, #FFFFFF" \

@@ -2,7 +2,7 @@
 alias ll="exa -alg --git"       # List-View + Hidden
 alias l="exa -lg --git"         # List View
 alias logout="kill -9 -1"       # Force Logout all Users
-alias open="nautilus"           # GUI File Manager
+alias open="nautilus -w"        # GUI File Manager
 alias kp="keepassxc.cli"        # Keepass CLI
 alias py="python"               # Latest Python Alias
 alias diff="diff --color"       # Diff with Color

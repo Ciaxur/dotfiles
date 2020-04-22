@@ -31,10 +31,10 @@ fi
 ###################################
 # Store Seperate data in Vars     #
 ###################################
-LENGTH=$(cat /tmp/$TMP_FILE | grep length | cut -d ' ' -f2-)
-ALBUM=$(cat /tmp/$TMP_FILE | grep -iw "album" | cut -d ' ' -f2-)
-ARTIST=$(cat /tmp/$TMP_FILE | grep -iw "artist" | cut -d ' ' -f2-)
-SONG=$(cat /tmp/$TMP_FILE | grep -iw "title" | cut -d ' ' -f2-)
+LENGTH=$(grep length /tmp/$TMP_FILE | cut -d ' ' -f2-)
+ALBUM=$(grep -iw "album" /tmp/$TMP_FILE | cut -d ' ' -f2-)
+ARTIST=$(grep -iw "artist" /tmp/$TMP_FILE | cut -d ' ' -f2-)
+SONG=$(grep -iw "title" /tmp/$TMP_FILE | cut -d ' ' -f2-)
 
 
 #################################
