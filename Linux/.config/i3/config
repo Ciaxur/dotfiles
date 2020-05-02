@@ -248,11 +248,11 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-     # Decrease Screen Br
 # Media player controls
 bindsym XF86AudioPlay   exec playerctl play-pause -p spotify || exec playerctl play-pause       # Spotify High Priority
 bindsym XF86AudioPause  exec playerctl play-pause -p spotify || exec playerctl play-pause       # Spotify High Priority
-bindsym XF86AudioNext   exec playerctl next
-bindsym XF86AudioPrev   exec playerctl previous
-bindsym XF86Tools       exec playerctl play-pause
-bindsym F11             exec playerctl previous
-bindsym F12             exec playerctl next
+bindsym XF86AudioNext   exec playerctl next -p spotify || exec playerctl next
+bindsym XF86AudioPrev   exec playerctl previous -p spotify || exec playerctl previous
+bindsym XF86Tools       exec playerctl play-pause -p spotify || exec playerctl play-pause
+bindsym F11             exec playerctl previous -p spotify || exec playerctl previous
+bindsym F12             exec playerctl next -p spotify || exec playerctl next
 
 
 # Locking Screen
