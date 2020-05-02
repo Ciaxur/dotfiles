@@ -21,7 +21,7 @@ chosen=$(grep -v "#" ~/scripts/dmenu-emoji/emoji-list | rofi -dmenu -p "Emoji" \
 
 c=$(echo "$chosen" | sed "s/ .*//")
 echo "$c" | tr -d '\n' | xclip -selection clipboard
-notify-send "'$c' copied to clipboard." &
+notify-send -a "Emoji Menu" "'$c' copied to clipboard." &
 
 #s=$(echo "$chosen" | sed "s/.*; //" | awk '{print $1}')
 #echo "$s" | tr -d '\n' | xclip

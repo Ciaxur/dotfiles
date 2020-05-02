@@ -32,18 +32,18 @@ fi
 # BATTERY CRITICAL : Battery under 20%!
 if [ $bat -lt 21 ] && [ $status -eq 0 ] && [ "$chargeState" = "Discharging" ]; then
     echo "HI"
-    SESSION notify-send "Battery at 20%! 🔋" "Find a power source as soon as possible! 🔌" -u critical
+    SESSION notify-send -a "Battery Service" "Battery at 20%! 🔋" "Find a power source as soon as possible! 🔌" -u critical
     echo "1" > $tempFile                            # Notified!
 
 
 # BATTERY CRITICAL : Battery under 10%!
 elif [ $bat -lt 11 ] && [ $status -eq 1 ] && [ "$chargeState" = "Discharging" ]; then
-    SESSION notify-send "Battery at 10%! 🔋" "Find a power source as soon as possible! 🔌" -u critical
+    SESSION notify-send -a "Battery Service" "Battery at 10%! 🔋" "Find a power source as soon as possible! 🔌" -u critical
     echo "2" > $tempFile
 
 # BATTERY CRITICAL : Battery under 5%!
 elif [ $bat -lt 6 ] && [ $status -eq 2 ] && [ "$chargeState" = "Discharging" ]; then
-    SESSION notify-send "Battery at 5%! 🔋" "Find a power source as soon as possible! 🔌" -u critical
+    SESSION notify-send -a "Battery Service" "Battery at 5%! 🔋" "Find a power source as soon as possible! 🔌" -u critical
     echo "3" > $tempFile
 
 
