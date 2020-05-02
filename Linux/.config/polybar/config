@@ -112,7 +112,7 @@ interval = 1
 [module/internet-conx]
 type = custom/script
 exec = ~/.config/polybar/scripts/internet-module.sh
-interval = 2.5
+interval = 5
 #format-underline = #449f78e1
 
 [module/spotify-script]

@@ -28,11 +28,22 @@ CONX_TYPE=`echo $CONX_INFO | awk '{print $2}'`
 
 # Adjust Connection Type
 if [ "$CONX_TYPE" = "wifi" ]; then
-    CONX_TYPE="$WIFI_I"
+    # Color based on Signal Strength
+    strength=$(nmcli dev wifi | grep -i '*' | awk '{print $8}')
+
+    if (( $strength > 80 )); then       # Strong
+        CONX_TYPE="%{F#EEE}$WIFI_I"
+    elif (( $strength > 40 )); then     # Medium
+        CONX_TYPE="%{F#BBB}$WIFI_I"
+    else                                # Low
+        CONX_TYPE="%{F#888}$WIFI_I"
+    fi
+
+
 
 elif [ "$CONX_TYPE" = "ethernet" ]; then
     CONX_TYPE="$ETH_I"
 fi
 
 # Output Information with Fromatting
-echo "%{F#EEE}$CONX_TYPE %{F#FFF}$CONX_BSSID"
+echo "$CONX_TYPE %{F#FFF}$CONX_BSSID"
