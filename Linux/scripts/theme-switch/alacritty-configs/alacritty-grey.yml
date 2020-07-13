@@ -1,0 +1,91 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+env:
+  TERM: xterm-256color
+
+window:
+  # Window dimensions (changes require restart)
+  dimensions:
+    columns: 73
+    lines: 25
+
+  # Window padding (changes require restart)
+  padding:
+    x: 15
+    y: 15
+
+  # Window title
+  title: Alacritty
+
+scrolling:
+  history: 10000
+
+font:
+  normal:
+    family: monospace
+    style: Regular
+
+  bold:
+    family: monospace
+    style: Bold
+
+  italic:
+    family: monospace
+    style: Italic
+
+  bold_italic:
+    family: monospace
+    style: Bold Italic
+
+  # Point size
+  size: 7.0
+
+  # Thin strokes are suitable for retina displays
+  use_thin_strokes: true
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+# DDE1E5
+# https://github.com/alacritty/alacritty/wiki/Color-schemes
+# Colors (Nord)
+colors:
+   # Default colors
+   primary:
+     background: '#2E3440'
+     foreground: '#D8DEE9'
+
+   # Normal colors
+   normal:
+     black:   '#3B4252'
+     red:     '#BF616A'
+     green:   '#A3BE8C'
+     yellow:  '#EBCB8B'
+     blue:    '#81A1C1'
+     magenta: '#B48EAD'
+     cyan:    '#88C0D0'
+     white:   '#E5E9F0'
+
+   # Bright colors
+   bright:
+     black:   '#4C566A'
+     red:     '#BF616A'
+     green:   '#A3BE8C'
+     yellow:  '#EBCB8B'
+     blue:    '#81A1C1'
+     magenta: '#B48EAD'
+     cyan:    '#8FBCBB'
+     white:   '#ECEFF4'
+dynamic_title: true
+
+cursor:
+  # Cursor style
+  #
+  # Values for `style`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Beam
