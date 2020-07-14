@@ -89,3 +89,7 @@ cursor:
   #   - _ Underline
   #   - | Beam
   style: Beam
+
+key_bindings:
+  - { key: Up,    mods: Shift, action: ScrollPageUp   }
+  - { key: Down,  mods: Shift, action: ScrollPageDown }
