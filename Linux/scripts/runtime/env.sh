@@ -2,7 +2,7 @@
 export EDITOR=vim
 export GOPATH=~/Documents/go
 export TERM=rxvt-256color
-export LESS='--mouse'
+export LESS='--mouse -R'
 #export TERM=st-256color
 
 # Deno
