@@ -25,10 +25,13 @@ ZSH_THEME="robbyrussell-mod"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+
+# https://github.com/lukechilds/zsh-nvm
+#  Lazy Load NVM (shaves 0.5s+)
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+plugins=(git zsh-nvm)
 source $ZSH/oh-my-zsh.sh
-
-
 
 
 
@@ -53,7 +56,9 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
-export PAGER="most"
+
+# Configure Pager ; RegExp Search
+#export PAGER="most -r"
 
 # Load Sources 
 source ~/scripts/runtime/functions.sh
@@ -63,12 +68,12 @@ source ~/scripts/runtime/env.sh
 
 # Source ZSH Syntax Highlighting
 # Git: https://github.com/zsh-users/zsh-syntax-highlighting
-source ~/documents/git-clones/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/Documents/git-clones/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # NVM Exports
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Pip Packages Exports
 export PATH=$PATH:$HOME/.local/bin
@@ -77,8 +82,8 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$GOPATH/bin
 
 # fzf Additions
-source /home/omar/documents/git-clones/fzf/shell/completion.zsh
-source /home/omar/documents/git-clones/fzf/shell/key-bindings.zsh
+source /home/omar/Documents/git-clones/fzf/shell/completion.zsh
+source /home/omar/Documents/git-clones/fzf/shell/key-bindings.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -92,22 +97,13 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'page faults from disk:     %F'$'\n'\
 'other page faults:         %R'
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/omar/Applications/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/omar/Applications/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/omar/Applications/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/omar/Applications/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
 
-# Don't Activate it yet
-conda deactivate
 
-# <<< conda initialize <<<
+# Configure Completion
+source ~/.oh-my-zsh/completions/*.zsh 2&> /dev/null
 
+# Define Completions
+compdef _deno deno      # Deno Autocomplete
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/home/omar/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;

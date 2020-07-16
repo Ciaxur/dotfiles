@@ -5,6 +5,9 @@ export TERM=rxvt-256color
 export LESS='--mouse -R'
 #export TERM=st-256color
 
-# Deno
-export DENO_INSTALL="/home/omar/Documents/deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Ruby Path
+export RUBY_PATH="/home/omar/.gem/ruby/2.7.0"
+
+# Export Path
+export PATH="$RUBY_PATH/bin:$PATH"
