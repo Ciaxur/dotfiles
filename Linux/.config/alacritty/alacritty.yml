@@ -25,19 +25,19 @@ scrolling:
 
 font:
   normal:
-    family: monospace
+    family: SF Compact
     style: Regular
 
   bold:
-    family: monospace
+    family: SF Compact
     style: Bold
 
   italic:
-    family: monospace
+    family: SF Compact
     style: Italic
 
   bold_italic:
-    family: monospace
+    family: SF Compact
     style: Bold Italic
 
   # Point size
