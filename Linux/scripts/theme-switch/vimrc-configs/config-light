@@ -50,6 +50,7 @@ filetype plugin indent on    " required
 
 "" General Configuration
 set         history=500
+set         lbr               "Word Wrap
 
 
 " Make Cursor Hori-Line in Insert

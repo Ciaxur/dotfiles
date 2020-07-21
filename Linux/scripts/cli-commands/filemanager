@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cmd="nautilus -w $@"
+$cmd &>/dev/null & disown
+#"$cmd" &>/dev/null & disown

@@ -2,12 +2,16 @@
 alias ll="exa -alg --git"       # List-View + Hidden
 alias l="exa -lg --git"         # List View
 alias logout="kill -9 -1"       # Force Logout all Users
-alias open="nautilus -w"        # GUI File Manager
 alias kp="keepassxc.cli"        # Keepass CLI
 alias py="python"               # Latest Python Alias
 alias diff="diff --color"       # Diff with Color
 #alias fzf="fzf --height 50% --layout=reverse --border --color=16 --preview='head -$LINES {+}'"
-alias fzf="fzf --height 50% --layout=reverse --border --color=16 --preview='~/.config/lf/scopes/pistol {}'"
+alias fzf="fzf --height 60% --layout=reverse --border --color=16 --preview='~/.config/lf/scopes/pistol {}'"
+alias lsblk="lsblk -o NAME,MAJ:MIN,SIZE,RO,TYPE,LABEL,FSTYPE,MOUNTPOINT"
+
+# Aliases Based on Scripts
+alias terminal="~/scripts/cli-commands/terminal"
+alias open="~/scripts/cli-commands/filemanager"
 
 # Alias for Downloader-CLI by "deepjyoti30"
 alias dw="py ~/documents/git-clones/downloader-cli/download.py"

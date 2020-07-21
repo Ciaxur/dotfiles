@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cmd="alacritty"
+"$cmd" &>/dev/null & disown

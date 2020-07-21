@@ -72,7 +72,7 @@ colors:
     blue:    '#0087AF'
     magenta: '#A963B8'
     cyan:    '#37CBE3'
-    white:   '#EBEBEB'
+    white:   '#666666'
 
   # Bright colors
   bright:
@@ -83,7 +83,7 @@ colors:
     blue:    '#0099FF'
     magenta: '#BA78EA'
     cyan:    '#1A5276'
-    white:   '#FEFEF8'
+    white:   '#363636'
 
 
 dynamic_title: true
