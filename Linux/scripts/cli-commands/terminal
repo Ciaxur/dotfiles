@@ -1,4 +1,13 @@
 #!/bin/sh
 
 cmd="alacritty"
-"$cmd" &>/dev/null & disown
+
+
+# Run attached
+if [ $# -ne 0 ];then 
+  $cmd $@  
+
+else  # Run un-attached
+  $cmd &>/dev/null & disown
+fi
+exit 0
