@@ -70,10 +70,10 @@ set         smarttab
 set         ai              " Auto Indent
 set         si              " Smart Indent
 syntax      on
-" colorscheme desert
+
 
 "" Color Scheme https://github.com/flazz/vim-colorschemes/tree/master/colors
-colorscheme dracula
+colorscheme adam
 highlight Normal ctermbg=none
 set         mouse=a         " Enable Mouse Interactions
 
