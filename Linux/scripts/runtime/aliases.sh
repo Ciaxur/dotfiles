@@ -23,3 +23,7 @@ alias fm='lfcd'
 # Alias for Copying over Text by piping
 #alias copy="tr -d '\n' | xclip -selection clipboard"
 alias copy="xclip -selection clipboard"
+
+
+# Fun Aliases
+alias 🍺="git checkout drunk 2>/dev/null || git checkout -b drunk"
