@@ -28,11 +28,8 @@ ZSH_THEME="robbyrussell-mod"
 
 # https://github.com/lukechilds/zsh-nvm
 #  Lazy Load NVM (shaves 0.5s+)
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
-plugins=(git zsh-nvm)
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
-
 
 
 # Uncomment the following line to enable command auto-correction.
@@ -70,10 +67,21 @@ source ~/scripts/runtime/env.sh
 # Git: https://github.com/zsh-users/zsh-syntax-highlighting
 source ~/Documents/git-clones/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# NVM Exports
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Load NVM only when Needed
+nvm() {
+  if [ !$NVM_DIR ]; then
+    echo "Initializing NVM..."
+
+    # NVM Exports
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    
+    nvm
+  fi
+}
+
+
 
 # Pip Packages Exports
 export PATH=$PATH:$HOME/.local/bin
