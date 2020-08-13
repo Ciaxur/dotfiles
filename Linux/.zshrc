@@ -76,10 +76,15 @@ nvm() {
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    
+
+    # Default to Stable
+    nvm use stable
     nvm
   fi
 }
+# NVM Export Lastest Installed Version
+LATEST=`ls $HOME/.nvm/versions/node/ | head -1`
+export PATH=$PATH:$HOME/.nvm/versions/node/$LATEST/bin
 
 
 
