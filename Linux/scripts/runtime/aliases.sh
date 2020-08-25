@@ -27,3 +27,4 @@ alias copy="xclip -selection clipboard"
 
 # Fun Aliases
 alias 🍺="git checkout drunk 2>/dev/null || git checkout -b drunk"
+alias set-wallpaper='feh --bg-scale'

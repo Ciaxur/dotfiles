@@ -38,6 +38,8 @@ ENABLE_CORRECTION="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
+# Allows Aliases to have Completion
+unsetopt completealiases
 
 
 ########################
