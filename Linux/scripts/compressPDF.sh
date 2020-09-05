@@ -16,6 +16,6 @@ fi
 
 # Preceed with Compression
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
-       -dNOPAUSE -dBATCH  -dQUIET -sOutputFile=$2 $1
+       -dNOPAUSE -dBATCH  -dQUIET -sOutputFile=$2 "$1"
 
 exit 0
