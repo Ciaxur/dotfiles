@@ -90,3 +90,41 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
             ObjRelease(pDesktopWallpaper)
         }
     return
+
+; Home Button Remap (Win+[)
+#[::
+  Send {Home}
+  return
+
+; End Button Remap (Win+])
+#]::
+  Send {End}
+  return
+; Shift End
+#+]::
+  Send +{End}
+  return
+; Shift Home
+#+[::
+  Send +{Home}
+  return
+; Ctrl Shift End
+^#+]::
+  Send ^+{End}
+  return
+; Ctrl Shift Home
+^#+[::
+  Send ^+{Home}
+  return
+; Ctrl End
+^#]::
+  Send ^{End}
+  return
+; Ctrl Home
+^#[::
+  Send ^{Home}
+  return
+
+
+; Remap Right Shift to Forward-Slash
+RShift::/
