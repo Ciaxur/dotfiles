@@ -1,5 +1,5 @@
 ﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-#NoTrayIcon
+;#NoTrayIcon
 
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
@@ -128,3 +128,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; Remap Right Shift to Forward-Slash
 RShift::/
+; Full-Screen Toggle (Win+F)
+#F::
+  WinGetPos, winWidth, winHeight, , , A
+
+  ; Window is Max when both Sizes are -8
+  if ( winWidth == -8 and winHeight == -8 ) {
+    WinRestore, A
+  } else {
+    WinMaximize, A
+  }
+  return
