@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Runs a git fs check but prettifies it
+function gflog() {
+  git log --graph --oneline --decorate $(git fsck --no-reflogs | awk '/dangling commit/ {print $3}')
+}
 
 # Enables/Disables Nightmode
 # Parameters are on/off

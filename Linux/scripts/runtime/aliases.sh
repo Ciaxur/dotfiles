@@ -24,10 +24,6 @@ alias fm='lfcd'
 #alias copy="tr -d '\n' | xclip -selection clipboard"
 alias copy="xclip -selection clipboard"
 
-# Productive Git Aliases
-  # Runs a git fs check but prettifies it
-alias gflog=git log --graph --oneline --decorate $(git fsck --no-reflogs | awk '/dangling commit/ {print $3}')
-
 # Fun Aliases
 alias 🍺="git checkout drunk 2>/dev/null || git checkout -b drunk"
 alias set-wallpaper='feh --bg-scale'
