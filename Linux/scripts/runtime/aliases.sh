@@ -7,7 +7,7 @@ alias py="python"               # Latest Python Alias
 alias diff="diff --color"       # Diff with Color
 #alias fzf="fzf --height 50% --layout=reverse --border --color=16 --preview='head -$LINES {+}'"
 alias fzf="fzf --height 60% --layout=reverse --border --color=16 --preview='~/.config/lf/scopes/pistol {}'"
-alias lsblk="lsblk -o NAME,MAJ:MIN,SIZE,RO,TYPE,LABEL,FSTYPE,MOUNTPOINT"
+alias lsblk='lsblk -o NAME,SIZE,FSUSED,FSUSE%,TYPE,FSTYPE,MOUNTPOINT,PARTTYPENAME'
 
 # Aliases Based on Scripts
 alias terminal="~/scripts/cli-commands/terminal"

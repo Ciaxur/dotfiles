@@ -42,7 +42,7 @@ font pango:monospace 8
 
 
 ## Key Bindings
-bindsym         $mod+Return                 exec --no-startup-id alacritty
+bindsym         $mod+Return                 exec --no-startup-id termite
 bindsym         $mod+q                      kill
 bindsym         $mod+n                      exec --no-startup-id nautilus -w
 bindsym         $mod+d                      exec --no-startup-id "rofi -show run -location 2 -display-run 'Apps: ' -width 15        \
@@ -56,15 +56,15 @@ bindsym         $mod+Down                   focus down
 bindsym         $mod+Up                     focus up
 bindsym         $mod+Right                  focus right
 
-bindsym         $mod+Shift+Left             move left
-bindsym         $mod+Shift+Down             move down
-bindsym         $mod+Shift+Up               move up
-bindsym         $mod+Shift+Right            move right
+bindsym         $mod+Shift+Left             move left   50px
+bindsym         $mod+Shift+Down             move down   50px
+bindsym         $mod+Shift+Up               move up     50px
+bindsym         $mod+Shift+Right            move right  50px
 
-bindsym         $mod+Shift+$ctrl+Right      move right  100px
-bindsym         $mod+Shift+$ctrl+Left       move left   100px
-bindsym         $mod+Shift+$ctrl+Down       move down   100px
-bindsym         $mod+Shift+$ctrl+Up         move up     100px
+bindsym         $mod+Shift+$ctrl+Right      move right  200px
+bindsym         $mod+Shift+$ctrl+Left       move left   200px
+bindsym         $mod+Shift+$ctrl+Down       move down   200px
+bindsym         $mod+Shift+$ctrl+Up         move up     200px
 
 
 bindsym         $mod+h                      split h
@@ -216,7 +216,7 @@ exec_always --no-startup-id ~/.config/i3/polybar.sh&
 exec_always --no-startup-id feh --bg-scale --random ~/Pictures/Background/*&
 exec_always --no-startup-id ~/.config/dunst/reload.sh&
 exec_always --no-startup-id albert&
-exec        --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 74.92&
+#exec        --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 74.92&
 
 
 # Pulse Audio Controls

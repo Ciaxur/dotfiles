@@ -1,11 +1,17 @@
 #!/bin/sh
 
-cmd="alacritty"
+cmd="termite"
 
 
 # Run attached
 if [ $# -ne 0 ];then 
-  $cmd $@  
+
+  # Run Specific Directory
+  if [ -d "$1" ];then
+    $cmd -d $1 &>/dev/null & disown
+  else
+    $cmd $@
+  fi
 
 else  # Run un-attached
   $cmd &>/dev/null & disown
