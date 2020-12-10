@@ -53,12 +53,12 @@ lfcd() {
 
 # nnn Function Invocation
 nnncd() {
-  NNN_TMPFILE=/tmp/nnn.tmp
+  TMP=/tmp/nnn.tmp
   FCOLORS='EEEEAAAF00000087005F8700FF'
 
   PLUGINS='f:fzf;o:fzopen;h:hexview;d:diffs;i:mediainf;j:autojump'
 
-  TERMINAL=/bin/termite NNN_FCOLORS=$FCOLORS NNN_PLUG=$PLUGINS nnn -ade
+  NNN_TMPFILE=$TMP TERMINAL=/bin/termite NNN_FCOLORS=$FCOLORS NNN_PLUG=$PLUGINS nnn -ade
   eval $(cat ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd)
 }
 

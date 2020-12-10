@@ -76,7 +76,7 @@ echo "%{F#1DB954} $ICON %{F#5DADE2}[ $SONG - $ARTIST  $PLAY_STATUS  ]"
 # Debuggin Section #
 ####################
 if [ $DEBUG = 0 ];then
-    return 0
+    exit 0
 fi
 
 printf "Length: "

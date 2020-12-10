@@ -216,7 +216,7 @@ exec_always --no-startup-id ~/.config/i3/polybar.sh&
 exec_always --no-startup-id feh --bg-scale --random ~/Pictures/Background/*&
 exec_always --no-startup-id ~/.config/dunst/reload.sh&
 exec_always --no-startup-id albert&
-#exec        --no-startup-id xrandr --output DisplayPort-0 --mode 2560x1440 --rate 74.92&
+exec_always --no-startup-id lxpolkit&
 
 
 # Pulse Audio Controls
@@ -236,7 +236,7 @@ bindsym $mod+l exec ~/scripts/lockscreen.sh
 
 # Launch Emoji Menu
 bindsym $mod+period exec --no-startup-id ~/scripts/dmenu-emoji/dmenu-emoji.sh
-bindsym $mod+c exec --no-startup-id google-chrome-stable
+bindsym $mod+c exec --no-startup-id chromium
 
 # Launch Help Menu
 bindsym $mod+question       exec --no-startup-id ~/scripts/dmenu-help/script.sh
@@ -286,6 +286,7 @@ bindsym --release $ctrl+$alt+Down       exec --no-startup-id \
                                           xdotool key --delay --clearmodifiers Ctrl+Alt && \
                                           xdotool key Page_Down && \
                                           xdotool keydown Ctrl+Alt
+
 
 # i3-Gaps Configuration
 smart_borders on

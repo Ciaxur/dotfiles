@@ -4,6 +4,7 @@ export GOPATH=~/Documents/go
 export TERM=rxvt-256color
 export LESS='--mouse -RX'
 #export TERM=st-256color
+export ANDROID_SDK=~/Documents/Android/Sdk
 
 
 # Ruby Path

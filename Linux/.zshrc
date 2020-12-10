@@ -122,3 +122,6 @@ compdef _deno deno      # Deno Autocomplete
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/home/omar/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# Jump Config
+eval "$(jump shell)"
