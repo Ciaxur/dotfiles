@@ -85,7 +85,7 @@ nvm() {
   fi
 }
 # NVM Export Lastest Installed Version
-LATEST=`ls $HOME/.nvm/versions/node/ | head -1`
+LATEST=`ls -r $HOME/.nvm/versions/node/ | head -1`
 export PATH=$PATH:$HOME/.nvm/versions/node/$LATEST/bin
 
 

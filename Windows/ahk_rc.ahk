@@ -42,8 +42,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
     WinClose, %title%
     return
 
-; Shortkey to set Current Window AlwaysOnTop    (Win + SPACE)
-#SPACE:: 
+; Shortkey to set Current Window AlwaysOnTop    (Win + Shift + SPACE)
+#+SPACE:: 
     Winset AlwaysOnTop, , A
     Return
 
