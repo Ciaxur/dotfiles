@@ -222,7 +222,7 @@ exec_always --no-startup-id lxpolkit&
 # Pulse Audio Controls
 bindsym XF86AudioRaiseVolume    exec --no-startup-id ~/scripts/Audio/ActiveSink-Volume.sh +1     # Increase Active Output Device
 bindsym XF86AudioLowerVolume    exec --no-startup-id ~/scripts/Audio/ActiveSink-Volume.sh -1     # Decrease Active Output Device
-bindsym XF86Tools               exec --no-startup-id ~/scripts/Audio/ActiveSink-Toggle-Mute.sh          # Mute Active Output Device
+bindsym XF86AudioMute           exec --no-startup-id ~/scripts/Audio/ActiveSink-Toggle-Mute.sh          # Mute Active Output Device
 
 
 # Media player controls

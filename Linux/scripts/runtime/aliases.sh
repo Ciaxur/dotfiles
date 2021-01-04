@@ -4,6 +4,7 @@ alias l="exa -lg --git"         # List View
 alias logout="kill -9 -1"       # Force Logout all Users
 alias kp="keepassxc.cli"        # Keepass CLI
 alias py="python"               # Latest Python Alias
+alias ipy="ipython"             # Interactive Python
 alias diff="diff --color"       # Diff with Color
 #alias fzf="fzf --height 50% --layout=reverse --border --color=16 --preview='head -$LINES {+}'"
 alias fzf="fzf --height 60% --layout=reverse --border --color=16 --preview='~/.config/lf/scopes/pistol {}'"
@@ -29,3 +30,4 @@ alias copy="xclip -selection clipboard"
 alias 🍺="git checkout drunk 2>/dev/null || git checkout -b drunk"
 alias set-wallpaper='feh --bg-scale'
 alias set-theme='~/scripts/theme-switch/script.sh'
+alias glog="git log --oneline --decorate --graph --pretty=format:'%C(auto)%h%d %s (%cn - %cr)'"
