@@ -69,27 +69,6 @@ source ~/scripts/runtime/env.sh
 # Git: https://github.com/zsh-users/zsh-syntax-highlighting
 source ~/Documents/git-clones/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Load NVM only when Needed
-nvm() {
-  if [ !$NVM_DIR ]; then
-    echo "Initializing NVM..."
-
-    # NVM Exports
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-    # Default to Stable
-    nvm use stable
-    nvm
-  fi
-}
-# NVM Export Lastest Installed Version
-LATEST=`ls -r $HOME/.nvm/versions/node/ | head -1`
-export PATH=$PATH:$HOME/.nvm/versions/node/$LATEST/bin
-
-
-
 # Pip Packages Exports
 export PATH=$PATH:$HOME/.local/bin
 
@@ -117,11 +96,12 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 # Configure Completion
 source ~/.oh-my-zsh/completions/*.zsh 2&> /dev/null
 
-# Define Completions
-compdef _deno deno      # Deno Autocomplete
-
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/home/omar/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 # Jump Config
 eval "$(jump shell)"
+
+# fnm
+export PATH=/home/omar/.fnm:$PATH
+eval "`fnm env`"
