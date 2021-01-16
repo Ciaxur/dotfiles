@@ -1,0 +1,85 @@
+{
+    "workbench.colorTheme": "Dracula",
+    // "editor.fontFamily": "'Input Mono', consolas, 'monospace'",
+    "editor.fontFamily": "Fira Code Retina",
+    "editor.fontLigatures": true,
+    "workbench.iconTheme": "vscode-great-icons",
+
+    "todohighlight.keywords": [
+        {
+            "text": "REVIEW:",
+            "color": "#B233FF",
+            "border": "1px solid #B233FF",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        },
+        {
+            "text": "BUG:",
+            "color": "#C70039",
+            "border": "1px solid #C70039",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        },
+        {
+            "text": "DEBUG:",
+            "color": "#FF3374",
+            "border": "1px solid #FF3374",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        },
+        {
+            "text": "NOTE:",
+            "color": "#FF5B33",
+            "border": "1px solid #FF5B33",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        },
+        {
+            "text": "TODO:",
+            "color": "yellow",
+            "border": "1px solid yellow",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        },
+        {
+            "text": "TEST:",
+            "color": "#BA4A00",
+            "border": "1px solid #BA4A00",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        }
+    ],
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.tabSize": 2,
+    "explorer.openEditors.visible": 0,
+    "go.formatTool": "goimports",
+    "window.zoomLevel": 0,
+    "editor.minimap.maxColumn": 80,
+    "terminal.integrated.fontSize": 12,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "deno.enable": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "editor.fontSize": 11,
+    "compile-hero.typescriptx-output-toggle": false,
+    "compile-hero.typescript-output-toggle": false,
+
+    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 2, ColumnLimit: 120, MaxEmptyLinesToKeep: 3, UseTab: Never, TabWidth: 2, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -2, BreakBeforeBraces: Attach }",
+    "C_Cpp.intelliSenseCachePath": "${workspaceFolder}/.vscode/ipch",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "workbench.editor.pinnedTabSizing": "compact",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
