@@ -53,6 +53,12 @@ elif [ "$1" = "light" ]; then           # Light Mode
 elif [ "$1" = "grey" ]; then            # Grey Mode
     echo "Activating Grey Mode"
 
+    # Copy GTK Theme
+    cp $DIR/gtk-configs/settings-grey.ini ~/.config/gtk-3.0/settings.ini
+
+    # Copy Termite Theme
+    cp $DIR/termite-configs/grey.config ~/.config/termite/config
+
     # Copy Alacritty Config
     cp $DIR/alacritty-configs/alacritty-grey.yml ~/.config/alacritty/alacritty.yml
 

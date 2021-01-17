@@ -11,7 +11,7 @@ if [ "$1" == "" ]; then
 fi
 
 # Convert File to HTML
-pandoc -o $OUT_HTML $INPUT
+pandoc -o $OUT_HTML $INPUT &> /dev/null
 
 # Open file using default Browser
 gtk-launch "$(xdg-settings get default-web-browser)" $OUT_HTML

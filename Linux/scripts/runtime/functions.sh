@@ -56,7 +56,7 @@ nnncd() {
   TMP=/tmp/nnn.tmp
   FCOLORS='EEEEAAAF00000087005F8700FF'
 
-  PLUGINS='f:fzf;o:fzopen;h:hexview;d:diffs;i:mediainf;j:autojump'
+  PLUGINS='f:fzcd;o:fzopen;h:hexview;d:diffs;i:mediainf;j:autojump'
 
   NNN_TMPFILE=$TMP TERMINAL=/bin/termite NNN_FCOLORS=$FCOLORS NNN_PLUG=$PLUGINS nnn -ade
   eval $(cat ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd)
@@ -64,3 +64,13 @@ nnncd() {
 
 # Runs Local NPM Packages
 function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
+
+# Creates a Temporary Directory in /tmp and cd's into it
+#  storing the directory path into variable "CDTMP"
+function cdtemp() {
+  export CDTEMP=$(mktemp -d)
+  cd $CDTEMP
+}
+
+
+

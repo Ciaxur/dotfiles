@@ -1,5 +1,5 @@
 # Environment Variables
-export EDITOR=vim
+export EDITOR=nvim
 export GOPATH=~/Documents/go
 export TERM=rxvt-256color
 export LESS='--mouse -RX'
