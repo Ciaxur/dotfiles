@@ -39,6 +39,7 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 # Allows Aliases to have Completion
+fpath=(~/.oh-my-zsh/completions $fpath)autoload -Uz compinitcompinit -u
 unsetopt completealiases
 
 
@@ -64,6 +65,7 @@ source ~/scripts/runtime/functions.sh
 source ~/scripts/runtime/aliases.sh
 source ~/scripts/runtime/keybinds.sh
 source ~/scripts/runtime/env.sh
+source ~/scripts/runtime/autocompletion.zsh
 
 # Source ZSH Syntax Highlighting
 # Git: https://github.com/zsh-users/zsh-syntax-highlighting
@@ -92,9 +94,6 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'other page faults:         %R'
 
 
-
-# Configure Completion
-source ~/.oh-my-zsh/completions/*.zsh 2&> /dev/null
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/home/omar/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;

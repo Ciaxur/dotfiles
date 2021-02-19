@@ -10,6 +10,7 @@ alias diff="diff --color"       # Diff with Color
 alias fzf="fzf --height 60% --layout=reverse --border --color=16 --preview='~/.config/lf/scopes/pistol {}'"
 alias lsblk='lsblk -o NAME,SIZE,FSUSED,FSUSE%,TYPE,FSTYPE,MOUNTPOINT,PARTTYPENAME'
 alias sudo='sudo -p "Password for $USER:🔑"'
+alias yay='paru'
 
 # Aliases Based on Scripts
 alias terminal="~/scripts/cli-commands/terminal"

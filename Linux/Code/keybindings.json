@@ -67,5 +67,14 @@
     {
         "key": "ctrl+numpad0",
         "command": "-workbench.action.zoomReset"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "-editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+/",
+        "command": "editor.action.blockComment"
     }
 ]

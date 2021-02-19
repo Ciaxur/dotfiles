@@ -1,10 +1,8 @@
 {
-    "workbench.colorTheme": "Dracula",
-    // "editor.fontFamily": "'Input Mono', consolas, 'monospace'",
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.iconTheme": "material-icon-theme",
     "editor.fontFamily": "Fira Code Retina",
     "editor.fontLigatures": true,
-    "workbench.iconTheme": "vscode-great-icons",
-
     "todohighlight.keywords": [
         {
             "text": "REVIEW:",
@@ -71,15 +69,26 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "deno.enable": false,
     "C_Cpp.updateChannel": "Insiders",
+    "C_Cpp.default.cppStandard": "c++20",
     "editor.fontSize": 11,
     "compile-hero.typescriptx-output-toggle": false,
     "compile-hero.typescript-output-toggle": false,
 
     "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 2, ColumnLimit: 120, MaxEmptyLinesToKeep: 3, UseTab: Never, TabWidth: 2, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -2, BreakBeforeBraces: Attach }",
-    "C_Cpp.intelliSenseCachePath": "${workspaceFolder}/.vscode/ipch",
+    "C_Cpp.intelliSenseCachePath": "/tmp/.vscode/ipch",
     "latex-workshop.view.pdf.viewer": "tab",
     "workbench.editor.pinnedTabSizing": "compact",
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.refactor.renameFromFileExplorer": "autoApply",
+    "telemetry.enableTelemetry": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
