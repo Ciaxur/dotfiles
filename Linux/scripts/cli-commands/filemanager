@@ -2,16 +2,20 @@
 
 cmd="nautilus -w"             # File Manager Command
 img_cmd="feh -. -g 512x512"   # Image Command
+pdf_cmd="okular"              # PDF Command
 curDir="$(dirname $0)"        # Current Directory
 
 # Evaluate Patterns (Image, Markdown)
 isImgParam=`echo $1 | grep -i '.*.png\|jp[e]\?g$'`
 isMdParam=`echo $1 | grep -i '.*.md$'`
+isPDF=`echo $1 | grep -i '.*.pdf$'`
 
 if [ "$isImgParam" != "" ];then
-  $img_cmd $@ &>/dev/null &disown
+  $img_cmd "$@" &>/dev/null &disown
 elif [ "$isMdParam" != "" ];then
-  $curDir/openMarkdown.sh $@
+  $curDir/openMarkdown.sh "$@"
+elif [ "$isPDF" != "" ]; then
+  $pdf_cmd "$@" &>/dev/null &disown
 else
   $cmd $@ &>/dev/null & disown
 fi
