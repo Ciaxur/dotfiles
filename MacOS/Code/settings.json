@@ -1,0 +1,81 @@
+{
+    "workbench.colorTheme": "Palenight Theme",
+    // "editor.fontFamily": "Fira Code Retina",
+    "editor.fontLigatures": true,
+    "todohighlight.keywords": [
+        {
+            "text": "REVIEW:",
+            "color": "#B233FF",
+            "border": "1px solid #B233FF",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        },
+        {
+            "text": "BUG:",
+            "color": "#C70039",
+            "border": "1px solid #C70039",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        },
+        {
+            "text": "DEBUG:",
+            "color": "#FF3374",
+            "border": "1px solid #FF3374",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        },
+        {
+            "text": "NOTE:",
+            "color": "#FF5B33",
+            "border": "1px solid #FF5B33",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        },
+        {
+            "text": "TODO:",
+            "color": "yellow",
+            "border": "1px solid yellow",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        },
+        {
+            "text": "TEST:",
+            "color": "#BA4A00",
+            "border": "1px solid #BA4A00",
+            "borderRadius": "2px",
+            "backgroundColor": "rgba(0,0,0,.2)"
+        }
+    ],
+    "window.zoomLevel": 0,
+    "editor.tabSize": 2,
+    "telemetry.enableTelemetry": false,
+    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 2, ColumnLimit: 120, MaxEmptyLinesToKeep: 3, UseTab: Never, TabWidth: 2, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -2, BreakBeforeBraces: Attach }",
+    "todo-tree.tree.showScanModeButton": false,
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "editor.fontFamily": "Fira Code",
+    "workbench.productIconTheme": "material-product-icons",
+    "C_Cpp.default.cppStandard": "c++17",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+}
