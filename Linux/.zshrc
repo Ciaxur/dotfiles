@@ -39,7 +39,8 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 # Allows Aliases to have Completion
-fpath=(~/.oh-my-zsh/completions $fpath)autoload -Uz compinitcompinit -u
+fpath=(~/.oh-my-zsh/completions $fpath)
+#autoload -Uz compinitcompinit -u -d /tmp/zcompdump
 unsetopt completealiases
 
 

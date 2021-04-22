@@ -12,6 +12,9 @@ alias lsblk='lsblk -o NAME,SIZE,FSUSED,FSUSE%,TYPE,FSTYPE,MOUNTPOINT,PARTTYPENAM
 alias sudo='sudo -p "Password for $USER:🔑"'
 alias yay='paru'
 
+# Bat Aliases
+alias bat_man="bat --style=snip --language=man"
+
 # Aliases Based on Scripts
 alias terminal="~/scripts/cli-commands/terminal"
 alias open="~/scripts/cli-commands/filemanager"
@@ -26,6 +29,11 @@ alias fm='lfcd'
 # Alias for Copying over Text by piping
 #alias copy="tr -d '\n' | xclip -selection clipboard"
 alias copy="xclip -selection clipboard"
+
+# Docker Aliases based on https://github.com/devemio/docker-color-output too
+alias di='docker images $@ | dco'
+alias dps='docker ps $@ | dco'
+alias dcps='docker-compose ps $@ | dco'
 
 # Fun Aliases
 alias 🍺="git checkout drunk 2>/dev/null || git checkout -b drunk"

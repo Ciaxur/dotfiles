@@ -1,0 +1,13 @@
+[Unit]
+Description=OneDrive Daemon
+After=network.target
+
+[Service]
+Type=simple
+Environment=XAUTHORITY=%h/.Xauthority
+ExecStart=/usr/bin/onedrive -m
+ExecStop=/usr/bin/pkill onedrive
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

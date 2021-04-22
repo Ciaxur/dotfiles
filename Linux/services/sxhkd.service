@@ -1,0 +1,16 @@
+[Unit]
+Description=Simple X Hotkey Daemon
+Documentation=man:sxhkd(1)
+Wants=display-manager.service
+#BindsTo=display-manager.service
+After=imwheel.service
+
+[Service]
+ExecStart=/usr/bin/sxhkd
+ExecReload=/usr/bin/kill -SIGUSR1 $MAINPID
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+#WantedBy=graphical.target
+WantedBy=default.target
