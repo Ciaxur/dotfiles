@@ -1,0 +1,155 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+      "key": "ctrl+cmd+f",
+      "command": "editor.action.formatSelection",
+      "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "cmd+k cmd+f",
+      "command": "-editor.action.formatSelection",
+      "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "ctrl+cmd+t",
+      "command": "workbench.action.terminal.toggleTerminal",
+      "when": "terminal.active"
+    },
+    {
+      "key": "ctrl+`",
+      "command": "-workbench.action.terminal.toggleTerminal",
+      "when": "terminal.active"
+    },
+    {
+      "key": "cmd+=",
+      "command": "editor.action.fontZoomIn"
+    },
+    {
+      "key": "cmd+-",
+      "command": "editor.action.fontZoomOut"
+    },
+    {
+      "key": "cmd+0",
+      "command": "editor.action.fontZoomReset"
+    },
+    {
+      "key": "cmd+1",
+      "command": "workbench.action.openEditorAtIndex1"
+    },
+    {
+      "key": "ctrl+1",
+      "command": "-workbench.action.openEditorAtIndex1"
+    },
+    {
+      "key": "cmd+2",
+      "command": "workbench.action.openEditorAtIndex2"
+    },
+    {
+      "key": "ctrl+2",
+      "command": "-workbench.action.openEditorAtIndex2"
+    },
+    {
+      "key": "cmd+3",
+      "command": "workbench.action.openEditorAtIndex3"
+    },
+    {
+      "key": "ctrl+3",
+      "command": "-workbench.action.openEditorAtIndex3"
+    },
+    {
+      "key": "cmd+4",
+      "command": "workbench.action.openEditorAtIndex4"
+    },
+    {
+      "key": "ctrl+4",
+      "command": "-workbench.action.openEditorAtIndex4"
+    },
+    {
+      "key": "cmd+5",
+      "command": "workbench.action.openEditorAtIndex5"
+    },
+    {
+      "key": "ctrl+5",
+      "command": "-workbench.action.openEditorAtIndex5"
+    },
+    {
+      "key": "cmd+6",
+      "command": "workbench.action.openEditorAtIndex6"
+    },
+    {
+      "key": "ctrl+6",
+      "command": "-workbench.action.openEditorAtIndex6"
+    },
+    {
+      "key": "cmd+7",
+      "command": "workbench.action.openEditorAtIndex7"
+    },
+    {
+      "key": "ctrl+7",
+      "command": "-workbench.action.openEditorAtIndex7"
+    },
+    {
+      "key": "cmd+8",
+      "command": "workbench.action.openEditorAtIndex8"
+    },
+    {
+      "key": "ctrl+8",
+      "command": "-workbench.action.openEditorAtIndex8"
+    },
+    {
+      "key": "cmd+9",
+      "command": "workbench.action.openEditorAtIndex9"
+    },
+    {
+      "key": "ctrl+9",
+      "command": "-workbench.action.openEditorAtIndex9"
+    },
+    {
+      "key": "cmd+3",
+      "command": "-workbench.action.focusThirdEditorGroup"
+    },
+    {
+      "key": "shift+cmd+[",
+      "command": "editor.fold",
+      "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+      "key": "alt+cmd+[",
+      "command": "-editor.fold",
+      "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+      "key": "shift+cmd+]",
+      "command": "editor.unfold",
+      "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+      "key": "alt+cmd+]",
+      "command": "-editor.unfold",
+      "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+      "key": "cmd+numpad_subtract",
+      "command": "-workbench.action.zoomOut"
+    },
+    {
+      "key": "cmd+-",
+      "command": "-workbench.action.zoomOut"
+    },
+    {
+      "key": "cmd+numpad_add",
+      "command": "-workbench.action.zoomIn"
+    },
+    {
+      "key": "cmd+=",
+      "command": "-workbench.action.zoomIn"
+    },
+    {
+      "key": "shift+cmd+0",
+      "command": "workbench.action.zoomReset"
+    },
+    {
+      "key": "cmd+numpad0",
+      "command": "-workbench.action.zoomReset"
+    }
+  ]
