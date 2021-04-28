@@ -14,6 +14,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Closetags
 Plug 'alvan/vim-closetag'
 
+Plug 'vimwiki/vimwiki'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 " Automatically install missing plugins on startup
