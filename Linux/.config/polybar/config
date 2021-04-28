@@ -17,6 +17,7 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+
 [modules/xmenu]
 menu-0 = item 1;command
 menu-0-0 = sub-item 1.1;command
@@ -33,7 +34,7 @@ height = 18
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 1.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -50,19 +51,27 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Roboto:pixelsize=8:weigth=bold;0"
+font-0 = "SF UI Display:style=Bold:size=8;0"
 font-1 = Unifont:size=6;0
 font-2 = FontAwesome:size=8;
-font-3 = NotoSans-Regular:size=8;-1
-font-4 = MaterialIcons:size=10;0
+font-3 = Noto Sans:size=8;-1
+font-4 = Material Icons:size=10;0
 font-5 = Iosevka:size=12;1
+font-6 = JoyPixels:scale=10;0
+font-7 = "DejaVu Sans Mono:size=8;0"
+font-8 = "SF Pro Text:size=8;0"
+font-9 = "Helvetica Neue:size=8;0"
+font-10 = "Helvetica:size=8;0"
+font-11 = "Arial:size=8;0"
+font-12 = "DejaVu Serif:size=8;0"
+
 
 modules-left = bspwm i3 spotify-script
-modules-center = 
-modules-right = brightness better-volume memory cpu-usage cpu-freq cpu-temp bat-script internet-conx date
+modules-center = screensaver-status date
+modules-right = better-volume memory cpu-usage cpu-freq cpu-temp internet-conx
 
 ;; Icon App Tray
-;tray-position = right
+;tray-position = center
 ;tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
@@ -82,11 +91,19 @@ modules-right = brightness better-volume memory cpu-usage cpu-freq cpu-temp bat-
 type = custom/script
 exec = ~/.config/polybar/scripts/VolumeInfo
 tail = true
-click-left = ~/.config/polybar/scripts/ActiveSink-Toggle-Mute.sh
+click-left = pactl set-sink-mute @DEFAULT_SINK@ toggle 
+click-right = pavucontrol
+scroll-up = pactl set-sink-volume @DEFAULT_SINK@ +1%
+scroll-down = pactl set-sink-volume @DEFAULT_SINK@ -1%
 
 [module/cpu-freq]
 type = custom/script
 exec = ~/.config/polybar/scripts/CPU/cpu-current-freq.sh
+interval = 1.0
+
+[module/screensaver-status]
+type = custom/script
+exec = ~/.config/polybar/scripts/screensaver-stat.sh
 interval = 1.0
 
 [module/cpu-temp]
@@ -119,6 +136,9 @@ interval = 5
 type = custom/script
 exec = ~/.config/polybar/scripts/getCurrentPlayingSong.sh
 interval = 1
+click-left = playerctl play-pause -p spotify 
+scroll-up = playerctl next -p spotify
+scroll-down = playerctl previous -p spotify
 
 
 [module/bat-script]
@@ -191,7 +211,7 @@ label-mode-background = ${colors.primary}
 label-focused = %index%
 
 label-focused-background = ${colors.background}
-label-focused-foreground = #1FBDC2
+label-focused-foreground = #72C5F1
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
@@ -200,7 +220,7 @@ label-unfocused-foreground = #008286
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 label-visible = V%index%
-label-visible-foreground = #24D939
+label-visible-foreground = #72C5F1
 label-visible-background = $(colors.background)
 label-visible-underline = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
