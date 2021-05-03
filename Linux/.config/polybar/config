@@ -67,8 +67,8 @@ font-12 = "DejaVu Serif:size=8;0"
 
 
 modules-left = bspwm i3 spotify-script
-modules-center = screensaver-status date
-modules-right = better-volume memory cpu-usage cpu-freq cpu-temp internet-conx
+modules-center = date
+modules-right = screensaver-status screen-module better-volume memory cpu-usage cpu-freq cpu-temp internet-conx
 
 ;; Icon App Tray
 ;tray-position = center
@@ -95,6 +95,11 @@ click-left = pactl set-sink-mute @DEFAULT_SINK@ toggle
 click-right = pavucontrol
 scroll-up = pactl set-sink-volume @DEFAULT_SINK@ +1%
 scroll-down = pactl set-sink-volume @DEFAULT_SINK@ -1%
+
+[module/screen-module]
+type = custom/script
+exec = ~/.config/polybar/scripts/screen-module.sh
+interval = 1.0
 
 [module/cpu-freq]
 type = custom/script
