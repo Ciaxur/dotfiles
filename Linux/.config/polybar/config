@@ -99,6 +99,7 @@ scroll-down = pactl set-sink-volume @DEFAULT_SINK@ -1%
 [module/screen-module]
 type = custom/script
 exec = ~/.config/polybar/scripts/screen-module.sh
+click-left = ~/.config/polybar/scripts/screen-dmenu-select.sh
 interval = 1.0
 
 [module/cpu-freq]
