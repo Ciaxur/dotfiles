@@ -26,6 +26,9 @@ echo \
 "  h1, h2, h3, h4, h5, h6 {" \
 "    margin: 8px 0px;" \
 "  }" \
+"  a {" \
+"    color: #3F63A6;" \
+"  }" \
 "  hr {" \
 "    opacity: 0.2;" \
 "  }" \
