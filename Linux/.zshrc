@@ -102,6 +102,13 @@ HEROKU_AC_ZSH_SETUP_PATH=/home/omar/.cache/heroku/autocomplete/zsh_setup && test
 # Jump Config
 eval "$(jump shell)"
 
+# Keychain
+source ~/.keychain/"$(uname -n)-sh"
+
 # fnm
 export PATH=/home/omar/.fnm:$PATH
 eval "`fnm env`"
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true

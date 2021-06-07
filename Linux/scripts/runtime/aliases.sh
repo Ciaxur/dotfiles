@@ -18,6 +18,7 @@ alias bat_man="bat --style=snip --language=man"
 # Aliases Based on Scripts
 alias terminal="~/scripts/cli-commands/terminal"
 alias open="~/scripts/cli-commands/filemanager"
+alias openmd="~/scripts/cli-commands/openMarkdown.sh"
 
 # Alias for Downloader-CLI by "deepjyoti30"
 alias dw="py ~/documents/git-clones/downloader-cli/download.py"
