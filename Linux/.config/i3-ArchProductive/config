@@ -45,11 +45,11 @@ font pango:monospace 8
 bindsym         $mod+Return                 exec --no-startup-id termite
 bindsym         $mod+q                      kill
 bindsym         $mod+n                      exec --no-startup-id nautilus -w
-bindsym         $mod+d                      exec --no-startup-id "rofi -show run -location 2 -display-run 'Apps: ' -width 15        \
-                                                    -font 'Monospace 8' -columns 1 -lines 10 -hide-scrollbar        \
-                                                    -theme ~/.config/rofi/solarized-darker.rasi                     \
-                                                    -kb-row-select 'Tab' -kb-row-tab ''"
-
+bindsym         $mod+d                      exec --no-startup-id "rofi -show drun \
+                                              -width 25 \
+                                              -font 'SF Compact 10' \
+                                              -show-icons \
+                                              -theme solarized"
 
 bindsym         $mod+Left                   focus left
 bindsym         $mod+Down                   focus down
@@ -217,6 +217,7 @@ exec_always --no-startup-id feh --bg-scale --random ~/Pictures/Background/*&
 exec_always --no-startup-id ~/.config/dunst/reload.sh&
 exec_always --no-startup-id albert&
 exec_always --no-startup-id lxpolkit&
+exec_always --no-startup-id keychain&
 
 
 # Pulse Audio Controls
@@ -246,7 +247,7 @@ bindsym $mod+c exec --no-startup-id chromium
 bindsym $mod+question       exec --no-startup-id ~/scripts/dmenu-help/script.sh
 
 # Launch Picom (Compton)
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
+#exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Press HOME/END Keys + Shift and HOME/END & Reset the Keys
 bindsym --release $mod+bracketright         exec --no-startup-id \
@@ -300,8 +301,8 @@ gaps outer 5
 
 # Window Specific Settings
 # Properties could be obtained from "xprop | grep -i "class"
+for_window [class="^.*"] border pixel 2
 for_window [class=".*"] floating enable
 for_window [class="albert"] border pixel 0
-
 
 
