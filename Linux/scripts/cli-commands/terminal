@@ -1,14 +1,15 @@
 #!/bin/sh
 
-cmd="termite"
+cmd="alacritty"
 
 
 # Run attached
-if [ $# -ne 0 ];then 
+if [ $# -ne 0 ]; then 
 
   # Run Specific Directory
-  if [ -d "$1" ];then
-    $cmd -d $1 &>/dev/null & disown
+  if [ -d "$1" ]; then
+    #$cmd -d $1 &>/dev/null & disown
+    $cmd --working-directory $1 &>/dev/null & disown
   else
     $cmd $@
   fi

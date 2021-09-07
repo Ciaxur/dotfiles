@@ -14,7 +14,9 @@
 
 
 # Border Configuration
-new_window normal
+#new_window normal
+default_border normal
+
 hide_edge_borders vertical
 for_window [class="^.*"] border toggle
 
@@ -42,7 +44,7 @@ font pango:monospace 8
 
 
 ## Key Bindings
-bindsym         $mod+Return                 exec --no-startup-id termite
+bindsym         $mod+Return                 exec --no-startup-id alacritty
 bindsym         $mod+q                      kill
 bindsym         $mod+n                      exec --no-startup-id nautilus -w
 bindsym         $mod+d                      exec --no-startup-id "rofi -show drun \
@@ -215,7 +217,6 @@ client.background       #313131
 exec_always --no-startup-id ~/.config/i3/polybar.sh&
 exec_always --no-startup-id feh --bg-scale --random ~/Pictures/Background/*&
 exec_always --no-startup-id ~/.config/dunst/reload.sh&
-exec_always --no-startup-id albert&
 exec_always --no-startup-id lxpolkit&
 exec_always --no-startup-id keychain&
 
@@ -238,6 +239,8 @@ bindsym $mod+F11            exec playerctl previous -p spotify || exec playerctl
 
 # Locking Screen
 bindsym $mod+l exec ~/scripts/lockscreen.sh 
+
+bindsym $mod+space exec --no-startup-id ~/scripts/dmenu-apps/dmenu-app.sh
 
 # Launch Emoji Menu
 bindsym $mod+period exec --no-startup-id ~/scripts/dmenu-emoji/dmenu-emoji.sh
@@ -297,6 +300,7 @@ bindsym --release $ctrl+$alt+Down       exec --no-startup-id \
 smart_borders on
 gaps inner 25
 gaps outer 5
+border_radius 8
 
 
 # Window Specific Settings

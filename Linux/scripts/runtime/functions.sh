@@ -103,5 +103,8 @@ function cdtemp() {
 }
 
 
-
+function whatsmyip() {
+  IP=$(curl -s 'https://api.ipify.org?format=json' | jq '.ip')
+  printf "My Public IP is $IP\n";
+}
 
