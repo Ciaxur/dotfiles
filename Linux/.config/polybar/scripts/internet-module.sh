@@ -24,7 +24,7 @@ fi
 # Get rest of Information
 CONX_BSSID=`echo $CONX_INFO | awk '{print $4}'`
 CONX_TYPE=`echo $CONX_INFO | awk '{print $2}'`
-
+CONX_VPN=`echo $CONX_INFO | grep -Po 'tun[\d+]'`
 
 # Adjust Connection Type
 if [ "$CONX_TYPE" = "wifi" ]; then
@@ -45,5 +45,10 @@ elif [ "$CONX_TYPE" = "ethernet" ]; then
     CONX_TYPE="$ETH_I"
 fi
 
+# Adjust for VPN Connection
+if [ "CONX_VPN" != "" ]; then
+  CONX_VPN="[VPN]"
+fi
+
 # Output Information with Fromatting
-echo "$CONX_TYPE %{F#FFF}$CONX_BSSID"
+echo "$CONX_TYPE$CONX_VPN %{F#FFF}$CONX_BSSID"
