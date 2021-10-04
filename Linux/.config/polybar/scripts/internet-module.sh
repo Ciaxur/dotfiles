@@ -46,7 +46,7 @@ elif [ "$CONX_TYPE" = "ethernet" ]; then
 fi
 
 # Adjust for VPN Connection
-if [ "CONX_VPN" != "" ]; then
+if [ ${#CONX_VPN} -gt 0 ]; then
   CONX_VPN="[VPN]"
 fi
 
