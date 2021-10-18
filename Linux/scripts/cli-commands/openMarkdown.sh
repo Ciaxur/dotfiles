@@ -20,7 +20,7 @@ fi
 echo \
 "<style>" \
 "  * {" \
-"    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";" \
+"    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Helvetica Neue\", Helvetica, Roboto, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", "Segoe UI Symbol";" \
 "    color: #3D3D3D;" \
 "  }" \
 "  h1, h2, h3, h4, h5, h6 {" \

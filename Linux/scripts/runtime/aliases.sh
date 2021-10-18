@@ -18,6 +18,7 @@ alias bat_man="bat --style=snip --language=man"
 # Aliases Based on Scripts
 alias terminal="~/scripts/cli-commands/terminal"
 alias open="~/scripts/cli-commands/filemanager"
+alias openmd="~/scripts/cli-commands/openMarkdown.sh"
 
 # Alias for Downloader-CLI by "deepjyoti30"
 alias dw="py ~/documents/git-clones/downloader-cli/download.py"
@@ -40,3 +41,8 @@ alias 🍺="git checkout drunk 2>/dev/null || git checkout -b drunk"
 alias set-wallpaper='feh --bg-scale'
 alias set-theme='~/scripts/theme-switch/script.sh'
 alias glog="git log --oneline --decorate --graph --pretty=format:'%C(auto)%h%d %s (%cn - %cr)'"
+
+# Life Satisfying Aliases (Easy update, thanks to Zaki)
+alias yay-update="(yay -Syu --noconfirm && notify-send Yay-update\ Succesfful) || notify-send Failed\ Update"
+alias pacman-update="(sudo pacman -Syu --noconfirm && notify-send Pcman\ Succesfful) || notify-send Failed\ Update"
+alias system-update="yay-update && pacman-update"

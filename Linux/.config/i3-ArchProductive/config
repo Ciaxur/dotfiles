@@ -14,7 +14,9 @@
 
 
 # Border Configuration
-new_window normal
+#new_window normal
+default_border normal
+
 hide_edge_borders vertical
 for_window [class="^.*"] border toggle
 
@@ -42,14 +44,14 @@ font pango:monospace 8
 
 
 ## Key Bindings
-bindsym         $mod+Return                 exec --no-startup-id termite
+bindsym         $mod+Return                 exec --no-startup-id alacritty
 bindsym         $mod+q                      kill
 bindsym         $mod+n                      exec --no-startup-id nautilus -w
-bindsym         $mod+d                      exec --no-startup-id "rofi -show run -location 2 -display-run 'Apps: ' -width 15        \
-                                                    -font 'Monospace 8' -columns 1 -lines 10 -hide-scrollbar        \
-                                                    -theme ~/.config/rofi/solarized-darker.rasi                     \
-                                                    -kb-row-select 'Tab' -kb-row-tab ''"
-
+bindsym         $mod+d                      exec --no-startup-id "rofi -show drun \
+                                              -width 25 \
+                                              -font 'SF Compact 10' \
+                                              -show-icons \
+                                              -theme solarized"
 
 bindsym         $mod+Left                   focus left
 bindsym         $mod+Down                   focus down
@@ -184,10 +186,16 @@ mode "i3-gap-resize" {
     bindsym $ctrl+Left      gaps horizontal current plus   5
     bindsym $ctrl+Right     gaps horizontal current minus  5
 
+    # Preset Gaps
+    bindsym 1               "gaps outer current set 10; gaps inner current set 30"
+    bindsym 2               "gaps outer current set 20; gaps inner current set 20"
+    bindsym 3               "gaps outer current set 30; gaps inner current set 10"
+    bindsym 4               "gaps outer current set 30; gaps inner current set 40"
+    
 
 
     # Reset Gap Values
-    bindsym $ctrl+r         "gaps outer current set 4 ; gaps inner current set 6"
+    bindsym $ctrl+r         "gaps outer current set 5 ; gaps inner current set 25"
 
     # Escape Mode
     bindsym Return          mode "default"
@@ -215,8 +223,8 @@ client.background       #313131
 exec_always --no-startup-id ~/.config/i3/polybar.sh&
 exec_always --no-startup-id feh --bg-scale --random ~/Pictures/Background/*&
 exec_always --no-startup-id ~/.config/dunst/reload.sh&
-exec_always --no-startup-id albert&
 exec_always --no-startup-id lxpolkit&
+exec_always --no-startup-id keychain&
 
 
 # Pulse Audio Controls
@@ -238,6 +246,8 @@ bindsym $mod+F11            exec playerctl previous -p spotify || exec playerctl
 # Locking Screen
 bindsym $mod+l exec ~/scripts/lockscreen.sh 
 
+bindsym $mod+space exec --no-startup-id ~/scripts/dmenu-apps/dmenu-app.sh
+
 # Launch Emoji Menu
 bindsym $mod+period exec --no-startup-id ~/scripts/dmenu-emoji/dmenu-emoji.sh
 bindsym $mod+c exec --no-startup-id chromium
@@ -246,7 +256,7 @@ bindsym $mod+c exec --no-startup-id chromium
 bindsym $mod+question       exec --no-startup-id ~/scripts/dmenu-help/script.sh
 
 # Launch Picom (Compton)
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
+#exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Press HOME/END Keys + Shift and HOME/END & Reset the Keys
 bindsym --release $mod+bracketright         exec --no-startup-id \
@@ -296,12 +306,13 @@ bindsym --release $ctrl+$alt+Down       exec --no-startup-id \
 smart_borders on
 gaps inner 25
 gaps outer 5
+border_radius 8
 
 
 # Window Specific Settings
 # Properties could be obtained from "xprop | grep -i "class"
+for_window [class="^.*"] border pixel 2
 for_window [class=".*"] floating enable
 for_window [class="albert"] border pixel 0
-
 
 
