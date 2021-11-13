@@ -82,6 +82,14 @@ bindsym         $mod+a                      focus parent
 bindsym         $mod+Shift+n                exec --no-startup-id feh --bg-scale --random ~/Pictures/Background/*
 bindsym         $mod+Print                  exec --no-startup-id "flameshot gui"
 
+## Key Binds: Dunst
+bindsym         $ctrl+space                 exec --no-startup-id dunstctl close
+bindsym         $ctrl+Shift+space           exec --no-startup-id dunstctl close-all
+bindsym         $ctrl+$mod+space            exec --no-startup-id dunstctl history-pop
+bindsym         $ctrl+$mod+period           exec --no-startup-id dunstctl context
+
+
+
 # set floating modifer
 #  Allows to move Floating Window when held
 #  down and dragged anywhere on the window
