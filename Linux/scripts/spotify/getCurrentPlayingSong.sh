@@ -24,7 +24,7 @@ qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlay
 ##############################
 if [ $(cat /tmp/$TMP_FILE | wc -l) -lt 9 ];then
     echo ""
-    return 0
+    exit 0
 fi
 
 
@@ -40,9 +40,9 @@ SONG=$(grep -iw "title" /tmp/$TMP_FILE | cut -d ' ' -f2-)
 #################################
 # Make sure Valid Data is found #
 #################################
-if [ "$ALBUM" = "" ] || [ "$ARTIST" = "" ] || [ "$SONG" = "" ] ;then
+if [ "$ALBUM" = "" ] || [ "$SONG" = "" ] ;then
     echo "%{F#5DADE2}[ %{F#1DB954}$ICON %{F#999}Spotify %{F#5DADE2}]"
-    return 0
+    exit 0
 
 # Limit the Song String to Variable Character Length
 elif [ "$(expr length "$SONG")" -gt $SONG_LEN_MAX ];then
@@ -69,7 +69,11 @@ SEC=$(( ($MICRO_SEC - ($MIN * 60000000)) / 1000000  ))
 ######################
 # Output for Polybar #
 ######################
-echo "%{F#1DB954} $ICON %{F#5DADE2}[ $SONG - $ARTIST  $PLAY_STATUS  ]" 
+if [ "$ARTIST" = "" ]; then # No Artist, this is a Podcast
+  echo "%{F#1DB954} $ICON %{F#5DADE2}[ $SONG - (Podcast) $PLAY_STATUS  ]" 
+else
+  echo "%{F#1DB954} $ICON %{F#5DADE2}[ $SONG - $ARTIST  $PLAY_STATUS  ]" 
+fi
 
 
 ####################
