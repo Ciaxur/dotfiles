@@ -3,7 +3,8 @@ set formatoptions-=cro                  " Stop newline continution of comments
 
 syntax enable                           " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
-set nowrap                              " Display long lines as just one line
+"set nowrap                              " Display long lines as just one line
+set wrap linebreak
 set whichwrap+=<,>,[,],h,l
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
@@ -32,10 +33,13 @@ set nowritebackup                       " This is recommended by coc
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
 set updatetime=300                      " Faster completion
-set timeoutlen=100                      " By default timeoutlen is 1000 ms
+set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch
 set guifont=JetBrainsMono\ Nerd\ Font
+set foldmethod=indent                   " zc (Close Fold) zo (Open Fold) zO (Open All in Fold)
+set nocompatible
+filetype plugin on
 
 " New stuff
 " set notimeout nottimeout
@@ -53,5 +57,3 @@ set guifont=JetBrainsMono\ Nerd\ Font
 " au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Sudo Saves current file -> :W
-command W w !sudo tee % > /dev/null

@@ -83,7 +83,7 @@ bindsym         $mod+Shift+n                exec --no-startup-id feh --bg-scale 
 bindsym         $mod+Print                  exec --no-startup-id "flameshot gui"
 
 ## Key Binds: Dunst
-bindsym         $ctrl+space                 exec --no-startup-id dunstctl close
+bindsym         $ctrl+$alt+space            exec --no-startup-id dunstctl close
 bindsym         $ctrl+Shift+space           exec --no-startup-id dunstctl close-all
 bindsym         $ctrl+$mod+space            exec --no-startup-id dunstctl history-pop
 bindsym         $ctrl+$mod+period           exec --no-startup-id dunstctl context

@@ -9,5 +9,6 @@ source $HOME/.config/nvim/plug-config/coc/coc-extensions.vim
 
 " Configure Plugins
 source $HOME/.config/nvim/plugins/fzf.vim
+source $HOME/.config/nvim/plugins/nnn.vim
 source $HOME/.config/nvim/plugins/vimwiki.vim
 
