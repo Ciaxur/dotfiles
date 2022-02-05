@@ -6,7 +6,7 @@ export LESS='--mouse -RX'
 #export TERM=st-256color
 export ANDROID_SDK=~/Documents/Android/Sdk
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
+export SUDO_ASKPASS=/usr/lib/ssh/ssh-askpass
 
 
 # Ruby Path
