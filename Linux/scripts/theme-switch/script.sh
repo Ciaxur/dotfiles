@@ -9,7 +9,7 @@ BKG_LIGHT=~/Pictures/Background-Light     # Actual Path to Light-Themed Backgrou
 BKG_DARK=~/Pictures/Background-Dark       #  Actual Path to Dark-Themed Backgrounds
 
 
-if [ "$1" = "" ]; then                  # Empty Input
+if [ "$1" = "" ] || [ "$1" == "--help" ]; then  # Empty Input or help argument
     echo "Enter [dark, light, grey] as an option for command [OPTIONS]"
 
 elif [ "$1" = "dark" ]; then            # Dark Mode

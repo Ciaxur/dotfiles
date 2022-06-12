@@ -108,3 +108,12 @@ function whatsmyip() {
   printf "My Public IP is $IP\n";
 }
 
+
+function wttr() {
+  # wttr is a cool weather project: 
+  # This func serves as a mini-alias for quick weather requests.
+  # By default, use these default options.
+  URL="wttr.in/${1:=?0&m}"
+  curl $URL
+}
+

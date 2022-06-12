@@ -11,9 +11,12 @@ alias fzf="fzf --height 60% --layout=reverse --border --color=16 --preview='~/.c
 alias lsblk='lsblk -o NAME,SIZE,FSUSED,FSUSE%,TYPE,FSTYPE,MOUNTPOINT,PARTTYPENAME'
 alias sudo='sudo -p "Password for $USER:🔑"'
 alias yay='paru'
+alias nmutt='neomutt'
+alias tn='timed-notify'
 
 # Bat Aliases
-alias bat_man="bat --style=snip --language=man"
+alias bat="bat --style=snip"
+alias bat_man="bat --language=man"
 
 # Aliases Based on Scripts
 alias terminal="~/scripts/cli-commands/terminal"
@@ -30,6 +33,7 @@ alias fm='lfcd'
 # Alias for Copying over Text by piping
 #alias copy="tr -d '\n' | xclip -selection clipboard"
 alias copy="xclip -selection clipboard"
+alias copy-image="xclip -se c -t image/png -i"
 
 # Docker Aliases based on https://github.com/devemio/docker-color-output too
 alias di='docker images $@ | dco'
@@ -41,6 +45,8 @@ alias 🍺="git checkout drunk 2>/dev/null || git checkout -b drunk"
 alias set-wallpaper='feh --bg-scale'
 alias set-theme='~/scripts/theme-switch/script.sh'
 alias glog="git log --oneline --decorate --graph --pretty=format:'%C(auto)%h%d %s (%cn - %cr)'"
+alias coin-gecko='~/scripts/crypto/coin-gecko.sh'
+alias hostname-print='~/scripts/ascii-art/launch-owl.sh'
 
 # Life Satisfying Aliases (Easy update, thanks to Zaki)
 alias yay-update="(yay -Syu --noconfirm && notify-send Yay-update\ Succesfful) || notify-send Failed\ Update"
