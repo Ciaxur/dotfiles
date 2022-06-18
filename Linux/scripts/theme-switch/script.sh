@@ -10,7 +10,23 @@ BKG_DARK=~/Pictures/Background-Dark       #  Actual Path to Dark-Themed Backgrou
 
 
 if [ "$1" = "" ] || [ "$1" == "--help" ]; then  # Empty Input or help argument
-    echo "Enter [dark, light, grey] as an option for command [OPTIONS]"
+    echo "Enter [dark, light, grey, tokyo-dark] as an option for command [OPTIONS]"
+
+elif [ "$1" = "tokyo-dark" ]; then            # Tokyo Dark Mode (Alacritty Only)
+    echo "Activating Tokyo Dark Mode"
+
+    # Copy GTK Theme
+    cp $DIR/gtk-configs/settings-dark.ini ~/.config/gtk-3.0/settings.ini
+
+    # Copy Alacritty Config
+    cp $DIR/alacritty-configs/alacritty-tokyo-dark.yml ~/.config/alacritty/alacritty.yml
+
+    # Copy vimrc Config
+    cp $DIR/vimrc-configs/config-dark ~/.vimrc
+
+    # Add Symbolic Link for Dark Theme
+    rm $BKG_OUT
+    ln -s $BKG_DARK $BKG_OUT
 
 elif [ "$1" = "dark" ]; then            # Dark Mode
     echo "Activating Dark Mode"
