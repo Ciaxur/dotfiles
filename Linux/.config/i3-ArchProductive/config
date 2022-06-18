@@ -263,6 +263,9 @@ bindsym $mod+c exec --no-startup-id chromium
 # Launch Help Menu
 bindsym $mod+question       exec --no-startup-id ~/scripts/dmenu-help/script.sh
 
+# Launch Window Menu
+bindsym $mod+Tab            exec --no-startup-id ~/scripts/dmenu-window/script.sh
+
 # Launch Picom (Compton)
 #exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
