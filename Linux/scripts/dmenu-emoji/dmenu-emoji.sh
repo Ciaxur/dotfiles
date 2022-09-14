@@ -14,7 +14,6 @@ chosen=$(grep -v "#" ~/scripts/dmenu-emoji/emoji-list | rofi -dmenu -p "Emoji" \
 	-lines 20 -line-margin 0 -line-padding 1 \
 	-separator-style none -font "JoyPixels 8" -columns 1 -bw 0 \
 	-hide-scrollbar \
-	-kb-row-select "Tab" -kb-row-tab "" \
 	-i)
 
 [ "$chosen" != "" ] || exit
