@@ -29,7 +29,6 @@ Plug 'jparise/vim-graphql'
 
 call plug#end()
 
-
 " Automatically install missing plugins on startup
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))

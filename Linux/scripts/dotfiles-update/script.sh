@@ -6,6 +6,22 @@
 # Requires a Text file that tells the script
 #  which files/dirs to check for
 
+# Parse optional arguments.
+DRY_RUN=0
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --dry-run)
+      DRY_RUN=1
+      echo "Enabled Dry run toggled."
+      shift # past argument
+      ;;
+    *)
+      # Ignore unknown argument.
+      shift
+      ;;
+  esac
+done
+
 
 # PATHS TO CHECK (MUST BE ABSOUTE, for guarenteed success!)
 source_path="/home/omar"
@@ -19,6 +35,11 @@ if [ -f $filesUsed_file ]; then
     # Split on Delimeter for Customer Source->Target Path
     IFS=":" read -a pathArr <<< $path
 
+    # Ignore comments and empty lines.
+    if [[ "$pathArr" == \#* ]] || [[ "$pathArr" == "" ]]; then
+      continue
+    fi
+
     # Specify Correct Paths
     source="$source_path/$pathArr"          # Pick first Path from PathArr
 
@@ -30,15 +51,18 @@ if [ -f $filesUsed_file ]; then
     fi
 
     # Verbose Output
-    printf "Source [$source] \t Target [$target]\n"
+    printf "Source [$source]\n" 
+    printf "    ↳ Target [$target]\n"
     
     # Make sure Necessary Directories Created
     prevPath=$(dirname $target)
-    if [ ! "$prevPath" = "$target_path" ]; then
-      mkdir -p $prevPath
-      cp -ru $source $prevPath
-    else
-      cp -ru $source $target
+    if [ $DRY_RUN = 0 ]; then
+      if [ ! "$prevPath" = "$target_path" ]; then
+        mkdir -p $prevPath
+        cp -ru $source $prevPath
+      else
+        cp -ru $source $target
+      fi
     fi
   done < filesUsed.txt
 

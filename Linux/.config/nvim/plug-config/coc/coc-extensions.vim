@@ -28,6 +28,7 @@ let g:coc_global_extensions = [
   \ 'coc-yaml',
   \ 'coc-go',
   \ 'coc-marketplace',
+  \ 'coc-lua',
   \ ]
   " \ 'coc-bookmark',
   " \ 'coc-tabnine',
