@@ -27,7 +27,6 @@ ZSH_THEME="robbyrussell-mod"
 # Add wisely, as too many plugins slow down shell startup.
 
 # https://github.com/lukechilds/zsh-nvm
-#  Lazy Load NVM (shaves 0.5s+)
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
@@ -66,7 +65,6 @@ source ~/scripts/runtime/functions.sh
 source ~/scripts/runtime/aliases.sh
 source ~/scripts/runtime/keybinds.sh
 source ~/scripts/runtime/env.sh
-source ~/scripts/runtime/autocompletion.zsh
 
 # Source ZSH Syntax Highlighting
 # Git: https://github.com/zsh-users/zsh-syntax-highlighting

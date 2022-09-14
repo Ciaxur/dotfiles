@@ -1,5 +1,12 @@
 #!/bin/sh
 
+
+# Docker Mini-function/aliases based on https://github.com/devemio/docker-color-output too
+function di { docker images $@ | dco }
+function dps { docker ps $@ | dco }
+function dcps { docker-compose ps $@ | dco }
+
+
 # Runs a git fs check but prettifies it
 function gflog() {
   git log --graph --oneline --decorate $(git fsck --no-reflogs | awk '/dangling commit/ {print $3}')
@@ -11,7 +18,7 @@ nightmode() {
 
     if [ "$1" = "-h" ]; then
         echo "Parameters: [on/off] to trigger nightmode"
-    
+
     elif [ "$1" = "off" ]; then
         redshift -x        &>/dev/null
         echo "Turning off Nightmode"
@@ -25,7 +32,7 @@ nightmode() {
     else
         redshift -x        &>/dev/null
         redshift -O 3000   &>/dev/null
-        
+
         echo "Setting Nightmode to '3000'"
     fi
 
@@ -110,7 +117,7 @@ function whatsmyip() {
 
 
 function wttr() {
-  # wttr is a cool weather project: 
+  # wttr is a cool weather project:
   # This func serves as a mini-alias for quick weather requests.
   # By default, use these default options.
   URL="wttr.in/${1:=?0&m}"

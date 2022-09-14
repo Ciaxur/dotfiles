@@ -16,7 +16,7 @@ alias tn='timed-notify'
 
 # Bat Aliases
 alias bat="bat --style=snip"
-alias bat_man="bat --language=man"
+alias batman="bat --language=man"
 
 # Aliases Based on Scripts
 alias terminal="~/scripts/cli-commands/terminal"
@@ -34,11 +34,6 @@ alias fm='lfcd'
 #alias copy="tr -d '\n' | xclip -selection clipboard"
 alias copy="xclip -selection clipboard"
 alias copy-image="xclip -se c -t image/png -i"
-
-# Docker Aliases based on https://github.com/devemio/docker-color-output too
-alias di='docker images $@ | dco'
-alias dps='docker ps $@ | dco'
-alias dcps='docker-compose ps $@ | dco'
 
 # Fun Aliases
 alias 🍺="git checkout drunk 2>/dev/null || git checkout -b drunk"
