@@ -5,7 +5,7 @@ export TERM=rxvt-256color
 #export TERM=screen-256color
 export LESS='--mouse -RX'
 export ANDROID_SDK=~/Documents/Android/Sdk
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export SSH_AUTH_SOCK="/run/user/1000/ssh-agent.socket"
 export SUDO_ASKPASS=/usr/lib/ssh/ssh-askpass
 
 

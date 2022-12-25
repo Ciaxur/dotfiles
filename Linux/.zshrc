@@ -5,7 +5,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
-
 #############################
 ## oh-my-zsh Configuration ##
 #############################
@@ -60,7 +59,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 # Configure Pager ; RegExp Search
 #export PAGER="most -r"
 
-# Load Sources 
+# Load Sources
 source ~/scripts/runtime/functions.sh
 source ~/scripts/runtime/aliases.sh
 source ~/scripts/runtime/keybinds.sh
@@ -110,3 +109,7 @@ eval "`fnm env`"
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+# OpenAbyss
+eval "`open-abyss --completion-script-zsh`"
+

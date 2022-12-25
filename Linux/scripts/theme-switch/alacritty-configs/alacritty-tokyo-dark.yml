@@ -44,7 +44,7 @@ font:
   size: 8.0
 
   # Thin strokes are suitable for retina displays
-  use_thin_strokes: true
+  AppleFontSmoothing: true
   dynamic_title: true
 
 # If `true`, bold text is drawn using the bright color variants.

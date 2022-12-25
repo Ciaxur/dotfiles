@@ -6,6 +6,7 @@ alias kp="keepassxc.cli"        # Keepass CLI
 alias py="python"               # Latest Python Alias
 alias ipy="ipython"             # Interactive Python
 alias diff="diff --color"       # Diff with Color
+alias k="kubectl"
 #alias fzf="fzf --height 50% --layout=reverse --border --color=16 --preview='head -$LINES {+}'"
 alias fzf="fzf --height 60% --layout=reverse --border --color=16 --preview='~/.config/lf/scopes/pistol {}'"
 alias lsblk='lsblk -o NAME,SIZE,FSUSED,FSUSE%,TYPE,FSTYPE,MOUNTPOINT,PARTTYPENAME'
