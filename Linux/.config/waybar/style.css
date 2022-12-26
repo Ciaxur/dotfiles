@@ -1,0 +1,122 @@
+@import "mocha.css";
+* {
+  font-family: SF UI Display;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+window#waybar {
+  /* border-bottom: 2px solid @surface0; */
+  transition-property: background;
+  transition-duration: 0.5s;
+  background-color: rgba(69, 69, 92, 0.2);
+}
+
+/* window#waybar > box { */
+/*   border-radius: 4px; */
+/*   margin: 4px 8px 8px 8px; */
+/*   box-shadow: 4px 4px 2px 1px #11111b; */
+/*   background-color: rgba(30, 30, 46, 0.85); */
+/* } */
+
+#workspaces,
+#mode,
+#clock,
+#language,
+#pulseaudio,
+#network,
+#temperature,
+#window,
+#cpu,
+#memory,
+#idle_inhibitor,
+#custom-internet-conx,
+#custom-spotify-script,
+#disk {
+  padding: 0px 2px;
+  margin: 0px 10px 0px 2px;
+  border-radius: 40px;
+  background-clip: padding-box;
+}
+
+#tray {
+  padding: 2px;
+  margin: 0px 4px 4px 0px;
+}
+
+#custom-sep {
+  padding: 0px;
+  color: @surface0;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  min-width: 20px;
+  color: @text;
+}
+
+#workspaces button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.active {
+  color: @blue;
+}
+
+#workspaces button.urgent {
+  color: @red;
+}
+
+#idle_inhibitor {
+    color: bisque;
+    font-size: 15px;
+}
+
+#cpu {
+  color: @teal;
+}
+
+#temperature,
+#memory {
+  color: @mauve;
+}
+
+#clock {
+  color: @blue;
+}
+
+#mode {
+  color: @red;
+}
+
+#window {
+  color: @text;
+}
+
+#language {
+  color: @teal;
+}
+
+
+#pulseaudio {
+  color: @lavender;
+}
+
+
+#pulseaudio.muted {
+  color: @subtext0;
+}
+
+#custom-spotify-script,
+#custom-internet-conx {
+    font-family: SF UI Display;
+    color: @lavender;
+    padding: 5px;
+}
+
+@keyframes blink {
+  to {
+    background-color: @surface0;
+    color: @red;
+  }
+}

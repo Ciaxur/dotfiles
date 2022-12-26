@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # Author: Omar Omar
 #
-# Simple Script Used to Update files 
+# Simple Script Used to Update files
 #  based on Source and Target Path
 # Requires a Text file that tells the script
 #  which files/dirs to check for
@@ -51,9 +51,9 @@ if [ -f $filesUsed_file ]; then
     fi
 
     # Verbose Output
-    printf "Source [$source]\n" 
+    printf "Source [$source]\n"
     printf "    ↳ Target [$target]\n"
-    
+
     # Make sure Necessary Directories Created
     prevPath=$(dirname $target)
     if [ $DRY_RUN = 0 ]; then

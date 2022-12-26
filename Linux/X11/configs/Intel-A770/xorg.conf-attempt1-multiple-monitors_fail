@@ -1,0 +1,176 @@
+Section "ServerLayout"
+    Identifier     "Layout0"
+
+    Screen      0  "Screen0" 1440 658 # Middle monitor.
+    Screen      1  "Screen1" 0 0      # Left monitor.
+    Screen      2  "Screen2" 4000 658 # Right monitor.
+
+    InputDevice    "Keyboard0" "CoreKeyboard"
+    InputDevice    "Mouse0" "CorePointer"
+    Option         "Xinerama" "0"
+EndSection
+
+Section "InputDevice"
+    Identifier     "Mouse0"
+    Driver         "mouse"
+    Option         "Protocol" "auto"
+    Option         "Device" "/dev/psaux"
+    Option         "Emulate3Buttons" "no"
+    Option         "ZAxisMapping" "4 5"
+EndSection
+
+Section "InputDevice"
+    Identifier     "Keyboard0"
+    Driver         "kbd"
+EndSection
+
+# 3 Monitor configuration. 
+# Configured by xrandr/axradr(gui).
+# Monitor information can then be obtained by finding the edid of those monitors
+# through 'find /sys/devices/pci0000:00 -name "edid"', then cat-ing te edid file into 'parse-edid'
+# Source of truth, refer to: https://linux.die.net/man/5/xorg.conf
+
+# DP-2 (Right)
+Section "Monitor"
+	Identifier "PA278QV"
+	ModelName "PA278QV"
+	VendorName "AUS"
+	DisplaySize 600 340
+	Option "DPMS" "true"
+	Horizsync 112-112
+	VertRefresh 46-75
+  
+  # Locations.
+  Option "Position" "4000 658"
+  Option "Rotate" "normal"
+EndSection
+
+# DP-3 (Middle Primary)
+Section "Monitor"
+	Identifier "LG ULTRAGEAR"
+	ModelName "LG ULTRAGEAR"
+	VendorName "GSM"
+	DisplaySize 600 340
+	Option "DPMS" "true"
+	Horizsync 230-230
+	VertRefresh 48-144
+
+  # Locations.
+  Option "Primary" "true"
+  Option "Position" "1440 658"
+  Option "Rotate" "normal"
+EndSection
+
+# DP-4 (Left+Rotated)
+Section "Monitor"
+	Identifier "LG HDR QHD"
+	ModelName "LG HDR QHD"
+	VendorName "GSM"
+	DisplaySize 700 390
+	Option "DPMS" "true"
+	Horizsync 112-112
+	VertRefresh 48-75
+	
+  # Locations.
+  Option "Position" "0 0"
+  Option "Rotate" "left"
+EndSection
+
+Section "Files"
+EndSection
+
+### Available Driver options are:-
+### Values: <i>: integer, <f>: float, <bool>: "True"/"False",
+### <string>: "String", <freq>: "<f> Hz/kHz/MHz",
+### <percent>: "<f>%"
+### [arg]: arg optional
+#Option     "Accel"              	# [<bool>]
+#Option     "AccelMethod"        	# <str>
+#Option     "Backlight"          	# <str>
+#Option     "CustomEDID"         	# <str>
+#Option     "DRI"                	# <str>
+#Option     "Present"            	# [<bool>]
+#Option     "ColorKey"           	# <i>
+#Option     "VideoKey"           	# <i>
+#Option     "Tiling"             	# [<bool>]
+#Option     "LinearFramebuffer"  	# [<bool>]
+#Option     "HWRotation"         	# [<bool>]
+#Option     "VSync"              	# [<bool>]
+#Option     "PageFlip"           	# [<bool>]
+#Option     "SwapbuffersWait"    	# [<bool>]
+#Option     "TripleBuffer"       	# [<bool>]
+#Option     "XvPreferOverlay"    	# [<bool>]
+#Option     "HotPlug"            	# [<bool>]
+#Option     "ReprobeOutputs"     	# [<bool>]
+#Option     "XvMC"               	# [<bool>]
+#Option     "ZaphodHeads"        	# <str>
+#Option     "VirtualHeads"       	# <i>
+#Option     "TearFree"           	# [<bool>]
+#Option     "PerCrtcPixmaps"     	# [<bool>]
+#Option     "FallbackDebug"      	# [<bool>]
+#Option     "DebugFlushBatches"  	# [<bool>]
+#Option     "DebugFlushCaches"   	# [<bool>]
+#Option     "DebugWait"          	# [<bool>]
+#Option     "BufferCache"        	# [<bool>]
+Section "Device"
+	Identifier  "Device0"
+	Driver      "modesetting"
+	BusID       "PCI:7:0:0"
+	Option      "DRI" "3"
+EndSection
+Section "Device"
+	Identifier  "Device1"
+	Driver      "modesetting"
+	BusID       "PCI:7:0:0"
+	Option      "DRI" "3"
+EndSection
+Section "Device"
+	Identifier  "Device2"
+	Driver      "modesetting"
+	BusID       "PCI:7:0:0"
+	Option      "DRI" "3"
+EndSection
+
+
+# Screen definitions.
+Section "Screen" # DP-3
+	Identifier    "Screen0"
+	Device        "Device0"
+  Monitor       "LG ULTRAGEAR"
+	DefaultDepth   24
+
+  # Metadata. `xrandr -q`
+  Option        "metamodes" "DP-3: 2560x1440 +1440+658"
+
+	SubSection   "Display"
+		Depth 24
+	EndSubSection
+EndSection
+
+Section "Screen" # DP-4
+	Identifier   "Screen1"
+	Device       "Device1"
+  Monitor      "LG HDR QHD"
+	DefaultDepth  24
+
+  # Metadata. `xrandr -q`
+  Option        "metamodes" "DP-4: 1440x2560 +0+0 left"
+
+	SubSection   "Display"
+		Depth 24
+	EndSubSection
+EndSection
+
+Section "Screen" # DP-2
+	Identifier   "Screen2"
+	Device       "Device2"
+  Monitor      "PA278QV"
+	DefaultDepth  24
+
+  # Metadata. `xrandr -q`
+  Option        "metamodes" "DP-2: 2560x1440 +4000+658"
+
+	SubSection   "Display"
+		Depth 24
+	EndSubSection
+EndSection

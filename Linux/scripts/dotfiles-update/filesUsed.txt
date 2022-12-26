@@ -1,27 +1,42 @@
-documents/notes
-documents/code/go/01-Mini-Programs/CPU_Usage
-documents/code/go/01-Mini-Programs/VolumeInfo
-documents/code/go/01-Mini-Programs/CPU_Temp
-scripts/Audio
-scripts/batteryCheck
-scripts/Brightness
+# This file contains tracked files relative to the user's home directory.
+# Comments & newlines are obv. ignored.
+
+# Notes.
+notes/Linux
+
+# Scripts.
+scripts/dotfiles-update/script.sh
 scripts/dmenu-emoji
-scripts/dotfiles-update
-scripts/compressPDF.sh
-scripts/keepass-shortcuts
+scripts/dmenu-help
+scripts/dmenu-apps
+scripts/dmenu-window
+scripts/theme-switch
+scripts/pacman
+scripts/gnome
+scripts/kde
 scripts/runtime
-scripts/lockscreen.sh
+scripts/cli-commands
+scripts/compressPDF.sh
 scripts/spotify
-.zshrc
-.vimrc
-.Xmodmap
-.Xresources
-.config/picom
-.config/gtk-3.0/gtk.css
-.config/i3
-.config/polybar
-.config/rofi
-.config/lf
-.config/termite
-.config/dunst
+scripts/launch-ascii
+
+# Themes.
 .oh-my-zsh/themes/robbyrussell-mod.zsh-theme
+.config/alacritty
+.config/termite
+.config/fontconfig
+
+# Configs.
+.zshrc
+.tmux.conf
+.config/i3/config:.config/i3-ArchProductive/config
+.config/polybar/config.ini:.config/polybar-ArchProductive/config.ini
+.config/dunst/dunstrc
+.config/vis
+
+# Neovim configs, ignoring auto-populated autoload directory.
+.config/nvim/*.vim
+.config/nvim/*.json
+.config/nvim/general
+.config/nvim/plug-config
+.config/nvim/plugins
