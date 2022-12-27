@@ -5,8 +5,8 @@
 # Get Current Directory Full Path
 CURR_DIR=`dirname $0`
 
-# Must have xclip installed to even show menu.
-echo -n | xclip -sel clipboard || exit
+# Must have wl-copy installed to even show menu.
+echo -n | wl-copy || exit
 
 chosen=$(grep -v "#" ~/scripts/dmenu-emoji/emoji-list | rofi -dmenu -p "Emoji" \
 	-theme "$CURR_DIR/Theme.rasi" \
@@ -19,6 +19,6 @@ chosen=$(grep -v "#" ~/scripts/dmenu-emoji/emoji-list | rofi -dmenu -p "Emoji" \
 [ "$chosen" != "" ] || exit
 
 c=$(echo "$chosen" | sed "s/ .*//")
-echo "$c" | tr -d '\n' | xclip -selection clipboard
+echo "$c" | tr -d '\n' | wl-copy
 notify-send -a "Emoji Menu" "'$c' copied to clipboard." -i "$CURR_DIR/pericles.png" &
 
