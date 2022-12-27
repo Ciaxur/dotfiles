@@ -15,26 +15,38 @@ function gflog() {
 # Enables/Disables Nightmode
 # Parameters are on/off
 nightmode() {
+  # Add support for wayland.
+  CMD="redshift"
+  if [[ $XDG_BACKEND = "wayland" ]]; then
+    CMD="gammastep"
+  fi
 
-    if [ "$1" = "-h" ]; then
-        echo "Parameters: [on/off] to trigger nightmode"
+  if [ "$1" = "-h" ]; then
+    echo "Parameters: [on/off] to trigger nightmode or integer value to set temperature."
+  elif [ "$1" = "off" ]; then
+    $(${CMD} -x        &>/dev/null)&
+    pkill $CMD
+    echo "Turning off Nightmode"
 
-    elif [ "$1" = "off" ]; then
-        redshift -x        &>/dev/null
-        echo "Turning off Nightmode"
+  # Actual Value to set (Checks if Integer)
+  elif [ $1 -eq $1 2>/dev/null ] && [ ! -z "$1" ]; then
+    # Reset tempreature & kill background process.
+    $(${CMD} -x        &>/dev/null)&
+    pkill $CMD
 
-    # Actual Value to set Redshift (Checks if Integer)
-    elif [ $1 -eq $1 2>/dev/null ] && [ ! -z "$1" ]; then
-        redshift -x        &>/dev/null
-        redshift -O $1     &>/dev/null
+    $(nohup ${CMD} -O $1     &>/dev/null)&
+    disown
 
-        echo "Setting Nightmode to $1"
-    else
-        redshift -x        &>/dev/null
-        redshift -O 3000   &>/dev/null
+    echo "Setting Nightmode to $1"
+  else
+    $(${CMD} -x        &>/dev/null)&
+    pkill $CMD
 
-        echo "Setting Nightmode to '3000'"
-    fi
+    $(nohup ${CMD} -O 3000   &>/dev/null)&
+    disown
+
+    echo "Setting Nightmode to '3000'"
+  fi
 
 }
 

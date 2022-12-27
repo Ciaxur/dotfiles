@@ -32,9 +32,7 @@ alias dw="py ~/documents/git-clones/downloader-cli/download.py"
 alias fm='lfcd'
 
 # Alias for Copying over Text by piping
-#alias copy="tr -d '\n' | xclip -selection clipboard"
-alias copy="xclip -selection clipboard"
-alias copy-image="xclip -se c -t image/png -i"
+alias copy="wl-copy"
 
 # Fun Aliases
 alias 🍺="git checkout drunk 2>/dev/null || git checkout -b drunk"
