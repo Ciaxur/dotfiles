@@ -4,9 +4,9 @@
 # ICON VARIABLES #
 #  kcharselect   #
 ##################
-WIFI_I=''
-ETH_I=''
-AIRPLAINE_I='✈'
+WIFI_I=''
+ETH_I=''
+AIRPLAINE_I=''
 
 
 # Obtain Connection Information
