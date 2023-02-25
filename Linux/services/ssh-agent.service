@@ -5,6 +5,9 @@ Description=SSH key agent
 Type=simple
 Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
 ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
+KillMode=process
+Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=default.target
