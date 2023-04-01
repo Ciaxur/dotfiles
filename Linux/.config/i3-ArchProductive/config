@@ -12,6 +12,8 @@
 #
 # Running `xmodmap` will display Mod Keys
 
+# Pre-init: Configure xrandr.
+exec_always --no-startup-id ~/.config/i3/xrandr.layout.sh
 
 # Border Configuration
 #new_window normal
@@ -137,14 +139,14 @@ mode "resize" {
     bindsym Left  resize shrink width  5px
     bindsym Down  resize grow   height 5px
     bindsym Up    resize shrink height 5px
- 
-    # Fast Resizing 
+
+    # Fast Resizing
     bindsym Shift+Right resize grow   width  40px
     bindsym Shift+Left  resize shrink width  40px
     bindsym Shift+Down  resize grow   height 40px
     bindsym Shift+Up    resize shrink height 40px
 
-    # Extra-Fast Resizing 
+    # Extra-Fast Resizing
     bindsym Shift+$ctrl+Right   resize  grow   width     100px
     bindsym Shift+$ctrl+Left    resize  shrink width     100px
     bindsym Shift+$ctrl+Down    resize  grow   height    100px
@@ -159,8 +161,8 @@ mode "resize" {
     bindsym 4 resize set 640px  800px
     bindsym 5 resize set 720px  900px
     bindsym 6 resize set 720px  1000px
-    
-    
+
+
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -173,7 +175,7 @@ mode "i3-gap-resize" {
     # Inner Gap Change
     bindsym plus            gaps inner current  plus     5
     bindsym minus           gaps inner current  minus    5
-    
+
     # Outer Gap Change
     bindsym Shift+plus      gaps outer current  plus     5
     bindsym Shift+minus     gaps outer current  minus    5
@@ -199,7 +201,7 @@ mode "i3-gap-resize" {
     bindsym 2               "gaps outer current set 20; gaps inner current set 20"
     bindsym 3               "gaps outer current set 30; gaps inner current set 10"
     bindsym 4               "gaps outer current set 30; gaps inner current set 40"
-    
+
 
 
     # Reset Gap Values
@@ -252,8 +254,9 @@ bindsym $mod+F11            exec playerctl previous -p spotify || exec playerctl
 
 
 # Locking Screen
-bindsym $mod+l exec ~/scripts/lockscreen.sh 
+bindsym $mod+l exec ~/scripts/lockscreen.sh
 
+# Application menu.
 bindsym $mod+space exec --no-startup-id ~/scripts/dmenu-apps/dmenu-app.sh
 
 # Launch Emoji Menu

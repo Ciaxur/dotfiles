@@ -59,7 +59,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 # Configure Pager ; RegExp Search
 #export PAGER="most -r"
 
-# Load Sources
+# Load Sources 
 source ~/scripts/runtime/functions.sh
 source ~/scripts/runtime/aliases.sh
 source ~/scripts/runtime/keybinds.sh
@@ -102,9 +102,8 @@ eval "$(jump shell)"
 # Keychain
 source ~/.keychain/"$(uname -n)-sh"
 
-# fnm
-export PATH=/home/omar/.fnm:$PATH
-eval "`fnm env`"
+# ngrok
+source <(ngrok completion zsh)
 
 # tabtab source for packages
 # uninstall by removing these lines

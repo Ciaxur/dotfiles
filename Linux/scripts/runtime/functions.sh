@@ -129,10 +129,17 @@ function whatsmyip() {
 
 
 function wttr() {
+  URI="https://wttr.in"
+
+  if [[ "$1" == "help" ]]; then
+    1=":help"
+  fi
+  
+
   # wttr is a cool weather project:
   # This func serves as a mini-alias for quick weather requests.
   # By default, use these default options.
-  URL="wttr.in/${1:=?0&m}"
-  curl $URL
+  URL="${URI}/${1:=?0&m}"
+  curl -s $URL
 }
 

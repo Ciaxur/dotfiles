@@ -14,6 +14,7 @@ alias sudo='sudo -p "Password for $USER:🔑"'
 alias yay='paru'
 alias nmutt='neomutt'
 alias tn='timed-notify'
+alias handbrake='ghb'
 
 # Bat Aliases
 alias bat="bat --style=snip"
