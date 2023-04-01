@@ -9,14 +9,26 @@ BKG_LIGHT=~/Pictures/Background-Light     # Actual Path to Light-Themed Backgrou
 BKG_DARK=~/Pictures/Background-Dark       #  Actual Path to Dark-Themed Backgrounds
 
 
+# Helper function for explicitly setting GTK interface's theme.
+function set_gtk_theme() {
+  SETTINGS_FILEPATH=$1; shift
+  gsettings set org.gnome.desktop.interface gtk-theme \
+    $(cat "$SETTINGS_FILEPATH" | rg -o "gtk-theme-name=(.*)$" --replace='$1')
+}
+
+
 if [ "$1" = "" ] || [ "$1" == "--help" ]; then  # Empty Input or help argument
     echo "Enter [dark, light, grey, tokyo-dark] as an option for command [OPTIONS]"
 
 elif [ "$1" = "tokyo-dark" ]; then            # Tokyo Dark Mode (Alacritty Only)
     echo "Activating Tokyo Dark Mode"
 
-    # Copy GTK Theme
+    # Copy GTK Themes
     cp $DIR/gtk-configs/settings-dark.ini ~/.config/gtk-3.0/settings.ini
+    cp $DIR/gtk-4-configs/settings-dark.ini ~/.config/gtk-4.0/settings.ini
+
+    # Set theme through GTK settings.
+    set_gtk_theme $DIR/gtk-4-configs/settings-dark.ini
 
     # Copy Alacritty Config
     cp $DIR/alacritty-configs/alacritty-tokyo-dark.yml ~/.config/alacritty/alacritty.yml
@@ -31,8 +43,12 @@ elif [ "$1" = "tokyo-dark" ]; then            # Tokyo Dark Mode (Alacritty Only)
 elif [ "$1" = "dark" ]; then            # Dark Mode
     echo "Activating Dark Mode"
 
-    # Copy GTK Theme
+    # Copy GTK Themes
     cp $DIR/gtk-configs/settings-dark.ini ~/.config/gtk-3.0/settings.ini
+    cp $DIR/gtk-4-configs/settings-dark.ini ~/.config/gtk-4.0/settings.ini
+
+    # Set theme through GTK settings.
+    set_gtk_theme $DIR/gtk-4-configs/settings-dark.ini
 
     # Copy Termite Theme
     cp $DIR/termite-configs/dark.config ~/.config/termite/config
@@ -50,8 +66,12 @@ elif [ "$1" = "dark" ]; then            # Dark Mode
 elif [ "$1" = "light" ]; then           # Light Mode
     echo "Activating Light Mode"
 
-    # Copy GTK Theme
+    # Copy GTK Themes
     cp $DIR/gtk-configs/settings-light.ini ~/.config/gtk-3.0/settings.ini
+    cp $DIR/gtk-4-configs/settings-light.ini ~/.config/gtk-4.0/settings.ini
+
+    # Set theme through GTK settings.
+    set_gtk_theme $DIR/gtk-4-configs/settings-light.ini
 
     # Copy Termite Theme
     cp $DIR/termite-configs/light.config ~/.config/termite/config
@@ -69,8 +89,12 @@ elif [ "$1" = "light" ]; then           # Light Mode
 elif [ "$1" = "grey" ]; then            # Grey Mode
     echo "Activating Grey Mode"
 
-    # Copy GTK Theme
+    # Copy GTK Themes
     cp $DIR/gtk-configs/settings-grey.ini ~/.config/gtk-3.0/settings.ini
+    cp $DIR/gtk-4-configs/settings-grey.ini ~/.config/gtk-4.0/settings.ini
+
+    # Set theme through GTK settings.
+    set_gtk_theme $DIR/gtk-4-configs/settings-grey.ini
 
     # Copy Termite Theme
     cp $DIR/termite-configs/grey.config ~/.config/termite/config
