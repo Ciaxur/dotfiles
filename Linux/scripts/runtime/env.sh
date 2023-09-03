@@ -14,3 +14,4 @@ export RUBY_PATH="/home/omar/.gem/ruby/2.7.0"
 
 # Export Path
 export PATH="$RUBY_PATH/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"

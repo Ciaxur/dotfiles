@@ -42,6 +42,7 @@ alias set-theme='~/scripts/theme-switch/script.sh'
 alias glog="git log --oneline --decorate --graph --pretty=format:'%C(auto)%h%d %s (%cn - %cr)'"
 alias coin-gecko='~/scripts/crypto/coin-gecko.sh'
 alias hostname-print='~/scripts/ascii-art/launch-owl.sh'
+alias worldtime="~/scripts/worldtime.sh"
 
 # Life Satisfying Aliases (Easy update, thanks to Zaki)
 alias yay-update="(yay -Syu --noconfirm && notify-send Yay-update\ Succesfful) || notify-send Failed\ Update"
