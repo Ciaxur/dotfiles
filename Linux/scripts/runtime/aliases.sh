@@ -17,7 +17,6 @@ alias tn='timed-notify'
 alias handbrake='ghb'
 
 # Bat Aliases
-alias bat="bat --style=snip"
 alias batman="bat --language=man"
 
 # Aliases Based on Scripts
@@ -32,8 +31,8 @@ alias dw="py ~/documents/git-clones/downloader-cli/download.py"
 #  sourced before this :)
 alias fm='lfcd'
 
-# Alias for Copying over Text by piping
-alias copy="wl-copy"
+# Alias for Copying over Text by piping and trimming newline
+alias copy="wl-copy -n"
 
 # Fun Aliases
 alias 🍺="git checkout drunk 2>/dev/null || git checkout -b drunk"
