@@ -18,5 +18,4 @@ export PATH="$RUBY_PATH/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # GUI Themes
-## https://archlinux.org/packages/extra/x86_64/kvantum
 export QT_STYLE_OVERRIDE=Oxygen
