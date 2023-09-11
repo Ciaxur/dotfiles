@@ -1,13 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 8, // Waybar height (to be removed for auto height)
+    "height": 24,  // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width (blank for dynamic value)
     "spacing": 4, // Gaps between modules (4px)
     "output": ["DP-1"],
 
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "custom/spotify-script", "hyprland/submap"],
+    "modules-left": ["hyprland/workspaces", "custom/spotify-script", "hyprland/submap"],
     "modules-center": ["clock"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "custom/internet-conx", "cpu", "memory", "temperature", "tray"],
 
@@ -18,8 +18,9 @@
     },
 
     // https://man.archlinux.org/man/waybar-wlr-workspaces.5.en
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "all-outputs": true,
+        "active_only": true,
         "sort-by-number": true
     },
     "idle_inhibitor": {
