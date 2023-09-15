@@ -8,7 +8,7 @@ export SUDO_ASKPASS=/usr/lib/ssh/ssh-askpass
 export BAT_CONFIG_PATH=~/.config/bat/bat.conf
 
 # Set terminal options.
-if [[ -e $TMUX ]]; then
+if [ -e $TMUX ]; then
   export TERM=rxvt-256color
 else
   export TERM=tmux-256color
