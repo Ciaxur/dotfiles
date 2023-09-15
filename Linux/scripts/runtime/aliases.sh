@@ -15,6 +15,7 @@ alias yay='paru'
 alias nmutt='neomutt'
 alias tn='timed-notify'
 alias handbrake='ghb'
+alias clear_trailing_whitespace="sed -i 's/[[:space:]]$//'"
 
 # Bat Aliases
 alias batman="bat --language=man"
