@@ -1,13 +1,18 @@
 # Environment Variables
 export EDITOR=nvim
 export GOPATH=~/Documents/go
-export TERM=rxvt-256color
-#export TERM=screen-256color
 export LESS='--mouse -RX'
 export ANDROID_SDK=~/Documents/Android/Sdk
 export SSH_AUTH_SOCK="/run/user/1000/ssh-agent.socket"
 export SUDO_ASKPASS=/usr/lib/ssh/ssh-askpass
 export BAT_CONFIG_PATH=~/.config/bat/bat.conf
+
+# Set terminal options.
+if [[ -e $TMUX ]]; then
+  export TERM=rxvt-256color
+else
+  export TERM=tmux-256color
+fi
 
 
 # Ruby Path
