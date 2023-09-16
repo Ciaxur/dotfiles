@@ -18,6 +18,21 @@ if [ "$(hyprctl activewindow -j | jq .floating)" == true ]; then
   echo "Moving floating window  $FLOATING_DIRECTION_X   $FLOATING_DIRECTION_Y"
   hyprctl dispatch moveactive  "$FLOATING_DIRECTION_X" "$FLOATING_DIRECTION_Y"
 else
+  # Grab the grouped state of the current window.
+  ACTIVE_WINDOW_GROUPS_LEN=$(hyprctl activewindow -j | jq .grouped | jq 'length')
+
+  # Move active window within the group.
+  if [ "$ACTIVE_WINDOW_GROUPS_LEN" != 0 ]; then
+    echo "Moving group window $TILED_DIRECTION"
+    if [ "$TILED_DIRECTION" == "r" ]; then
+      hyprctl dispatch movegroupwindow n
+    else
+      hyprctl dispatch movegroupwindow b
+    fi
+    exit 0
+  fi
+
+  # Move the tiled window.
   echo "Moving tiled window    $TILED_DIRECTION"
   hyprctl dispatch movewindow "$TILED_DIRECTION"
 fi
