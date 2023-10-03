@@ -87,34 +87,51 @@ function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
 # Creates a Temporary Directory in /tmp and cd's into it
 #  storing the directory path into variable "CDTMP"
 function cdtemp() {
+  # Option variables.
+  TEMPFS_SIZE="512M"
 
   # Handle Paramters
-  # PRINT HELP
+  # Print help
   if [ "$1" = "-h" ]; then
     printf "cdtemp\n"
     printf "Creates a Temporary Directory and CD's into it\n"
     printf "Temporary Direcory stored under variable: $$CDTTEMP\n"
 
-     printf "\nUSAGE:\n"
+    printf "\nUSAGE:\n"
     printf "  cdtemp [OPTIONS]\n"
 
     printf "\nOPTIONS:\n"
     printf "  -h \t\t Prints help information\n"
     printf "  -r \t\t Removes CDTEMP directory created (if any)\n"
+    printf "  --tempfs \t Creates a tempfs directory\n"
 
-
-  # REMOVE CDTEMP
+  # Remove temporary directory
   elif [ "$1" = "-r" ]; then
-
     if [ "$CDTEMP" != "" ]; then
+
+      # Check if temp direcotry is a tempfs mount.
+      if [ "$(mount | grep -E "$CDTEMP.*tmpfs")" ]; then
+        # change the current directory since resource would be busy.
+        cd /tmp
+        echo "Unmounting tempfs..."
+        sudo umount "$CDTEMP"
+      fi
+
       printf "Removing Temporary Directory $CDTEMP...\n"
-      rm -rf $CDTEMP
+      rm -rf $CDTEMP || return
       unset CDTEMP
     else
       printf "No CDTEMP created to remove\n"
     fi
 
-  # CREATE AND CD INTO TEMP DIRECTORY
+  # Create a tempfs temporary directory.
+  elif [ "$1" = "--tempfs" ]; then
+    export CDTEMP=$(mktemp -d)
+    echo "Mounting tempfs(size=$TEMPFS_SIZE) on '$CDTEMP'..."
+    sudo mount -t tmpfs -o size=$TEMPFS_SIZE tempfs "$CDTEMP"
+    cd $CDTEMP
+
+  # Create and cd into that temp directory.
   else
     export CDTEMP=$(mktemp -d)
     cd $CDTEMP
