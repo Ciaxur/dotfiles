@@ -76,5 +76,32 @@
     {
         "key": "ctrl+shift+/",
         "command": "editor.action.blockComment"
-    }
+    },
+    {
+        "key": "alt+q",
+        "command": "workbench.action.quit"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quit"
+    },
+    {
+        "key": "shift+alt+e",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "deleteAllRight",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+k =",
+        "command": "workbench.action.toggleEditorWidths"
+    },
 ]
