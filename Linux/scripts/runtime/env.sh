@@ -3,7 +3,7 @@ export EDITOR=nvim
 export GOPATH=~/Documents/go
 export LESS='--mouse -RX'
 export ANDROID_SDK=~/Documents/Android/Sdk
-export SSH_AUTH_SOCK="/run/user/1000/ssh-agent.socket"
+export SSH_AUTH_SOCK="/run/user/$UID/ssh-agent.socket"
 export SUDO_ASKPASS=/usr/lib/ssh/ssh-askpass
 export BAT_CONFIG_PATH=~/.config/bat/bat.conf
 
