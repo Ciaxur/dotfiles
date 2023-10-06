@@ -1,0 +1,90 @@
+[global]
+    # Notification Focus
+    monitor = 0
+    follow = mouse
+
+    # Text on Notification
+    font = SF Compact Display 10
+    line_height = 4
+    alignment = center
+    vertical_alignment = center
+
+    # The format of the message.  Possible variables are:
+    #   %a  appname
+    #   %s  summary
+    #   %b  body
+    #   %i  iconname (including its path)
+    #   %I  iconname (without its path)
+    #   %p  progress value if set ([  0%] to [100%]) or nothing
+    #   %n  progress value if set without any extra characters
+    #   %%  Literal %
+    markup = full
+    word_wrap = yes
+
+
+    # Window Geometry
+    #   [{width}]x{height}[+/-{x}+/-{y}]
+    #geometry = "320x10-10+30"
+    width=350
+    height=320
+    offset=5x5
+
+    padding = 20
+    horizontal_padding = 8
+
+    # Window Style
+    transparency = 10
+    frame_width = 0
+
+    separator_height = 1
+    separator_color = frame
+    indicate_hidden = yes
+    shrink = no
+
+    idle_threshold = 120
+    show_age_threshold = 60
+
+    ignore_newline = no
+    stack_duplicates = false
+    hide_duplicate_count = yes
+    
+    # Display indicators for URLs (U) and actions (A).
+    show_indicators = yes
+
+    sticky_history = yes
+    history_length = 20
+    browser = /usr/bin/chromium
+    always_run_script = true
+
+    # Define Window if spawned by dunst
+    title = Dunst
+    class = Dunst
+
+    # Icons
+    icon_path = /usr/share/icons/Adwaita/32x32/legacy/
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 64
+    
+
+    # Sort by Urgency
+    sort = no
+
+[urgency_low]
+    timeout = 4
+    background = "#526270"
+    foreground = "#E2CCA6"
+    frame_color = "#000000"
+
+
+[urgency_normal]
+    timeout = 8
+    background = "#526270"
+    foreground = "#E2CCA6"
+    frame_color = "#000000"
+
+[urgency_critical]
+    timeout = 0
+    background = "#CB2755"
+    foreground = "#000000"
+    frame_color = "#000000"

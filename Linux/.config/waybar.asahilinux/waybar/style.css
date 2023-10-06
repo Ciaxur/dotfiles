@@ -1,0 +1,118 @@
+@import "mocha.css";
+* {
+  font-family: SF UI Display;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+window#waybar {
+  transition-property: background;
+  transition-duration: 0.5s;
+  background-color: rgba(69, 69, 92, 0.2);
+}
+
+
+#workspaces,
+#mode,
+#clock,
+#language,
+#pulseaudio,
+#network,
+#temperature,
+#window,
+#cpu,
+#memory,
+#idle_inhibitor,
+#custom-internet-conx,
+#custom-spotify-script,
+#disk {
+  padding: 0px 2px;
+  margin: 0px 10px 0px 2px;
+  border-radius: 40px;
+  background-clip: padding-box;
+}
+
+#tray {
+  padding: 2px;
+  margin: 0px 4px 4px 0px;
+}
+
+#custom-sep {
+  padding: 0px;
+  color: @surface0;
+}
+
+#workspaces button {
+  padding: 0 0px;
+  min-width: 20px;
+  color: @text;
+}
+
+#workspaces button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.active {
+  color: @blue;
+}
+
+#workspaces button.urgent {
+  color: @red;
+}
+
+#idle_inhibitor {
+    color: bisque;
+    font-size: 15px;
+}
+
+#cpu {
+  color: @teal;
+}
+
+#temperature,
+#memory {
+  color: @mauve;
+}
+
+#network,
+#backlight,
+#clock {
+  color: @blue;
+}
+
+#mode {
+  color: @red;
+}
+
+#window {
+  color: @text;
+}
+
+#battery,
+#language {
+  color: @teal;
+}
+
+
+#pulseaudio {
+  color: @lavender;
+}
+
+
+#pulseaudio.muted {
+  color: @subtext0;
+}
+
+#custom-spotify-script,
+#custom-internet-conx {
+    font-family: SF UI Display;
+    color: @lavender;
+    padding: 5px;
+}
+
+@keyframes blink {
+  to {
+    background-color: @surface0;
+    color: @red;
+  }
+}
