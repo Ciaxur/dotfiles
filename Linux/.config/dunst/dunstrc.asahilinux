@@ -25,12 +25,12 @@
     # Window Geometry
     #   [{width}]x{height}[+/-{x}+/-{y}]
     #geometry = "320x10-10+30"
-    width=350
-    height=320
+    width=450
+    height=350
     offset=5x5
 
     padding = 20
-    horizontal_padding = 8
+    horizontal_padding = 10
 
     # Window Style
     transparency = 10
@@ -64,7 +64,7 @@
     icon_path = /usr/share/icons/Adwaita/32x32/legacy/
     icon_position = left
     min_icon_size = 0
-    max_icon_size = 64
+    max_icon_size = 128
     
 
     # Sort by Urgency
