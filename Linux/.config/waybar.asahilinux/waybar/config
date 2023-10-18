@@ -114,9 +114,9 @@
         "format": "{}",
         "interval": 1,
         "escape": true,
-        "on-click": "playerctl play-pause -p spotify",
-        "on-scroll-up": "playerctl next -p spotify",
-        "on-scroll-down": "playerctl previous -p spotify",
+        "on-click": "playerctl play-pause -p spotifyd",
+        "on-scroll-up": "playerctl next -p spotifyd",
+        "on-scroll-down": "playerctl previous -p spotifyd",
         "exec": "$HOME/.config/waybar/scripts/getCurrentPlayingSong.sh 2> /dev/null"
     }
 }
