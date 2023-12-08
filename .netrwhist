@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/omar/Documents/dev/RESTful-Notify.api/src'
+let g:netrw_dirhist_5='/home/omar/.config/termite/termite-style'
+let g:netrw_dirhist_4='/home/omar/Documents/dev/oomar-den.cc/oomar-den.server/src'
+let g:netrw_dirhist_3='/home/omar/.config/polybar'
+let g:netrw_dirhist_2='/home/omar/.config/nvim'
+let g:netrw_dirhist_1='/home/omar/.config/nvim/plug-config'
