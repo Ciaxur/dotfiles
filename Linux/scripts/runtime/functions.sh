@@ -1,5 +1,9 @@
 #!/bin/sh
 
+SCRIPT_DIR=$(dirname $0)
+
+# Source functions from other files.
+alias wttr=$SCRIPT_DIR/functions/wttr.sh
 
 # Docker Mini-function/aliases based on https://github.com/devemio/docker-color-output too
 function di { docker images $@ | dco }
@@ -144,19 +148,4 @@ function whatsmyip() {
   printf "My Public IP is $IP\n";
 }
 
-
-function wttr() {
-  URI="https://wttr.in"
-
-  if [[ "$1" == "help" ]]; then
-    1=":help"
-  fi
-  
-
-  # wttr is a cool weather project:
-  # This func serves as a mini-alias for quick weather requests.
-  # By default, use these default options.
-  URL="${URI}/${1:=?0&m}"
-  curl -s $URL
-}
 
