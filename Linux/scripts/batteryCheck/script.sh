@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Temporary Dump
 tempFile="/tmp/bat-dump-temp.dump"
