@@ -51,9 +51,6 @@ opt.undofile = true
 opt.backup = false
 opt.writebackup = false
 
--- Folding
-opt.foldmethod = 'indent'
-
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
 
