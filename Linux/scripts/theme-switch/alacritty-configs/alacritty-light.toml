@@ -1,0 +1,79 @@
+# DDE1E5
+# https://github.com/alacritty/alacritty/wiki/Color-schemes
+# Colors (Arogonaut Modified)
+[colors.bright]
+black = "#6D7070"
+blue = "#0099FF"
+cyan = "#1A5276"
+green = "#FF5733"
+magenta = "#BA78EA"
+red = "#FF4352"
+white = "#363636"
+yellow = "#1A5276"
+
+[colors.cursor]
+cursor = "#005f87"
+text = "#FF261E"
+
+[colors.normal]
+black = "#202020"
+blue = "#0087AF"
+cyan = "#37CBE3"
+green = "#148F77"
+magenta = "#A963B8"
+red = "#FF5733"
+white = "#666666"
+yellow = "#229954"
+
+[colors.primary]
+background = "#DDE1E5"
+foreground = "#4C5B62"
+
+[cursor]
+style = "Beam"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 8.0
+
+[font.bold]
+family = "SF Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "SF Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "SF Mono"
+style = "Italic"
+
+[font.normal]
+family = "SF Mono"
+style = "Semibold"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "Up"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "Down"
+mods = "Shift"
+
+[scrolling]
+history = 10000
+
+[window]
+title = "Alacritty"
+
+[window.dimensions]
+columns = 108
+lines = 35
+
+[window.padding]
+x = 15
+y = 15

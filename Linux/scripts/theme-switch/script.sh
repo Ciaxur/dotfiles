@@ -31,7 +31,7 @@ elif [ "$1" = "tokyo-dark" ]; then            # Tokyo Dark Mode (Alacritty Only)
     set_gtk_theme $DIR/gtk-4-configs/settings-dark.ini
 
     # Copy Alacritty Config
-    cp $DIR/alacritty-configs/alacritty-tokyo-dark.yml ~/.config/alacritty/alacritty.yml
+    cp $DIR/alacritty-configs/alacritty-tokyo-dark.toml ~/.config/alacritty/alacritty.toml
 
     # Copy vimrc Config
     cp $DIR/vimrc-configs/config-dark ~/.vimrc
@@ -57,7 +57,7 @@ elif [ "$1" = "dark" ]; then            # Dark Mode
     cp $DIR/vimrc-configs/config-dark ~/.vimrc
 
     # Copy Alacritty Config
-    cp $DIR/alacritty-configs/alacritty-dark.yml ~/.config/alacritty/alacritty.yml
+    cp $DIR/alacritty-configs/alacritty-dark.toml ~/.config/alacritty/alacritty.toml
 
     # Add Symbolic Link for Dark Theme
     rm $BKG_OUT
@@ -80,7 +80,7 @@ elif [ "$1" = "light" ]; then           # Light Mode
     cp $DIR/vimrc-configs/config-light ~/.vimrc
 
     # Copy Alacritty Config
-    cp $DIR/alacritty-configs/alacritty-light.yml ~/.config/alacritty/alacritty.yml
+    cp $DIR/alacritty-configs/alacritty-light.toml ~/.config/alacritty/alacritty.toml
 
     # Add Symbolic Link for Light Theme
     rm $BKG_OUT
@@ -100,6 +100,6 @@ elif [ "$1" = "grey" ]; then            # Grey Mode
     cp $DIR/termite-configs/grey.config ~/.config/termite/config
 
     # Copy Alacritty Config
-    cp $DIR/alacritty-configs/alacritty-grey.yml ~/.config/alacritty/alacritty.yml
+    cp $DIR/alacritty-configs/alacritty-grey.toml ~/.config/alacritty/alacritty.toml
 
 fi

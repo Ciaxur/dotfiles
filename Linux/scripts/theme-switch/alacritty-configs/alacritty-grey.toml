@@ -1,0 +1,75 @@
+# DDE1E5
+# https://github.com/alacritty/alacritty/wiki/Color-schemes
+# Colors (Nord)
+[colors.bright]
+black = "#4C566A"
+blue = "#81A1C1"
+cyan = "#8FBCBB"
+green = "#A3BE8C"
+magenta = "#B48EAD"
+red = "#BF616A"
+white = "#ECEFF4"
+yellow = "#EBCB8B"
+
+[colors.normal]
+black = "#3B4252"
+blue = "#81A1C1"
+cyan = "#88C0D0"
+green = "#A3BE8C"
+magenta = "#B48EAD"
+red = "#BF616A"
+white = "#E5E9F0"
+yellow = "#EBCB8B"
+
+[colors.primary]
+background = "#2E3440"
+foreground = "#D8DEE9"
+
+[cursor]
+style = "Beam"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 8.0
+
+[font.bold]
+family = "SF Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "SF Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "SF Mono"
+style = "Italic"
+
+[font.normal]
+family = "SF Mono"
+style = "Semibold"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "Up"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "Down"
+mods = "Shift"
+
+[scrolling]
+history = 10000
+
+[window]
+title = "Alacritty"
+
+[window.dimensions]
+columns = 108
+lines = 35
+
+[window.padding]
+x = 15
+y = 15
