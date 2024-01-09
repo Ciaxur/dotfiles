@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "One Dark Pro Mix",
+    "workbench.colorTheme": "Tokyo Night Storm",
     "editor.fontFamily": "Fira Code Retina",
     "editor.fontLigatures": true,
     "todohighlight.keywords": [
@@ -125,10 +125,24 @@
     "[xml]": {
         "editor.defaultFormatter": "redhat.vscode-xml"
     },
-    "rust-analyzer.inlayHints.renderColons": false,
-    "rust-analyzer.inlayHints.typeHints.enable": false,
-    "rust-analyzer.inlayHints.parameterHints.enable": false,
-    "rust-analyzer.inlayHints.chainingHints.enable": false,
-    "diffEditor.renderSideBySide": false,
     "editor.codeActionsOnSave": {},
+    "vsc-webshark.sharkdFullPath": "tshark",
+    "arduino.useArduinoCli": true,
+    "diffEditor.renderSideBySide": false,
+
+    // SSH Configs.
+    "remote.SSH.enableAgentForwarding": true,
+    "remote.SSH.useLocalServer": true,
+
+    // Rust configs.
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.renderColons": false,
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.formatOnSave": true
 }
