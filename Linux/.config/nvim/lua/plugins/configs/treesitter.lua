@@ -1,5 +1,5 @@
 local options = {
-  ensure_installed = { "lua" },
+  ensure_installed = { "lua", "python", "c", "cpp", "rust" },
 
   highlight = {
     enable = true,
