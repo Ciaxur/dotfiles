@@ -81,6 +81,16 @@ lspconfig.rust_analyzer.setup {
       capabilities = M.capabilities,
     },
   },
+  cmd = { 'rust-analyzer' },
+  filetypes = { 'rust' },
+  on_attach = function(client)
+    -- Override rust's default spacing.
+    vim.opt.expandtab = true
+    vim.opt.shiftwidth = 2
+    vim.opt.smartindent = true
+    vim.opt.tabstop = 2
+    vim.opt.softtabstop = 2
+  end,
 }
 
 -- Global mappings.
