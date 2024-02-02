@@ -58,6 +58,12 @@ opt.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
 
+-- Folding - https://neovim.io/doc/user/fold.html
+opt.foldmethod = "indent"
+
+-- Unfolded by default
+opt.foldlevel = 99
+
 g.mapleader = " "
 
 -------------------------------------- autocmds ------------------------------------------
