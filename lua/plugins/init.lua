@@ -288,6 +288,19 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
+
+  -- Large file plugin, which disables hungry resources when opening
+  -- large files.
+  {
+    "LunarVim/bigfile.nvim",
+    event = "BufReadPre",
+    opts = {
+      filesize = 2, -- size of file in MiB for which to trigger.
+    },
+    config = function(_, opts)
+      require('bigfile').setup(opts)
+    end,
+  },
 }
 
 local config = require("core.utils").load_config()
