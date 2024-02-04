@@ -77,7 +77,6 @@
     "editor.fontSize": 11,
     "compile-hero.typescriptx-output-toggle": false,
     "compile-hero.typescript-output-toggle": false,
-
     "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 2, ColumnLimit: 120, MaxEmptyLinesToKeep: 3, UseTab: Never, TabWidth: 2, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -2, BreakBeforeBraces: Attach }",
     "C_Cpp.intelliSenseCachePath": "/tmp/.vscode/ipch",
     "latex-workshop.view.pdf.viewer": "tab",
@@ -128,21 +127,18 @@
     "editor.codeActionsOnSave": {},
     "vsc-webshark.sharkdFullPath": "tshark",
     "arduino.useArduinoCli": true,
-    "diffEditor.renderSideBySide": false,
-
     // SSH Configs.
     "remote.SSH.enableAgentForwarding": true,
     "remote.SSH.useLocalServer": true,
-
     // Rust configs.
     "rust-analyzer.inlayHints.typeHints.enable": false,
     "rust-analyzer.inlayHints.renderColons": false,
     "rust-analyzer.inlayHints.parameterHints.enable": false,
-
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer",
         "editor.formatOnSave": true
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": true
 }
