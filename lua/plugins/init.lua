@@ -301,6 +301,13 @@ local default_plugins = {
       require('bigfile').setup(opts)
     end,
   },
+
+  -- Tabular plugin for aligning text on  a given symbol, like an '='
+  -- sign. (:Tab /=)
+  {
+    "godlygeek/tabular",
+    lazy = false,
+  },
 }
 
 local config = require("core.utils").load_config()
