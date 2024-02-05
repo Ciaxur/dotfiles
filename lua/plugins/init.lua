@@ -1,3 +1,14 @@
+-- Deleted plugins.
+-- Coc: https://github.com/neoclide/coc.nvim
+-- NOTE: Disabled to use luasnips
+--  {
+--    "neoclide/coc.nvim",
+--    lazy = false,
+--    branch = "release",
+--    map_cr = false,
+--  },
+
+
 -- All plugins have lazy=true by default, to load a plugin on startup just lazy=false
 -- List of all default plugins & their definitions
 local default_plugins = {
@@ -145,15 +156,6 @@ local default_plugins = {
       vim.g.mason_binaries_list = opts.ensure_installed
     end,
   },
-
-  -- Coc: https://github.com/neoclide/coc.nvim
-  -- NOTE: Disabled to use luasnips
---  {
---    "neoclide/coc.nvim",
---    lazy = false,
---    branch = "release",
---    map_cr = false,
---  },
 
   -- https://github.com/alvan/vim-closetag
   {
@@ -326,6 +328,11 @@ local default_plugins = {
     cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
   },
 
+  -- Whitespaces.
+  {
+    'jdhao/whitespace.nvim',
+    event = "VimEnter",
+  },
 }
 
 local config = require("core.utils").load_config()

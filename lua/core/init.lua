@@ -77,6 +77,13 @@ autocmd("FileType", {
   end,
 })
 
+-- On save pre-hook.
+--  - Trim whitespaces.
+autocmd('BufWritePre', {
+  pattern = '*',
+  command = "execute 'StripTrailingWhitespace'",
+})
+
 -- reload some chadrc options on-save
 autocmd("BufWritePost", {
   pattern = vim.tbl_map(function(path)
