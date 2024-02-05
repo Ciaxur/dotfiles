@@ -307,7 +307,25 @@ local default_plugins = {
   {
     "godlygeek/tabular",
     lazy = false,
+    init = function()
+      require("core.utils").load_mappings "tabular"
+    end,
   },
+
+  -- Multi-cursors plugin.
+  {
+    "smoka7/multicursors.nvim",
+    init = function()
+      require("core.utils").load_mappings "multicursors"
+    end,
+    event = "VeryLazy",
+    dependencies = {
+      "smoka7/hydra.nvim"
+    },
+    opts = {},
+    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+  },
+
 }
 
 local config = require("core.utils").load_config()
