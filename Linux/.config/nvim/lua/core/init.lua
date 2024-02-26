@@ -58,6 +58,12 @@ opt.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
 
+-- Folding - https://neovim.io/doc/user/fold.html
+opt.foldmethod = "indent"
+
+-- Unfolded by default
+opt.foldlevel = 99
+
 g.mapleader = " "
 
 -------------------------------------- autocmds ------------------------------------------
@@ -69,6 +75,13 @@ autocmd("FileType", {
   callback = function()
     vim.opt_local.buflisted = false
   end,
+})
+
+-- On save pre-hook.
+--  - Trim whitespaces.
+autocmd('BufWritePre', {
+  pattern = '*',
+  command = "execute 'StripTrailingWhitespace'",
 })
 
 -- reload some chadrc options on-save

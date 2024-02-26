@@ -18,10 +18,10 @@ M.general = {
   n = {
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows
-    ["<C-h>"] = { "<C-w>h", "Window left" },
-    ["<C-l>"] = { "<C-w>l", "Window right" },
-    ["<C-j>"] = { "<C-w>j", "Window down" },
-    ["<C-k>"] = { "<C-w>k", "Window up" },
+    ["<C-Left>"]  = { "<C-w>h", "Window left" },
+    ["<C-Right>"] = { "<C-w>l", "Window right" },
+    ["<C-Down>"]  = { "<C-w>j", "Window down" },
+    ["<C-Up>"]    = { "<C-w>k", "Window up" },
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
@@ -269,6 +269,10 @@ M.telescope = {
   plugin = true,
 
   n = {
+    -- Toggle menu
+   ["<leader>t"]   = { '<cmd>Telescope<cr>', 'Opens the Telescope window.' },
+   ["<leader>tc"]      = { '<cmd>Telescope commands<cr>', 'Open Telescope commands window.' },
+
     -- find
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "Find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
@@ -276,7 +280,7 @@ M.telescope = {
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
-    ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
+    ["ggeader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
 
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
@@ -289,6 +293,29 @@ M.telescope = {
     ["<leader>th"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
 
     ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
+  },
+}
+
+M.multicursors = {
+  plugin = true,
+
+  -- Normal mode
+  n = {
+    ['<leader>m'] = { '<cmd>MCstart<cr>', 'Create a selection for selected text or word under the cursor' },
+  },
+
+  -- Visual mode
+  v = {
+    ['<leader>m'] = { '<cmd>MCstart<cr>', 'Create a selection for selected text or word under the cursor' },
+  },
+}
+
+M.tabular = {
+  plugin = true,
+
+  -- Visual mode
+  v = {
+    ['<leader>tf'] = { '<cmd>Tabular /=<cr>', 'Aligned selection on equals character' },
   },
 }
 

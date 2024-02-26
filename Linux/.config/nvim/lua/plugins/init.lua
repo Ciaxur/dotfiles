@@ -1,3 +1,14 @@
+-- Deleted plugins.
+-- Coc: https://github.com/neoclide/coc.nvim
+-- NOTE: Disabled to use luasnips
+--  {
+--    "neoclide/coc.nvim",
+--    lazy = false,
+--    branch = "release",
+--    map_cr = false,
+--  },
+
+
 -- All plugins have lazy=true by default, to load a plugin on startup just lazy=false
 -- List of all default plugins & their definitions
 local default_plugins = {
@@ -146,15 +157,6 @@ local default_plugins = {
     end,
   },
 
-  -- Coc: https://github.com/neoclide/coc.nvim
-  -- NOTE: Disabled to use luasnips
---  {
---    "neoclide/coc.nvim",
---    lazy = false,
---    branch = "release",
---    map_cr = false,
---  },
-
   -- https://github.com/alvan/vim-closetag
   {
     "alvan/vim-closetag",
@@ -287,6 +289,49 @@ local default_plugins = {
       dofile(vim.g.base46_cache .. "whichkey")
       require("which-key").setup(opts)
     end,
+  },
+
+  -- Large file plugin, which disables hungry resources when opening
+  -- large files.
+  {
+    "LunarVim/bigfile.nvim",
+    event = "BufReadPre",
+    opts = {
+      filesize = 2, -- size of file in MiB for which to trigger.
+    },
+    config = function(_, opts)
+      require('bigfile').setup(opts)
+    end,
+  },
+
+  -- Tabular plugin for aligning text on  a given symbol, like an '='
+  -- sign. (:Tab /=)
+  {
+    "godlygeek/tabular",
+    lazy = false,
+    init = function()
+      require("core.utils").load_mappings "tabular"
+    end,
+  },
+
+  -- Multi-cursors plugin.
+  {
+    "smoka7/multicursors.nvim",
+    init = function()
+      require("core.utils").load_mappings "multicursors"
+    end,
+    event = "VeryLazy",
+    dependencies = {
+      "smoka7/hydra.nvim"
+    },
+    opts = {},
+    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+  },
+
+  -- Whitespaces.
+  {
+    'jdhao/whitespace.nvim',
+    event = "VimEnter",
   },
 }
 

@@ -67,9 +67,16 @@ lspconfig.lua_ls.setup {
     },
   },
 }
-
 lspconfig.pyright.setup {
   capabilities = M.capabilities,
+  on_attach = function(client)
+    -- Override default spacing.
+    vim.opt.expandtab = true
+    vim.opt.shiftwidth = 2
+    vim.opt.smartindent = true
+    vim.opt.tabstop = 2
+    vim.opt.softtabstop = 2
+  end,
 }
 lspconfig.tsserver.setup {
   capabilities = M.capabilities,
@@ -81,7 +88,27 @@ lspconfig.rust_analyzer.setup {
       capabilities = M.capabilities,
     },
   },
+  cmd = { 'rust-analyzer' },
+  filetypes = { 'rust' },
+  on_attach = function(client)
+    -- Override rust's default spacing.
+    vim.opt.expandtab = true
+    vim.opt.shiftwidth = 2
+    vim.opt.smartindent = true
+    vim.opt.tabstop = 2
+    vim.opt.softtabstop = 2
+  end,
 }
+lspconfig.clangd.setup {
+  capabilities = M.capabilities,
+  filetypes = { 'cpp', 'c' },
+}
+lspconfig.gopls.setup {
+  capabilities = M.capabilities,
+  filetypes = { 'go' },
+}
+
+
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
