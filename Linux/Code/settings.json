@@ -1,144 +1,146 @@
 {
-    "workbench.colorTheme": "Tokyo Night Storm",
-    "editor.fontFamily": "Fira Code Retina",
-    "editor.fontLigatures": true,
-    "todohighlight.keywords": [
-        {
-            "text": "REVIEW:",
-            "color": "#B233FF",
-            "border": "1px solid #B233FF",
-            "borderRadius": "2px",
-            "backgroundColor": "rgba(0,0,0,.2)"
-        },
-        {
-            "text": "BUG:",
-            "color": "#C70039",
-            "border": "1px solid #C70039",
-            "borderRadius": "2px",
-            "backgroundColor": "rgba(0,0,0,.2)"
-        },
-        {
-            "text": "DEBUG:",
-            "color": "#FF3374",
-            "border": "1px solid #FF3374",
-            "borderRadius": "2px",
-            "backgroundColor": "rgba(0,0,0,.2)"
-        },
-        {
-            "text": "NOTE:",
-            "color": "#FF5B33",
-            "border": "1px solid #FF5B33",
-            "borderRadius": "2px",
-            "backgroundColor": "rgba(0,0,0,.2)"
-        },
-        {
-            "text": "TODO:",
-            "color": "yellow",
-            "border": "1px solid yellow",
-            "borderRadius": "2px",
-            "backgroundColor": "rgba(0,0,0,.2)"
-        },
-        {
-            "text": "TEST:",
-            "color": "#BA4A00",
-            "border": "1px solid #BA4A00",
-            "borderRadius": "2px",
-            "backgroundColor": "rgba(0,0,0,.2)"
-        },
-        {
-            "text": "WIP:",
-            "color": "#00ACC1",
-            "border": "1px solid #00ACC1",
-            "borderRadius": "2px",
-            "backgroundColor": "rgba(0,0,0,.2)"
-        }
-    ],
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "editor.fontFamily": "Fira Code Retina",
+  "editor.fontLigatures": true,
+  "todohighlight.keywords": [
+    {
+      "text": "REVIEW:",
+      "color": "#B233FF",
+      "border": "1px solid #B233FF",
+      "borderRadius": "2px",
+      "backgroundColor": "rgba(0,0,0,.2)"
     },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "text": "BUG:",
+      "color": "#C70039",
+      "border": "1px solid #C70039",
+      "borderRadius": "2px",
+      "backgroundColor": "rgba(0,0,0,.2)"
     },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+    {
+      "text": "DEBUG:",
+      "color": "#FF3374",
+      "border": "1px solid #FF3374",
+      "borderRadius": "2px",
+      "backgroundColor": "rgba(0,0,0,.2)"
     },
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "editor.tabSize": 2,
-    "explorer.openEditors.visible": 0,
-    "go.formatTool": "goimports",
-    "editor.minimap.maxColumn": 80,
-    "terminal.integrated.fontSize": 12,
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+    {
+      "text": "NOTE:",
+      "color": "#FF5B33",
+      "border": "1px solid #FF5B33",
+      "borderRadius": "2px",
+      "backgroundColor": "rgba(0,0,0,.2)"
     },
-    "deno.enable": false,
-    "C_Cpp.updateChannel": "Insiders",
-    "C_Cpp.default.cppStandard": "c++20",
-    "editor.fontSize": 11,
-    "compile-hero.typescriptx-output-toggle": false,
-    "compile-hero.typescript-output-toggle": false,
-    "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 2, ColumnLimit: 120, MaxEmptyLinesToKeep: 3, UseTab: Never, TabWidth: 2, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -2, BreakBeforeBraces: Attach }",
-    "C_Cpp.intelliSenseCachePath": "/tmp/.vscode/ipch",
-    "latex-workshop.view.pdf.viewer": "tab",
-    "workbench.editor.pinnedTabSizing": "compact",
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "text": "TODO:",
+      "color": "yellow",
+      "border": "1px solid yellow",
+      "borderRadius": "2px",
+      "backgroundColor": "rgba(0,0,0,.2)"
     },
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
+    {
+      "text": "TEST:",
+      "color": "#BA4A00",
+      "border": "1px solid #BA4A00",
+      "borderRadius": "2px",
+      "backgroundColor": "rgba(0,0,0,.2)"
     },
-    "java.refactor.renameFromFileExplorer": "autoApply",
-    "telemetry.enableTelemetry": false,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.languageServer": "Pylance",
-    "liveshare.authenticationProvider": "GitHub",
-    "liveshare.presence": true,
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-    "go.toolsManagement.autoUpdate": true,
-    "polacode.transparentBackground": true,
-    "tabnine.experimentalAutoImports": true,
-    "workbench.iconTheme": "eq-material-theme-icons-palenight",
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
-    "extensions.autoUpdate": "onlyEnabledExtensions",
-    "editor.minimap.enabled": false,
-    "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs": "active",
-    "trailing-spaces.trimOnSave": true,
-    "Lua.telemetry.enable": false,
-    "markdown.preview.fontSize": 12,
-    "git.mergeEditor": false,
-    "vsicons.dontShowNewVersionMessage": true,
-    "gitlens.views.commitDetails.files.layout": "tree",
-    "remote.SSH.remotePlatform": {
-        "oomar-z4": "linux"
-    },
-    "[xml]": {
-        "editor.defaultFormatter": "redhat.vscode-xml"
-    },
-    "editor.codeActionsOnSave": {},
-    "vsc-webshark.sharkdFullPath": "tshark",
-    "arduino.useArduinoCli": true,
-    // SSH Configs.
-    "remote.SSH.enableAgentForwarding": true,
-    "remote.SSH.useLocalServer": true,
-    // Rust configs.
-    "rust-analyzer.inlayHints.typeHints.enable": false,
-    "rust-analyzer.inlayHints.renderColons": false,
-    "rust-analyzer.inlayHints.parameterHints.enable": false,
-    "[rust]": {
-        "editor.defaultFormatter": "rust-lang.rust-analyzer",
-        "editor.formatOnSave": true
-    },
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.formatOnSave": true,
-    "files.trimTrailingWhitespace": true
+    {
+      "text": "WIP:",
+      "color": "#00ACC1",
+      "border": "1px solid #00ACC1",
+      "borderRadius": "2px",
+      "backgroundColor": "rgba(0,0,0,.2)"
+    }
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.tabSize": 2,
+  "explorer.openEditors.visible": 0,
+  "editor.minimap.maxColumn": 80,
+  "terminal.integrated.fontSize": 12,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "deno.enable": false,
+  "C_Cpp.updateChannel": "Insiders",
+  "C_Cpp.default.cppStandard": "c++20",
+  "editor.fontSize": 11,
+  "compile-hero.typescriptx-output-toggle": false,
+  "compile-hero.typescript-output-toggle": false,
+  "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 2, ColumnLimit: 120, MaxEmptyLinesToKeep: 3, UseTab: Never, TabWidth: 2, BreakBeforeBraces: Allman, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -2, BreakBeforeBraces: Attach }",
+  "C_Cpp.intelliSenseCachePath": "/tmp/.vscode/ipch",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "workbench.editor.pinnedTabSizing": "compact",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "java.refactor.renameFromFileExplorer": "autoApply",
+  "telemetry.enableTelemetry": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.languageServer": "Pylance",
+  "liveshare.authenticationProvider": "GitHub",
+  "liveshare.presence": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "polacode.transparentBackground": true,
+  "tabnine.experimentalAutoImports": true,
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "trailing-spaces.trimOnSave": true,
+  "Lua.telemetry.enable": false,
+  "markdown.preview.fontSize": 12,
+  "git.mergeEditor": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "gitlens.views.commitDetails.files.layout": "tree",
+  "remote.SSH.remotePlatform": {
+    "oomar-z4": "linux"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "editor.codeActionsOnSave": {},
+  "vsc-webshark.sharkdFullPath": "tshark",
+  "arduino.useArduinoCli": true,
+  // SSH Configs.
+  "remote.SSH.enableAgentForwarding": true,
+  "remote.SSH.useLocalServer": true,
+  // Rust configs.
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.renderColons": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "go.formatTool": "gofmt",
+  "zenMode.hideLineNumbers": false,
+  "zenMode.centerLayout": false
 }
