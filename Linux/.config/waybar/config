@@ -7,7 +7,7 @@
     "output": ["DP-1"],
 
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "custom/spotify-script", "hyprland/submap"],
+    "modules-left": ["hyprland/workspaces", "cava", "custom/spotify-script", "hyprland/submap"],
     "modules-center": ["clock"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "custom/internet-conx", "cpu", "memory", "temperature", "tray"],
 
@@ -16,6 +16,7 @@
     "hyprland/submap": {
         "format": "<span face=\"SF UI Display\" size=\"small\"><b>Mode:</b> {}</span>"
     },
+
 
     // https://man.archlinux.org/man/waybar-wlr-workspaces.5.en
     "hyprland/workspaces": {
@@ -110,6 +111,21 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/scripts/internet-module.sh 2> /dev/null"
     },
+
+    // Cava: https://github.com/PROxZIMA/caway
+    // https://github.com/karlstav/cava
+    // https://github.com/Alexays/Waybar/wiki/Module:-Cava
+    "cava": {
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "escape": true,
+        "on-click": "playerctl play-pause -p spotify",
+        "on-scroll-up": "playerctl next -p spotify",
+        "on-scroll-down": "playerctl previous -p spotify",
+        "bar_delimiter": 0,
+        "framerate": 60,
+        "bars": 12
+    },
+
     "custom/spotify-script": {
         "format": "{}",
         "interval": 1,

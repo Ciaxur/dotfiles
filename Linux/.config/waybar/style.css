@@ -12,6 +12,10 @@ window#waybar {
 }
 
 
+#cava {
+  color: @blue;
+}
+
 #workspaces,
 #mode,
 #clock,
