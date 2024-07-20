@@ -104,4 +104,9 @@
         "key": "ctrl+k =",
         "command": "workbench.action.toggleEditorWidths"
     },
+    {
+        "key": "ctrl+k ctrl+space",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    }
 ]

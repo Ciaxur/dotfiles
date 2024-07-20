@@ -142,5 +142,6 @@
   "files.trimTrailingWhitespace": true,
   "go.formatTool": "gofmt",
   "zenMode.hideLineNumbers": false,
-  "zenMode.centerLayout": false
+  "zenMode.centerLayout": false,
+  "diffEditor.renderSideBySide": true
 }
