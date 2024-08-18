@@ -77,11 +77,21 @@ lfcd() {
 # nnn Function Invocation
 nnncd() {
   TMP=/tmp/nnn.tmp
-  FCOLORS='EEEEAAAF00000087005F8700FF'
 
-  PLUGINS='f:fzcd;o:fzopen;h:hexview;d:diffs;i:mediainf;j:autojump'
+  # Configs are done through envs.
+  #  https://github.com/jarun/nnn/wiki/Usage#configuration
+  # FCOLORS='EEEEAAAF00000087005F8700FF'
+  FCOLORS='c1e2272e006033f7c6d6abc4'
+  PLUGINS='f:fzcd;o:fzopen;h:hexview;d:diffs;i:mediainf;j:autojump;p:preview-tui'
+  FTERMINAL="/usr/bin/alacritty"
 
-  NNN_TMPFILE=$TMP TERMINAL=/bin/termite NNN_FCOLORS=$FCOLORS NNN_PLUG=$PLUGINS nnn -ade
+  NNN_PREVIEWIMGPROG="ueberzug" \
+  NNN_FIFO="/tmp/nnn.fifo" \
+  NNN_TMPFILE=$TMP \
+  TERMINAL=$FTERMINAL\
+  NNN_FCOLORS=$FCOLORS \
+  NNN_PLUG=$PLUGINS \
+    nnn -ade
   eval $(cat ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd)
 }
 
