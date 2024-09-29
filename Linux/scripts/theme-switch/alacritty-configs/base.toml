@@ -1,0 +1,58 @@
+# Base configuration without theme.
+# Theme expected to be imported like so at the top of this config:
+# import = [ "path/to/theme.toml" ]
+
+# Cursor style
+#
+# Values for `style`:
+#   - ▇ Block
+#   - _ Underline
+#   - | Beam
+[cursor]
+style = "Beam"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 8.0
+
+[font.bold]
+family = "SF Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "SF Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "SF Mono"
+style = "Italic"
+
+[font.normal]
+family = "SF Mono"
+style = "Semibold"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "Up"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "Down"
+mods = "Shift"
+
+[scrolling]
+history = 10000
+
+[window]
+title = "Alacritty"
+
+[window.dimensions]
+columns = 108
+lines = 35
+
+[window.padding]
+x = 15
+y = 15

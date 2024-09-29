@@ -1,8 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Get Path of Current Script
 DIR=`dirname $0`
-CONFIG_FILEPATH="$DIR/config.json"
+
+# imports
+source "$DIR/alacritty_utils.sh"
 
 # Background Paths
 BKG_OUT=~/Pictures/Background             # Path to Link Output for Background
@@ -10,6 +12,7 @@ BKG_LIGHT=~/Pictures/Background-Light     # Actual Path to Light-Themed Backgrou
 BKG_DARK=~/Pictures/Background-Dark       # Actual Path to Dark-Themed Backgrounds
 
 # Make sure config is present.
+CONFIG_FILEPATH="$DIR/config.json"
 [ -f "$CONFIG_FILEPATH" ] || echo "{}" > "$CONFIG_FILEPATH"
 CONFIG_VALUE="$(cat $CONFIG_FILEPATH)"
 
@@ -22,7 +25,6 @@ function update_config() {
 function flush_config() {
   echo $CONFIG_VALUE > $CONFIG_FILEPATH
 }
-
 
 # Helper function for explicitly setting GTK interface's theme.
 function set_gtk_theme() {
@@ -52,6 +54,7 @@ elif [ "$1" = "tokyo-dark" ]; then            # Tokyo Dark Mode (Alacritty Only)
   echo "Activating Tokyo Dark Mode"
   update_config "theme" "$1"
 
+
   # Copy GTK Themes
   cp $DIR/gtk-configs/settings-dark.ini ~/.config/gtk-3.0/settings.ini
   cp $DIR/gtk-4-configs/settings-dark.ini ~/.config/gtk-4.0/settings.ini
@@ -59,11 +62,8 @@ elif [ "$1" = "tokyo-dark" ]; then            # Tokyo Dark Mode (Alacritty Only)
   # Set theme through GTK settings.
   set_gtk_theme $DIR/gtk-4-configs/settings-dark.ini
 
-  # Copy Alacritty Config
-  cp $DIR/alacritty-configs/alacritty-tokyo-dark.toml ~/.config/alacritty/alacritty.toml
-
-  # Copy vimrc Config
-  cp $DIR/vimrc-configs/config-dark ~/.vimrc
+  # Alacritty Config
+  apply_alacritty_config "$1"
 
   # Add Symbolic Link for Dark Theme
   rm $BKG_OUT
@@ -83,11 +83,8 @@ elif [ "$1" = "dark" ]; then            # Dark Mode
   # Copy Termite Theme
   cp $DIR/termite-configs/dark.config ~/.config/termite/config
 
-  # Copy vimrc Config
-  cp $DIR/vimrc-configs/config-dark ~/.vimrc
-
   # Copy Alacritty Config
-  cp $DIR/alacritty-configs/alacritty-dark.toml ~/.config/alacritty/alacritty.toml
+  apply_alacritty_config "$1"
 
   # Add Symbolic Link for Dark Theme
   rm $BKG_OUT
@@ -107,11 +104,8 @@ elif [ "$1" = "light" ]; then           # Light Mode
   # Copy Termite Theme
   cp $DIR/termite-configs/light.config ~/.config/termite/config
 
-  # Copy vimrc Config
-  cp $DIR/vimrc-configs/config-light ~/.vimrc
-
   # Copy Alacritty Config
-  cp $DIR/alacritty-configs/alacritty-light.toml ~/.config/alacritty/alacritty.toml
+  apply_alacritty_config "$1"
 
   # Add Symbolic Link for Light Theme
   rm $BKG_OUT
@@ -132,7 +126,7 @@ elif [ "$1" = "grey" ]; then            # Grey Mode
   cp $DIR/termite-configs/grey.config ~/.config/termite/config
 
   # Copy Alacritty Config
-  cp $DIR/alacritty-configs/alacritty-grey.toml ~/.config/alacritty/alacritty.toml
+  apply_alacritty_config "$1"
 
 else
   echo "Error: Unknown option '$1'"
