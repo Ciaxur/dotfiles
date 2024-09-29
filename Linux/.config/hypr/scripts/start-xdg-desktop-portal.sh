@@ -35,9 +35,9 @@ echo "Waiting 2s for hyprland portal to start..."
 sleep 2
 /usr/lib/xdg-desktop-portal -v 2>&1 | tee -a "$LOG_FILEPATH" &
 
-#echo "Starting XWayland Video Bridge..."
-#sleep 1
-#xwaylandvideobridge 2>&1 | tee -a "$LOG_FILEPATH" &
+echo "Starting XWayland Video Bridge..."
+sleep 1
+xwaylandvideobridge 2>&1 | tee -a "$LOG_FILEPATH" &
 
 echo "Waiting for interrupt..."
 wait
