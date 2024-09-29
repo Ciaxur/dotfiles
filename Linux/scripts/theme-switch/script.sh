@@ -29,7 +29,7 @@ function flush_config() {
 
 function print_help() {
   echo "Usage: $(basename $0) [options] [theme]"
-  echo "  themes:         [dark, light, grey, tokyo-dark]"
+  echo "  themes:         [dark, light, grey, tokyo-dark, challenger-deep]"
   echo "Options:"
   echo "  -l              Prints the currently applied configuration"
   echo "  -h  --help      Prints the help menu"
@@ -41,6 +41,25 @@ if [ "$1" = "" ] || [ "$1" == "--help" ]; then  # Empty Input or help argument
 
 elif [ "$1" = "-l" ]; then
   echo $CONFIG_VALUE | jq .
+
+elif [ "$1" = "challenger-deep" ]; then
+  echo "Activating Challenger Deep Mode"
+  update_config "theme" "$1"
+
+  # Set theme through GTK settings.
+  set_gtk_theme "dark"
+  update_config "gtk_theme" "dark"
+
+  # Alacritty Config
+  apply_alacritty_config "$1"
+
+  # Copy Termite Theme
+  cp $DIR/termite-configs/dark.config ~/.config/termite/config
+  update_config "termite" "dark"
+
+  # Add Symbolic Link for Dark Theme
+  rm $BKG_OUT
+  ln -s $BKG_DARK $BKG_OUT
 
 elif [ "$1" = "tokyo-dark" ]; then            # Tokyo Dark Mode (Alacritty Only)
   echo "Activating Tokyo Dark Mode"
