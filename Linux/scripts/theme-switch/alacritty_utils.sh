@@ -15,7 +15,7 @@ function apply_alacritty_config() {
   THEME_PATH="$ALACRITTY_THEME_DIR/alacritty-$THEME_NAME.toml"
 
   # Inject path to alacritty theme.
-  echo -e "import = [ \"$THEME_PATH\" ] \n\n$ALACRITTY_CONFIG" > "$ALACRITTY_USER_CONFIG"
+  echo -e "general.import = [ \"$THEME_PATH\" ] \n\n$ALACRITTY_CONFIG" > "$ALACRITTY_USER_CONFIG"
 }
 
 # Given a filepath, iterates over all the themes one by one.

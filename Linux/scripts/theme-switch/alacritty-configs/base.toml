@@ -1,6 +1,6 @@
 # Base configuration without theme.
 # Theme expected to be imported like so at the top of this config:
-# import = [ "path/to/theme.toml" ]
+# general.import = [ "path/to/theme.toml" ]
 
 # Cursor style
 #
