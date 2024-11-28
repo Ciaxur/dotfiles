@@ -21,6 +21,10 @@ function set_gtk_theme() {
   gsettings set org.gnome.desktop.interface gtk-theme \
     $(cat "$GTK4_SETTINGS_CONFIG_PATH" | rg -o "gtk-theme-name=(.*)$" --replace='$1')
 
+  # Expected 'prefer-light' or 'prefer-dark'.
+  # Default value is 'default'.
+  gsettings set org.gnome.desktop.interface color-scheme "prefer-$1"
+
   # Update GTK theme files
   cp "$GTK_SETTINGS_CONFIG_PATH" "$USER_GTK_CONFIG_FILEPATH"
   cp "$GTK4_SETTINGS_CONFIG_PATH" "$USER_GTK4_CONFIG_FILEPATH"
