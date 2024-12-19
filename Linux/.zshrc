@@ -10,7 +10,7 @@ HISTFILE=~/.cache/zsh/history
 #############################
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/omar/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -76,8 +76,8 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$GOPATH/bin
 
 # fzf Additions
-source /home/omar/Documents/git-clones/fzf/shell/completion.zsh
-source /home/omar/Documents/git-clones/fzf/shell/key-bindings.zsh
+source "$HOME/Documents/git-clones/fzf/shell/completion.zsh"
+source "$HOME/Documents/git-clones/fzf/shell/key-bindings.zsh"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -94,7 +94,7 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 
 
 # heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/home/omar/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+HEROKU_AC_ZSH_SETUP_PATH=$HOME/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 # Jump Config
 eval "$(jump shell)"
