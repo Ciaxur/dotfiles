@@ -48,7 +48,6 @@ history = 10000
 
 [window]
 title = "Alacritty"
-dynamic_padding = true
 
 [window.dimensions]
 columns = 108
