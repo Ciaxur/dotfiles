@@ -59,7 +59,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 # Configure Pager ; RegExp Search
 #export PAGER="most -r"
 
-# Load Sources 
+# Load Sources
 source ~/scripts/runtime/functions.sh
 source ~/scripts/runtime/aliases.sh
 source ~/scripts/runtime/keybinds.sh
@@ -83,6 +83,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 
 # Configure "time" command's Output
+# https://www.keisuke.dev/memo/general/2023-11-15-zsh_cheatsheet.html
 TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'avg shared (code):         %X KB'$'\n'\
 'avg unshared (data/stack): %D KB'$'\n'\
