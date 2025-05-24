@@ -68,14 +68,28 @@ DEFAULT_OUTPUT="$HOME/Pictures/$IMG_NAME"
 
 # Grab location to obtain screenshot of.
 SLURP_RESULT=""
+
+# Requires https://github.com/ciaxur/png_img_radius_strip
+IMG_RADIUS=10
+
 if [[ "$CAPTURE_WINDOW" = "1" ]]; then
+  notify-send "Screenshot" "Select window to screenshot"
   SLURP_RESULT="$(slurp_window)"
-else
-  SLURP_RESULT="$(slurp ${SLURP_ARGS})"
+
+  if [[ "$SAVE_TO_CLIP" = "1" ]]; then
+    png_radius_strip -r $IMG_RADIUS -o - <(grim -g "$SLURP_RESULT" -) | wl-copy
+    notify-send "Screenshot" "Captured screenshot into clipboard"
+  else
+    png_radius_strip -r $IMG_RADIUS -o - <(grim -g "$SLURP_RESULT" -) > "$DEFAULT_OUTPUT"
+    notify-send "Screenshot" "Captured screenshot in \n$DEFAULT_OUTPUT"
+  fi
+
+  exit 0
 fi
 
 # Take the screenshot and save to clipboard if '-c' was passed in, otherwise
 # save to default directory.
+SLURP_RESULT="$(slurp ${SLURP_ARGS})"
 if [[ "$SAVE_TO_CLIP" = "1" ]]; then
   grim -g "$SLURP_RESULT" - | wl-copy
   notify-send "Screenshot" "Captured screenshot into clipboard"

@@ -5,6 +5,7 @@
     // "width": 1280, // Waybar width (blank for dynamic value)
     "spacing": 4, // Gaps between modules (4px)
     "output": ["DP-1"],
+    "mode": "dock",
 
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "cava", "custom/spotify-script", "hyprland/submap"],

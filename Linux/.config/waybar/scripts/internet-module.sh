@@ -33,11 +33,11 @@ if [ "$CONX_TYPE" = "wifi" ]; then
     strength=$(nmcli dev wifi | grep -i '*' | awk '{print $8}')
 
     if (( $strength > 80 )); then       # Strong
-        CONX_TYPE="%{F#EEE}$WIFI_I"
+        CONX_TYPE="$WIFI_I "
     elif (( $strength > 40 )); then     # Medium
-        CONX_TYPE="%{F#BBB}$WIFI_I"
+        CONX_TYPE="$WIFI_I "
     else                                # Low
-        CONX_TYPE="%{F#888}$WIFI_I"
+        CONX_TYPE="$WIFI_I "
     fi
 
 
