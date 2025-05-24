@@ -29,7 +29,7 @@ function wttr() {
       CMD="?2&m"
       ;;
   esac
-  
+
 
   # wttr is a cool weather project:
   # This func serves as a mini-alias for quick weather requests.
