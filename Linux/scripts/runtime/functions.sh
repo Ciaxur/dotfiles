@@ -74,6 +74,13 @@ lfcd() {
     fi
 }
 
+# yazi function with cd into cwd.
+yazicd() {
+  TMP=/tmp/yazi.cwd.tmp
+  yazi --cwd-file "$TMP"
+  cd "$(cat "$TMP")"
+}
+
 # nnn Function Invocation
 nnncd() {
   TMP=/tmp/nnn.tmp
@@ -92,7 +99,7 @@ nnncd() {
   NNN_FCOLORS=$FCOLORS \
   NNN_PLUG=$PLUGINS \
     nnn -ade
-  eval $(cat $TMP)
+  eval $(cat ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd)
 }
 
 # Runs Local NPM Packages
