@@ -27,6 +27,24 @@ function flush_config() {
   echo $CONFIG_VALUE > $CONFIG_FILEPATH
 }
 
+function apply_common() {
+  THEME_NAME="$1"
+  THEME_KIND="$2"
+
+  update_config "theme" "$THEME_NAME"
+
+  # Set theme through GTK settings.
+  set_gtk_theme "$THEME_KIND"
+  update_config "gtk_theme" "$THEME_KIND"
+
+  # Copy Termite Theme
+  cp "$DIR/termite-configs/${THEME_KIND}.config" ~/.config/termite/config
+  update_config "termite" "$THEME_KIND"
+
+  # Copy Alacritty Config
+  apply_alacritty_config "$THEME_NAME"
+}
+
 function print_help() {
   echo "Usage: $(basename $0) [options] [theme]"
   echo "  themes:         [dark, light, grey, tokyo-dark, challenger-deep]"
@@ -44,18 +62,7 @@ elif [ "$1" = "-l" ]; then
 
 elif [ "$1" = "challenger-deep" ]; then
   echo "Activating Challenger Deep Mode"
-  update_config "theme" "$1"
-
-  # Set theme through GTK settings.
-  set_gtk_theme "dark"
-  update_config "gtk_theme" "dark"
-
-  # Alacritty Config
-  apply_alacritty_config "$1"
-
-  # Copy Termite Theme
-  cp $DIR/termite-configs/dark.config ~/.config/termite/config
-  update_config "termite" "dark"
+  apply_common "$1" "dark"
 
   # Add Symbolic Link for Dark Theme
   rm $BKG_OUT
@@ -63,18 +70,7 @@ elif [ "$1" = "challenger-deep" ]; then
 
 elif [ "$1" = "tokyo-dark" ]; then            # Tokyo Dark Mode (Alacritty Only)
   echo "Activating Tokyo Dark Mode"
-  update_config "theme" "$1"
-
-  # Set theme through GTK settings.
-  set_gtk_theme "dark"
-  update_config "gtk_theme" "dark"
-
-  # Alacritty Config
-  apply_alacritty_config "$1"
-
-  # Copy Termite Theme
-  cp $DIR/termite-configs/dark.config ~/.config/termite/config
-  update_config "termite" "dark"
+  apply_common "$1" "dark"
 
   # Add Symbolic Link for Dark Theme
   rm $BKG_OUT
@@ -82,18 +78,7 @@ elif [ "$1" = "tokyo-dark" ]; then            # Tokyo Dark Mode (Alacritty Only)
 
 elif [ "$1" = "dark" ]; then            # Dark Mode
   echo "Activating Dark Mode"
-  update_config "theme" "$1"
-
-  # Set theme through GTK settings.
-  set_gtk_theme "dark"
-  update_config "gtk_theme" "dark"
-
-  # Copy Termite Theme
-  cp $DIR/termite-configs/dark.config ~/.config/termite/config
-  update_config "termite" "dark"
-
-  # Copy Alacritty Config
-  apply_alacritty_config "$1"
+  apply_common "$1" "dark"
 
   # Add Symbolic Link for Dark Theme
   rm $BKG_OUT
@@ -101,18 +86,7 @@ elif [ "$1" = "dark" ]; then            # Dark Mode
 
 elif [ "$1" = "light" ]; then           # Light Mode
   echo "Activating Light Mode"
-  update_config "theme" "$1"
-
-  # Set theme through GTK settings.
-  set_gtk_theme "light"
-  update_config "gtk_theme" "light"
-
-  # Copy Termite Theme
-  cp $DIR/termite-configs/light.config ~/.config/termite/config
-  update_config "termite" "light"
-
-  # Copy Alacritty Config
-  apply_alacritty_config "$1"
+  apply_common "$1" "light"
 
   # Add Symbolic Link for Light Theme
   rm $BKG_OUT
@@ -120,16 +94,7 @@ elif [ "$1" = "light" ]; then           # Light Mode
 
 elif [ "$1" = "grey" ]; then            # Grey Mode
   echo "Activating Grey Mode"
-  update_config "theme" "$1"
-
-  # Set theme through GTK settings.
-  set_gtk_theme "grey"
-  update_config "gtk_theme" "grey"
-
-  # Copy Termite Theme
-  cp $DIR/termite-configs/grey.config ~/.config/termite/config
-  update_config "termite" "grey"
-
+  apply_common "$1" "grey"
   # Copy Alacritty Config
   apply_alacritty_config "$1"
 
