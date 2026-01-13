@@ -4,6 +4,7 @@
 DIR=`dirname $0`
 ALACRITTY_USER_CONFIG="$HOME/.config/alacritty/alacritty.toml"
 ALACRITTY_THEME_DIR="$DIR/alacritty-configs"
+DEFAULT_FONT_TOML_FILEPATH="$ALACRITTY_THEME_DIR/alacritty-default-font.toml"
 
 # Applies the given alacritty theme to the base config.
 function apply_alacritty_config() {
@@ -15,7 +16,7 @@ function apply_alacritty_config() {
   THEME_PATH="$ALACRITTY_THEME_DIR/alacritty-$THEME_NAME.toml"
 
   # Inject path to alacritty theme.
-  echo -e "general.import = [ \"$THEME_PATH\" ] \n\n$ALACRITTY_CONFIG" > "$ALACRITTY_USER_CONFIG"
+  echo -e "general.import = [ \"$THEME_PATH\", \"$DEFAULT_FONT_TOML_FILEPATH\" ] \n\n$ALACRITTY_CONFIG" > "$ALACRITTY_USER_CONFIG"
 }
 
 # Given a filepath, iterates over all the themes one by one.

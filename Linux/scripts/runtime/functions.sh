@@ -99,7 +99,7 @@ nnncd() {
   NNN_FCOLORS=$FCOLORS \
   NNN_PLUG=$PLUGINS \
     nnn -ade
-  eval $(cat ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd)
+  eval $(cat $TMP)
 }
 
 # Runs Local NPM Packages
