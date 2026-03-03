@@ -7,4 +7,4 @@ killall -q waybar
 while pgrep -x waybar >/dev/null; do sleep 1; done
 
 # Launch.
-(waybar -c ~/.config/waybar/config &) &> /dev/null
+(waybar -c ~/.config/waybar/config.jsonc > /tmp/waybar.log ) &

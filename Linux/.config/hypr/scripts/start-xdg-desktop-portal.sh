@@ -1,7 +1,6 @@
 #!/bin/bash
 sleep 1
 killall -e xdg-desktop-portal-hyprland
-killall -e xdg-desktop-portal-wlr
 killall xdg-desktop-portal
 killall xwaylandvideobridge
 
@@ -10,9 +9,7 @@ function cleanup() {
   set +e
   echo "Cleaning up processes..."
   killall -e xdg-desktop-portal-hyprland
-  killall -e xdg-desktop-portal-wlr
   killall xdg-desktop-portal
-  killall xwaylandvideobridge
 }
 trap 'cleanup' SIGINT
 
@@ -27,6 +24,8 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 LOG_FILEPATH="/tmp/xdp-hyprland.log"
 
+echo "Starting xwaylandvideobridge..."
+xwaylandvideobridge 2>&1 | tee "$LOG_FILEPATH" &
 
 echo "Starting hyprland portal..."
 /usr/lib/xdg-desktop-portal-hyprland 2>&1 | tee "$LOG_FILEPATH" &
@@ -34,10 +33,6 @@ echo "Starting hyprland portal..."
 echo "Waiting 2s for hyprland portal to start..."
 sleep 2
 /usr/lib/xdg-desktop-portal -v 2>&1 | tee -a "$LOG_FILEPATH" &
-
-echo "Starting XWayland Video Bridge..."
-sleep 1
-xwaylandvideobridge 2>&1 | tee -a "$LOG_FILEPATH" &
 
 echo "Waiting for interrupt..."
 wait
