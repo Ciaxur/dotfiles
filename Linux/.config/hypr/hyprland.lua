@@ -381,12 +381,35 @@ hl.bind("SUPER + ALT + right", hl.dsp.focus({ direction="right" }))
 hl.bind("SUPER + ALT + up",    hl.dsp.focus({ direction="up" }))
 hl.bind("SUPER + ALT + down",  hl.dsp.focus({ direction="down" }))
 
--- Move window position based on floating/tiled mode.
--- NOTE: `relative = true` is required, it defaults to false (absolute move).
-hl.bind("SUPER + SHIFT + left",  hl.dsp.window.move({ x = -50,  y = 0,   relative = true }))
-hl.bind("SUPER + SHIFT + down",  hl.dsp.window.move({ x = 0,    y = 50,  relative = true }))
-hl.bind("SUPER + SHIFT + up",    hl.dsp.window.move({ x = 0,    y = -50, relative = true }))
-hl.bind("SUPER + SHIFT + right", hl.dsp.window.move({ x = 50,   y = 0,   relative = true }))
+-- Move window position based on floating/tiled/grouped mode.
+-- Was move_window.sh. A plain relative `window.move` only works on FLOATING
+-- windows, which is exactly why that script branched three ways -- using it
+-- unconditionally silently did nothing on tiled/grouped windows.
+--
+-- floating -> nudge by pixels
+-- grouped  -> reorder within the group (right = forward, else backward)
+-- tiled    -> move within the layout by direction
+-- NOTE: floating is checked FIRST, so a floating+grouped window nudges by
+-- pixels, matching the old script's ordering.
+local function move_window(x, y, dir)
+    return function()
+        local w = hl.get_active_window()
+        if not w then return end
+
+        if w.floating then
+            hl.dispatch(hl.dsp.window.move({ x = x, y = y, relative = true }))
+        elseif w.group then
+            hl.dispatch(hl.dsp.group.move_window({ forward = (dir == "r") }))
+        else
+            hl.dispatch(hl.dsp.window.move({ direction = dir }))
+        end
+    end
+end
+
+hl.bind("SUPER + SHIFT + left",  move_window(-50, 0,   "l"))
+hl.bind("SUPER + SHIFT + down",  move_window(0,   50,  "d"))
+hl.bind("SUPER + SHIFT + up",    move_window(0,   -50, "u"))
+hl.bind("SUPER + SHIFT + right", move_window(50,  0,   "r"))
 
 -- Move floating window at a larger offset.
 hl.bind("SUPER + CTRL + SHIFT + left",  hl.dsp.window.move({ x = -200, y = 0,    relative = true }))
